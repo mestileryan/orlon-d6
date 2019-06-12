@@ -1,0 +1,707 @@
+
+<input class="tab-button pc" type="radio" name="attr_tab" value="pc" checked="checked"><span>PJ</span>
+<input class="tab-button npc" type="radio" name="attr_tab" value="npc"><span>PNJ</span>
+
+<hr/>
+
+<input type="hidden" name="attr_global" value="0"/>
+
+<div class="page npc">
+    <label>Nom</label><input type="text" name="attr_character_name" />
+	<br/>
+	<label>Race</label><input type="text" name="attr_rank" />
+    <hr/>
+     
+    <label class="forlbl">Puissance générale NPC</label><input type="number" name='attr_PuissanceNPC' class='sheet-short' value="0" >
+    <br/>
+    <h2>Jets simplifiées</h2>
+    <div class="2colrow">
+        <div class="col">
+            <label class="forlbl">Force</label><input type="number" name='attr_For_d' class='sheet-short' value="0" >
+            <span class='dee'>D+</span>
+            <input type="number" name='attr_For_pip' class='sheet-short' value='0' />
+            <button type='roll' name='roll_jetFor' class='rollbtn' value='!wwd [[(@{PuissanceNPC}+@{For_d})D6+@{For_pip}]]'></button>
+            <br/>
+            <label class="dexlbl">Dextérité</label><input type="number" name='attr_Dex_d' class='sheet-short' value="0" />
+            <span class='dee'>D+</span>
+            <input type="number" name='attr_Dex_pip' class='sheet-short'  value="0" />
+            <button type='roll' name='roll_jetDex' value='!wwd [[(@{PuissanceNPC}+@{Dex_d})D6+@{Dex_pip}]]'></button>
+            <br/> 
+            <label class="agilbl">Agilité</label><input type="number" name='attr_Agi_d' class='sheet-short' value="0">
+            <span class='dee'>D+</span>
+            <input type="number" name='attr_Agi_pip' class='sheet-short' value="0" >
+            <button type='roll' name='roll_jetAgi' value='!wwd [[(@{PuissanceNPC}+@{Agi_d})D6+@{Agi_pip}+@{TotalAgiMalus}]]'></button>
+            <br/> 
+            <label class="conlbl">Constitution</label><input type="number" name='attr_Con_d' class='sheet-short' value="0">
+            <span class='dee'>D+</span>
+            <input type="number" name='attr_Con_pip' class='sheet-short' value="0" >
+            <button type='roll' name='roll_jetCon' value='!wwd [[(@{PuissanceNPC}+@{Con_d})D6+@{Con_pip}]]'></button>
+            <br/> 
+            <label class="intlbl">Intelligence</label><input type="number" name='attr_Int_d' class='sheet-short' value="0">
+            <span class='dee'>D+</span>
+            <input type="number" name='attr_Int_pip' class='sheet-short' value="0" >
+            <button type='roll' name='roll_jetInt' value='!wwd [[(@{PuissanceNPC}+@{Int_d})D6+@{Int_pip}]]'></button>
+            <br/> 
+            <label class="saglbl">Sagesse</label><input type="number" name='attr_Sag_d' class='sheet-short' value="0">
+            <span class='dee'>D+</span>
+            <input type="number" name='attr_Sag_pip' class='sheet-short' value="0" >
+            <button type='roll' name='roll_jetSag' value='!wwd [[(@{PuissanceNPC}+@{Sag_d})D6+@{Sag_pip}]]'></button>
+            <br/> 
+            <label class="chalbl">Charisme</label><input type="number" name='attr_Cha_d' class='sheet-short' value="0">
+            <span class='dee'>D+</span>
+            <input type="number" name='attr_Cha_pip' class='sheet-short' value="0" >
+            <button type='roll' name='roll_jetCha' value='!wwd [[(@{PuissanceNPC}+@{Cha_d})D6+@{Cha_pip}]]'></button>
+            <br/> 
+            <label class="potlbl">Potentiel</label><input type="number" name='attr_Pot_d' class='sheet-short' value="0">
+            <span class='dee'>D+</span>
+            <input type="number" name='attr_Pot_pip' class='sheet-short' value="0" >
+            <button type='roll' name='roll_jetPot' value='!wwd [[(@{PuissanceNPC}+@{Pot_d})D6+@{Pot_pip}]]'></button>
+		</div>
+        <div class="col">
+        	<label class="oneline">PV</label>
+    	    <input type="number" name="attr_PV" />
+    	    <span class='dee'>/</span>
+    	    <input type="number" name="attr_PV_max" />
+            <br/>
+    	    <label class="oneline">PE</label>
+        	<input type="number" name="attr_PE" />
+        	<span class='dee'>/</span>
+        	<input type="number" name="attr_PE_max" />
+        	<br/>
+        	<label class="oneline">B. Physique</label>
+        	<input type="number" name="attr_BasePhy" />
+        	<br/>
+        	<label class="oneline">B. Magique</label>
+        	<input type="number" name="attr_BaseMag" />
+        	<br/>
+        	<label class="oneline">Armure</label>
+        	<input type="number" name="attr_Armure" />
+        	<br/>
+        	<label class="oneline">Résistance</label>
+        	<input type="number" name="attr_Resistance" />
+        	<br/>
+        	<label class="oneline">Défense</label>
+        	<input type="number" name="attr_Defense" />
+        	<br/>
+        	<label class="oneline">Initiative</label>
+            <button type='roll' name='roll_OtherPotComp' value='/w gm Initiative de @{character_name}: [[((@{Sag_d}+@{PuissanceNPC})-1)D6+(@{Sag_pip}+floor(@{Agi_d}))+1D6! &{tracker}]]'></button>
+        </div>
+	</div>
+	
+    <hr/>
+    <h1>Sorts ou techniques tiers</h1>
+    <label class="desc-spell-cost">Coût</label>
+    <label class="desc-spell-name">Nom</label>
+    <label class="desc-spell-rank">Rang</label>
+    <label class="desc-spell-desc">Description</label>
+    <fieldset class="repeating_allOtherDons-spells">
+        <div class="spell-row"> 
+            <input type="number" name="attr_other_don_spell_cost" value="1" min="0"/>
+            <input type="text" name="attr_other_don_spell_name" placeholder="Nom" />
+            <input type="number" name="attr_other_don_spell_level" value="1" min="1"/>
+            <input class="long-desc" type="text" name="attr_other_don_spell_desc" placeholder="Description/Effet"/>
+        </div>
+    </fieldset>
+    <hr/>
+    <h1>Loot</h1>
+    <textarea name="attr_equipement" placeholder="Loot ici !"></textarea>
+</div>
+
+<div class="page pc">
+    <h1>Informations générales</h1>
+    
+    <div class="2colrow">
+        <div class="col">
+    	    <label>Nom</label><input type="text" name="attr_character_name" />
+    		<br/>
+    		<label>Race</label><input type="text" name="attr_rank" />
+    	</div>
+    
+    
+    	<div class="col">
+    		<label>Karma Dispo</label><input type="number" name="attr_karma" />
+    		<br/>
+    		<label>Karma Total</label><input type="number" name="attr_karma_max" />
+    		<br/>
+    		<label>Malus Multi-Action</label><input type="number" name="attr_mmaction" />
+    	</div>
+    
+    </div>
+    <hr/>
+    <h1>Caractéristiques et Compétences</h1>
+    <div class="2colrow">
+    	<div class="col">
+    		<label class="forlbl">Force</label><input type="number" name='attr_For_d' class='sheet-short' value="0" min="0" >
+    		<span class='dee'>D+</span>
+    		<input type="number" name='attr_For_pip' class='sheet-short' value='0' />
+    		<button type='roll' name='roll_jetFor' value='!wd [[(@{For_d}+@{global})D6+@{For_pip}]]'></button>
+    		<br/> 
+    		<div class="comp-section">
+                <label class="skill-label">Puissance Physique</label><input type="number" name='attr_PuissancePhysiqueComp_d' class='sheet-short' value='0' min="0" />
+                <span class='dee'>D+</span>
+                <input type="number" name='attr_PuissancePhysiqueComp_pip' class='sheet-short' value="0" min="0"/>
+                <button type='roll' name='roll_PuissancePhysiqueComp' value='!wd [[(@{PuissancePhysiqueComp_d}+@{For_d}+@{global})D6+(@{PuissancePhysiqueComp_pip}+@{For_pip})]]'></button>
+            </div>
+    		<fieldset class="repeating_ForComp">
+    	        <div class="comp-section">
+                    <input type="text" class="skill-input" name="attr_OtherForComp_name" placeholder="<Entrez un nom>"/><input type="number" name='attr_OtherForComp_d' class='sheet-short' value="0" min="0">
+                    <span class='dee'>D+</span>
+                    <input type="number" name='attr_OtherForComp_pip' class='sheet-short' value='0' min="0" >
+                    <button type='roll' name='roll_OtherForComp' value='!wd [[(@{OtherForComp_d}+@{For_d}+@{global})D6+(@{OtherForComp_pip}+@{For_pip})]]'></button>
+                </div>
+            </fieldset>
+    	</div>
+    	<div class="col">
+    		<label class="dexlbl">Dextérité</label><input type="number" name='attr_Dex_d' class='sheet-short' value="0" min="0" />
+    		<span class='dee'>D+</span>
+    		<input type="number" name='attr_Dex_pip' class='sheet-short'  value="0" />
+    		<button type='roll' name='roll_jetDex' value='!wd [[(@{Dex_d}+@{global})D6+@{Dex_pip}]]'></button>
+    		<br/> 
+    		<div class="comp-section">
+                <label class="skill-label">Combat Mêlée</label><input type="number" name='attr_CombatMeleeComp_d' class='sheet-short'  value="0" min="0"/>
+                <span class='dee'>D+</span>
+                <input type="number" name='attr_CombatMeleeComp_pip' class='sheet-short' value="0" min="0"/>
+                <button type='roll' name='roll_CombatMeleeComp' value='!wd [[(@{CombatMeleeComp_d}+@{Dex_d}+@{global})D6+(@{CombatMeleeComp_pip}+@{For_pip})]]'></button>
+            </div>
+    		<div class="comp-section">
+                <label class="skill-label">Tir</label><input type="number" name='attr_TirComp_d' class='sheet-short' value="0" min="0" />
+                <span class='dee'>D+</span>
+                <input type="number" name='attr_TirComp_pip' class='sheet-short' value="0" min="0"/>
+                <button type='roll' name='roll_TirComp' value='!wd [[(@{TirComp_d}+@{Dex_d}+@{global})D6+(@{TirComp_pip}+@{For_pip})]]'></button>
+            </div>
+    		<div class="comp-section">
+                <label class="skill-label">Lancé</label><input type="number" name='attr_LanceComp_d' class='sheet-short' value="0" min="0">
+                <span class='dee'>D+</span>
+                <input type="number" name='attr_LanceComp_pip' class='sheet-short' value="0" min="0">
+                <button type='roll' name='roll_LanceComp' value='!wd [[(@{LanceComp_d}+@{Dex_d}+@{global})D6+(@{LanceComp_pip}+@{For_pip})]]'></button>
+            </div>
+    		<fieldset class="repeating_DexComp">
+        		<div class="comp-section">
+                    <input type="text" class="skill-input" name="attr_OtherDexComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherDexComp_d' class='sheet-short' value="0" min="0">
+                    <span class='dee'>D+</span>
+                    <input type="number" name='attr_OtherDexComp_pip' class='sheet-short' value="0" min="0">
+                    <button type='roll' name='roll_OtherDexComp' value='!wd [[(@{OtherDexComp_d}+@{Dex_d}+@{global})D6+(@{OtherDexComp_pip}+@{Dex_pip})]]'></button>
+                </div>
+            </fieldset>
+    	</div>
+    </div>
+    <div class="2colrow">
+    	<div class="col">
+    		<label class="agilbl">Agilité</label><input type="number" name='attr_Agi_d' class='sheet-short' value="0" min="0">
+    		<span class='dee'>D+</span>
+    		<input type="number" name='attr_Agi_pip' class='sheet-short' value="0" >
+    		<button type='roll' name='roll_jetAgi' value='!wd [[(@{Agi_d}+@{global})D6+@{Agi_pip}+@{TotalAgiMalus}]]'></button>
+    		<br/> 
+    		<div class="comp-section">
+                <label class="skill-label">Esquive</label><input type="number" name='attr_EsquiveComp_d' class='sheet-short' value="0" min="0">
+                <span class='dee'>D+</span>
+                <input type="number" name='attr_EsquiveComp_pip' class='sheet-short' value="0" min="0">
+                <button type='roll' name='roll_EsquiveComp' value='!wd [[(@{EsquiveComp_d}+@{Agi_d}+@{global})D6+(@{EsquiveComp_pip}+@{Agi_pip}+@{TotalAgiMalus})]]'></button>
+            </div>
+    		<fieldset class="repeating_AgiComp">
+        		<div class="comp-section">
+                    <input type="text" class="skill-input" name="attr_OtherAgiComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherAgiComp_d' class='sheet-short' value="0" min="0">
+                    <span class='dee'>D+</span>
+                    <input type="number" name='attr_OtherAgiComp_pip' class='sheet-short' value="0" min="0">
+                    <button type='roll' name='roll_OtherAgiComp' value='!wd [[(@{OtherAgiComp_d}+@{Agi_d}+@{global})D6+(@{OtherAgiComp_pip}+@{Agi_pip}+@{TotalAgiMalus})]]'></button>
+                </div>
+            </fieldset>
+    	</div>
+    	<div class="col">
+    		<label class="conlbl">Constitution</label><input type="number" name='attr_Con_d' class='sheet-short' value="0" min="0">
+    		<span class='dee'>D+</span>
+    		<input type="number" name='attr_Con_pip' class='sheet-short' value="0" >
+    		<button type='roll' name='roll_jetCon' value='!wd [[(@{Con_d}+@{global})D6+@{Con_pip}]]'></button>
+    		<br/> 
+    		<div class="comp-section">
+                <label class="skill-label">Stamina</label><input type="number" name='attr_StaminaComp_d' class='sheet-short' value="0" min="0">
+                <span class='dee'>D+</span>
+                <input type="number" name='attr_StaminaComp_pip' class='sheet-short' value="0" min="0">
+                <button type='roll' name='roll_StaminaComp' value='!wd [[(@{StaminaComp_d}+@{Con_pip}+@{global})D6+(@{StaminaComp_pip}+@{Con_pip})]]'></button>
+            </div>
+    		<fieldset class="repeating_ConComp">
+            	<div class="comp-section">
+                    <input type="text" class="skill-input" name="attr_OtherConComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherConComp_d' class='sheet-short' value="0" min="0">
+                    <span class='dee'>D+</span>
+                    <input type="number" name='attr_OtherConComp_pip' class='sheet-short' value="0" min="0">
+                    <button type='roll' name='roll_OtherConComp' value='!wd [[(@{OtherConComp_d}+@{Con_d}+@{global})D6+(@{OtherConComp_pip}+@{Con_pip})]]'></button>
+    	        </div>
+            </fieldset>
+    	</div>
+    </div>
+    <div class="2colrow">
+    	<div class="col">
+    		<label class="intlbl">Intelligence</label><input type="number" name='attr_Int_d' class='sheet-short' value="0" min="0">
+    		<span class='dee'>D+</span>
+    		<input type="number" name='attr_Int_pip' class='sheet-short' value="0" >
+    		<button type='roll' name='roll_jetInt' value='!wd [[(@{Int_d}+@{global})D6+@{Int_pip}]]'></button>
+    		<br/> 
+    		<fieldset class="repeating_IntComp">
+        		<div class="comp-section">
+                    <input type="text" class="skill-input" name="attr_OtherIntComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherIntComp_d' class='sheet-short' value="0" min="0">
+                    <span class='dee'>D+</span>
+                    <input type="number" name='attr_OtherIntComp_pip' class='sheet-short' value="0" min="0">
+                    <button type='roll' name='roll_OtherIntComp' value='!wd [[(@{OtherIntComp_d}+@{Int_d}+@{global})D6+(@{OtherIntComp_pip}+@{Int_pip})]]'></button>
+                </div>
+            </fieldset>
+    	</div>
+    	<div class="col">
+    		<label class="saglbl">Sagesse</label><input type="number" name='attr_Sag_d' class='sheet-short' value="0" min="0">
+    		<span class='dee'>D+</span>
+    		<input type="number" class="skill-input" name='attr_Sag_pip' class='sheet-short' value="0" >
+    		<button type='roll' name='roll_jetSag' value='!wd [[(@{Sag_d}+@{global})D6+@{Sag_pip}]]'></button>
+    		<br/> 
+    		<div class="comp-section">
+                <label class="skill-label">Volonté</label><input type="number" name='attr_VolonteComp_d' class='sheet-short' value="0" min="0">
+                <span class='dee'>D+</span>
+                <input type="number" name='attr_VolonteComp_pip' class='sheet-short' value="0" min="0">
+                <button type='roll' name='roll_VolonteComp' value='!wd [[(@{VolonteComp_d}+@{Sag_d}+@{global})D6+(@{VolonteComp_pip}+@{Sag_pip})]]'></button>
+            </div>
+    		<fieldset class="repeating_SagComp">
+        		<div class="comp-section">
+                    <input type="text" class="skill-input" name="attr_OtherSagComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherSagComp_d' class='sheet-short' value="0" min="0">
+                    <span class='dee'>D+</span>
+                    <input type="number" name='attr_OtherSagComp_pip' class='sheet-short' value="0" min="0">
+                    <button type='roll' name='roll_OtherSagComp' value='!wd [[(@{OtherSagComp_d}+@{Sag_d}+@{global})D6+(@{OtherSagComp_pip}+@{Sag_pip})]]'></button>
+                </div>
+            </fieldset>
+    	</div>
+    </div>
+    <div class="2colrow">
+    	<div class="col">
+    		<label class="chalbl">Charisme</label><input type="number" name='attr_Cha_d' class='sheet-short' value="0" min="0">
+    		<span class='dee'>D+</span>
+    		<input type="number" name='attr_Cha_pip' class='sheet-short' value="0" >
+    		<button type='roll' name='roll_jetCha' value='!wd [[(@{Cha_d}+@{global})D6+@{Cha_pip}]]'></button>
+    		<br/> 
+    		<fieldset class="repeating_ChaComp">
+        		<div class="comp-section">
+                    <input type="text" class="skill-input" name="attr_OtherChaComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherChaComp_d' class='sheet-short' value="0" min="0">
+                    <span class='dee'>D+</span>
+                    <input type="number" name='attr_OtherChaComp_pip' class='sheet-short' value="0" min="0">
+                    <button type='roll' name='roll_OtherChaComp' value='!wd [[(@{OtherChaComp_d}+@{Cha_d}+@{global})D6+(@{OtherChaComp_pip}+@{Cha_pip})]]'></button>
+                </div>
+            </fieldset>
+    	</div>
+    	<div class="col">
+    		<label class="potlbl">Potentiel</label><input type="number" name='attr_Pot_d' class='sheet-short' value="0" min="0">
+    		<span class='dee'>D+</span>
+    		<input type="number" name='attr_Pot_pip' class='sheet-short' value="0" >
+    		<button type='roll' name='roll_jetPot' value='!wd [[(@{Pot_d}+@{global})D6+@{Pot_pip}]]'></button>
+    		<br/> 
+    		<div class="comp-section">
+                <label class="skill-label">Puissance magique</label><input type="number" name='attr_PuissanceMagiqueComp_d' class='sheet-short' value="0" min="0">
+                <span class='dee'>D+</span>
+                <input type="number" name='attr_PuissanceMagiqueComp_pip' class='sheet-short' value="0" min="0">
+                <button type='roll' name='roll_PuissanceMagiqueComp' value='!wd [[(@{PuissanceMagiqueComp_d}+@{Pot_d}+@{global})D6+(@{PuissanceMagiqueComp_pip}+@{Pot_pip})]]'></button>
+            </div>
+    		<fieldset class="repeating_PotComp">
+        		<div class="comp-section">
+                    <input type="text" class="skill-input" name="attr_OtherPotComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherPotComp_d' class='sheet-short' value="0" min="0">
+                    <span class='dee'>D+</span>
+                    <input type="number" name='attr_OtherPotComp_pip' class='sheet-short' value="0" min="0">
+                    <button type='roll' name='roll_OtherPotComp' value='!wd [[(@{OtherPotComp_d}+@{Pot_d}+@{global})D6+(@{OtherPotComp_pip}+@{Pot_pip})]]'></button>
+                </div>
+            </fieldset>
+    	</div>
+    </div>
+    <div class="3colrow">
+    	<div class="col">
+    	    <h2>Caractéristiques principales</h2>
+        	<div class="tooltip desclabel">
+        	    <label class="oneline">Points de vie</label>
+        	    <span class="tooltiptext"><b>Points de vie</b></span>
+    	    </div>
+    	    <input type="number" name="attr_PV"/>
+    	    <span class='dee'>/</span>
+    	    <input type="number" name="attr_PV_max" readonly />
+            <br/>
+        	<div class="tooltip desclabel">
+        	    <label class="oneline">Points d'énergie</label>
+        	    <span class="tooltiptext"><b>Points d'énergie</b></span>
+        	</div>
+        	<input type="number" name="attr_PE"/>
+        	<span class='dee'>/</span>
+        	<input type="number" name="attr_PE_max" readonly />
+        </div>
+    	<div class="col">
+    	    <h2>Caractéristiques offensives</h2>
+        	<div class="tooltip desclabel">
+        	    <label>Physique</label>
+        	    <span class="tooltiptext">
+        	        <b>Base aux dégâts physiques</b><br/><br/>Dégâts physiques infligés de base lors d'une frappe ou avec une arme implicant la puissance brute du personnage
+    	        </span>
+            </div>
+        	<span class='dee'>+</span><input type="number" name="attr_BonusBasePhy" /><span class='dee'>=</span><input type="number" name="attr_BasePhy" readonly/>
+            <br/>
+        	<div class="tooltip desclabel">
+    	        <label>Magique</label>
+    	        <span class="tooltiptext">
+    	            <b>Base aux dégâts magiques</b><br/><br/>Dégâts magiques infligés de base lorsqu'un sort est lancé ou lorsqu'une arme magique impliquant la puissance magique du personnage est utilisée
+                </span>
+            </div>
+        	<span class='dee'>+</span><input type="number" name="attr_BonusBaseMag" /><span class='dee'>=</span><input type="number" name="attr_BaseMag" readonly />
+        	<label class="desclabel">Initiative</label>
+            <button type='roll' name='roll_OtherPotComp' value='Initiative de @{character_name}: [[(@{Sag_d}-1)D6+(@{Sag_pip}+floor(@{Agi_d}/4))+1D6! &{tracker}]]'></button>
+        </div>
+    	<div class="col">
+    	    <h2>Carractéristiques défensives</h2>
+        	<div class="tooltip desclabel">
+        	    <label>Armure</label>
+        	    <span class="tooltiptext">
+        	        <b>Armure physique</b><br/><br/>Réduction fixe des dégâts physiques infligés
+        	    </span>
+        	</div>
+            <span class='dee'>+</span><input type="number" name="attr_BonusArmure" /><span class='dee'>=</span><input type="number" name="attr_Armure" readonly />
+            <br/>
+            
+        	<div class="tooltip desclabel">
+        	    <label>Résistance</label>
+        	    <span class="tooltiptext">
+        	        <b>Résistance magique</b><br/><br/>Réduction fixe des dégâts magiques infligés
+        	    </span>
+        	</div>
+        	<span class='dee'>+</span><input type="number" name="attr_BonusResistance" /><span class='dee'>=</span><input type="number" name="attr_Resistance" readonly />
+            <br/>
+            
+        	<div class="tooltip desclabel">
+        	    <label>Défense</label>
+        	    <span class="tooltiptext">
+        	        <b>Défense passive</b><br/><br/>Equivalent de la classe d'armure : Valeur qu'un opposant doit dépasser par défaut lors d'une attaque
+        	    </span>
+        	</div>
+        	<span class='dee'>+</span><input type="number" name="attr_BonusDefense" /><span class='dee'>=</span><input type="number" name="attr_Defense" readonly />
+        </div>
+    </div>
+    <hr/>
+    <h1>Dons</h1>
+    <div class="dons">
+        <i>Nombre de dons :</i>
+        <input class="tab-button don0" type="radio" name="attr_tabdon" value="don0" checked="checked"><span>X</span>
+        <input class="tab-button don1" type="radio" name="attr_tabdon" value="don1"><span>1</span>
+        <input class="tab-button don2" type="radio" name="attr_tabdon" value="don3"><span>2</span>
+        <input class="tab-button don3" type="radio" name="attr_tabdon" value="don4"><span>3</span>
+        <input class="tab-button don4" type="radio" name="attr_tabdon" value="don5"><span>4</span>
+        <br/>
+        <div class="page don1">
+            <center><input type="text" name="attr_nomdon1" placeholder="Nom du don" /></center>
+            <br/>
+            <input type="number" name='attr_compdon1_d' class='sheet-short' value="0" min="0">
+            <span class='dee'>D+</span>
+            <input type="number" name="attr_compdon1_pip" class="sheet-short" value='0'>
+            <select name="attr_compdon1_mult">
+                <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+            </select>
+            <button type='roll' name='roll_compdon1' value='!wd [[@{compdon1_mult}+(@{compdon1_d}+@{global})D6+@{compdon1_pip})]]'></button>
+            <br/>
+            <label>Description :</label><textarea class="desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
+            <h3>Liste des sorts et/ou techniques</h3>
+            <fieldset class="repeating_allDons1-spells">
+            <div class="spell-row"> 
+                <input type="text" name="attr_don1_spell_name" placeholder="Nom" />
+                <span>Coût : </span><input type="number" class="sheet-short" name="attr_don1_spell_cost" value="1" min="0"/>
+                <span>Rang : </span><input type="number" class="sheet-short" name="attr_don1_spell_level" value="1" min="1"/>
+                <button type='roll' name='roll_compdon1' value='!wd [[@{compdon1_mult}+(@{compdon1_d}+@{global})D6+@{compdon1_pip})]]'></button>
+                <textarea class="desc-don-spell" name="attr_don1_spell_desc" placeholder="Description/Effet"></textarea>
+            </div>
+            </fieldset>
+        </div>
+        <div class="page don2">
+            <center><input type="text" name="attr_nomdon2" placeholder="Nom du don" /></center>
+            <br/>
+            <input type="number" name='attr_compdon2_d' class='sheet-short' value="0" min="0">
+            <span class='dee'>D+</span>
+            <input type="number" name="attr_compdon2_pip" class="sheet-short" value='0'>
+            <select name="attr_compdon2_mult">
+                <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+            </select>
+            <button type='roll' name='roll_compdon2' value='!wd [[@{compdon2_mult}+(@{compdon2_d}+@{global})D6+@{compdon2_pip})]]'></button>
+            <br/>
+            <label>Description :</label><textarea class="desc-don" name="attr_doncompletdescription2" placeholder="Description complète du don"></textarea>
+            <h3>Liste des sorts et/ou techniques</h3>
+            <fieldset class="repeating_allDons2-spells">
+            <div class="spell-row"> 
+                <input type="text" name="attr_don2_spell_name" placeholder="Nom" />
+                <span>Coût : </span><input type="number" class="sheet-short" name="attr_don2_spell_cost" value="1" min="0"/>
+                <span>Rang : </span><input type="number" class="sheet-short" name="attr_don2_spell_level" value="1" min="1"/>
+                <button type='roll' name='roll_compdon2' value='!wd [[@{compdon2_mult}+(@{compdon2_d}+@{global})D6+@{compdon2_pip})]]'></button>
+                <textarea class="desc-don-spell" name="attr_don2_spell_desc" placeholder="Description/Effet"></textarea>
+            </div>
+            </fieldset>
+        </div>
+        <div class="page don3">
+            <center><input type="text" name="attr_nomdon3" placeholder="Nom du don" /></center>
+            <br/>
+            <input type="number" name='attr_compdon3_d' class='sheet-short' value="0" min="0">
+            <span class='dee'>D+</span>
+            <input type="number" name="attr_compdon3_pip" class="sheet-short" value='0'>
+            <select name="attr_compdon3_mult">
+                <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+            </select>
+            <button type='roll' name='roll_compdon3' value='!wd [[@{compdon3_mult}+(@{compdon3_d}+@{global})D6+@{compdon3_pip})]]'></button>
+            <br/>
+            <label>Description :</label><textarea class="desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
+            <h3>Liste des sorts et/ou techniques</h3>
+            <fieldset class="repeating_allDons3-spells">
+            <div class="spell-row"> 
+                <input type="text" name="attr_don1_spell_name" placeholder="Nom" />
+                <span>Coût : </span><input type="number" class="sheet-short" name="attr_don3_spell_cost" value="1" min="0"/>
+                <span>Rang : </span><input type="number" class="sheet-short" name="attr_don3_spell_level" value="1" min="1"/>
+                <button type='roll' name='roll_compdon3' value='!wd [[@{compdon3_mult}+(@{compdon3_d}+@{global})D6+@{compdon3_pip})]]'></button>
+                <textarea class="desc-don-spell" name="attr_don3_spell_desc" placeholder="Description/Effet"></textarea>
+            </div>
+            </fieldset>
+        </div>
+        <div class="page don4">
+            <center><input type="text" name="attr_nomdon4" placeholder="Nom du don" /></center>
+            <br/>
+            <input type="number" name='attr_compdon4_d' class='sheet-short' value="0" min="0">
+            <span class='dee'>D+</span>
+            <input type="number" name="attr_compdon4_pip" class="sheet-short" value='0'>
+            <select name="attr_compdon4_mult">
+                <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+            </select>
+            <button type='roll' name='roll_compdon4' value='!wd [[@{compdon4_mult}+(@{compdon4_d}+@{global})D6+@{compdon4_pip})]]'></button>
+            <br/>
+            <label>Description :</label><textarea class="desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
+            <h3>Liste des sorts et/ou techniques</h3>
+            <fieldset class="repeating_allDons4-spells">
+            <div class="spell-row"> 
+                <input type="text" name="attr_don3_spell_name" placeholder="Nom" />
+                <span>Coût : </span><input type="number" class="sheet-short" name="attr_don3_spell_cost" value="1" min="0"/>
+                <span>Rang : </span><input type="number" class="sheet-short" name="attr_don3_spell_level" value="1" min="1"/>
+                <button type='roll' name='roll_compdon3' value='!wd [[@{compdon3_mult}+(@{compdon3_d}+@{global})D6+@{compdon3_pip})]]'></button>
+                <textarea class="desc-don-spell" name="attr_don3_spell_desc" placeholder="Description/Effet"></textarea>
+            </div>
+            </fieldset>
+        </div>
+        
+        
+    </div>
+    <hr/>
+    <h1>Autres sorts ou techniques</h1>
+    <label class="desc-spell-cost">Coût</label>
+    <label class="desc-spell-name">Nom</label>
+    <label class="desc-spell-rank">Rang</label>
+    <label class="desc-spell-desc">Description</label>
+    <fieldset class="repeating_allOtherDons-spells">
+        <div class="spell-row"> 
+            <input type="number" name="attr_other_don_spell_cost" value="1" min="0"/>
+            <input type="text" name="attr_other_don_spell_name" placeholder="Nom" />
+            <input type="number" name="attr_other_don_spell_level" value="1" min="1"/>
+            <input class="long-desc" type="text" name="attr_other_don_spell_desc" placeholder="Description/Effet"/>
+        </div>
+    </fieldset>
+    <hr/>
+    <h1>Armes</h1>
+    <label class="desc-equipped">E?</label>
+    <label class="desc-equip-name">Nom</label>
+    <label class="desc-equip-value">Dégâts</label>
+    <label class="desc-equip-range">Portée</label>
+    <label class="desc-equip-spe">Spécial</label>
+    <fieldset class="repeating_allweapon">
+        <div class="weapon-row"> 
+            <input type="checkbox" name="attr_weapon_equipped" />
+            <input type="text" name="attr_weapon_name" placeholder="Nom de l'arme"/>
+            <input type="number" name="attr_weapon_value" value="0" min="0"/>
+            <input type="number" name="attr_weapon_range" value="0" min="0"/>
+            <input type="text" name="attr_weapon_misc" />
+        </div>
+    </fieldset>
+    <input type="hidden" name="attr_TotalArmor">
+    <input type="hidden" name="attr_TotalResist">
+    <input type="hidden" name="attr_TotalAgiMalus">
+    <hr/>
+    <h1>Armures</h1>
+    <label class="desc-equipped">E?</label>
+    <label class="desc-equip-name">Nom</label>
+    <label class="desc-equip-value">Valeur</label>
+    <label class="desc-equip-value">Resist</label>
+    <label class="desc-equip-malus">Malus</label>
+    <label class="desc-equip-spe">Spécial</label>
+    <fieldset class="repeating_allarmors">
+        <div class="armor-row"> 
+            <input type="checkbox" name="attr_armor_equipped" />
+            <input type="text" name="attr_armor_name" placeholder="Nom de l'armure"/>
+            <input type="number" name="attr_armor_value" value="0" min="0"/>
+            <input type="number" name="attr_resist_value" value="0" min="0"/>
+            <input type="number" name="attr_armor_malus" value="0" max="0"/>
+            <input type="text" name="attr_armor_misc" />
+        </div>
+    </fieldset>
+    <hr/>
+    <h1>Equipement</h1>
+    <textarea name="attr_equipement" placeholder="Placer vos équipements ici"></textarea>
+</div>
+
+<!-- Script Worker -->
+<script type="text/worker">
+
+/* ===== PARAMETERS ==========
+destination = the name of the attribute that stores the total quantity
+section = name of repeating fieldset, without the repeating_
+fields = the name of the attribute field to be summed
+      can be a single attribute: 'weight'
+      or an array of attributes: ['weight','number','equipped']
+multiplier (optional) = a multiplier to to entire fieldset total. For instance, if summing coins of weight 0.02, might want to multiply the final total by 0.02.
+*/
+const repeatingSum = (destination, section, fields, multiplier = 1) => {
+    if (!Array.isArray(fields)) fields = [fields];
+    getSectionIDs(`repeating_${section}`, idArray => {
+        const attrArray = idArray.reduce( (m,id) => [...m, ...(fields.map(field => `repeating_${section}_${id}_${field}`))],[]);
+        getAttrs(attrArray, v => {
+            console.log("===== values of v: "+ JSON.stringify(v) +" =====");
+                 // getValue: if not a number, returns 1 if it is 'on' (checkbox), otherwise returns 0..
+            const getValue = (section, id,field) => parseFloat(v[`repeating_${section}_${id}_${field}`], 10) || (v[`repeating_${section}_${id}_${field}`] === 'on' ? 1 : 0); 
+            const sumTotal = idArray.reduce((total, id) => total + fields.reduce((subtotal,field) => subtotal * getValue(section, id,field),1),0);
+            console.log(sumTotal*multiplier);
+            setAttrs({[destination]: sumTotal * multiplier});    
+        });
+    });
+};
+
+/* MAJ PV */
+on("change:puissancenpc change:con_d change:con_pip sheet:opened", function() {
+    console.log("MAJ PV max");
+    getAttrs(["Con_d","Con_pip", "PV_max", "PV", "PuissanceNPC"], function(values) {
+        console.log(values);
+        let cond = parseInt(values.Con_d, 10) || 0;
+        let conpip = parseInt(values.Con_pip, 10) || 0;
+        let oldpvmax = parseInt(values.PV_max, 10) || 0;
+        let oldpv = parseInt(values.PV, 10) || 0;
+        let pnpc = parseInt(values.PuissanceNPC, 10) || 0;
+        setAttrs({
+            PV_max: ((pnpc + cond) * 3 + conpip) * 2 + 10,
+            PV: Math.max(1, oldpv + (((pnpc + cond) * 3 + conpip) * 2 + 10) - oldpvmax)
+        });
+    });
+});
+
+/* MAJ PE */
+on("change:puissancenpc change:pot_d change:pot_pip sheet:opened", function() {
+    console.log("MAJ PE max");
+    getAttrs(["Pot_d","Pot_pip", "PE_max", "PE", "PuissanceNPC"], function(values) {
+        console.log(values);
+        let potd = parseInt(values.Pot_d, 10) || 0;
+        let potpip = parseInt(values.Pot_pip, 10) || 0;
+        let oldpemax = parseInt(values.PE_max, 10) || 0;
+        let oldpe = parseInt(values.PE, 10) || 0;
+        let pnpc = parseInt(values.PuissanceNPC, 10) || 0;
+        setAttrs({
+            PE_max: (pnpc + potd) * 3 + potpip,
+            PE: Math.max(1, oldpe + ((pnpc + potd) * 3 + potpip) - oldpemax)
+        });
+    });
+});
+
+/* MAJ Base physique */
+on("change:puissancenpc change:bonusbasephy change:for_d change:for_pip change:puissancephysiquecomp_pip change:puissancephysiquecomp_d sheet:opened", function() {
+    console.log("MAJ Base Physique");
+    getAttrs(["PuissancePhysiqueComp_d","PuissancePhysiqueComp_pip", "For_d", "For_pip", "BonusBasePhy", "PuissanceNPC"], function(values) {
+        console.log(values);
+        let fds = parseInt(values.For_d, 10) || 0;
+        let fpips = parseInt(values.For_pip, 10) || 0;
+        let ds = parseInt(values.PuissancePhysiqueComp_d, 10) || 0;
+        let pips = parseInt(values.PuissancePhysiqueComp_pip, 10) || 0;
+        let bonus = parseInt(values.BonusBasePhy, 10) || 0;
+        let pnpc = parseInt(values.PuissanceNPC, 10) || 0;
+        setAttrs({
+            BasePhy: Math.floor((ds * 3 + pips + (pnpc + fds) * 3 + fpips) / 2 + bonus)
+        });
+    });
+});
+
+/* MAJ Base magique */
+on("change:puissancenpc change:bonusbasemag change:pot_d change:pot_pip change:puissancemagiquecomp_pip change:puissancemagiquecomp_d sheet:opened", function() {
+    console.log("MAJ Base magique");
+    getAttrs(["PuissanceMagiqueComp_d","PuissanceMagiqueComp_pip", "Pot_d", "Pot_pip", "BonusBaseMag", "PuissanceNPC"], function(values) {
+        console.log(values);
+        let pds = parseInt(values.Pot_d, 10) || 0;
+        let ppips = parseInt(values.Pot_pip, 10) || 0;
+        let ds = parseInt(values.PuissanceMagiqueComp_d, 10) || 0;
+        let pips = parseInt(values.PuissanceMagiqueComp_pip, 10) || 0;
+        let bonus = parseInt(values.BonusBaseMag, 10) || 0;
+        let pnpc = parseInt(values.PuissanceNPC, 10) || 0;
+        setAttrs({
+            BaseMag: Math.floor((ds * 3 + pips + (pds + pnpc) * 3 + ppips) / 2 + bonus)
+        });
+    });
+});
+
+/* MAJ Armure */
+on("change:repeating_allarmors remove:repeating_allarmors sheet:opened", function() {
+    repeatingSum("TotalArmor", "allarmors", ["armor_equipped", "armor_value"]);
+    repeatingSum("TotalResist", "allarmors", ["armor_equipped", "resist_value"]);
+    repeatingSum("TotalAgiMalus", "allarmors", ["armor_equipped", "armor_malus"]);
+});
+
+on("change:totalarmor change:bonusarmure change:staminacomp_d sheet:opened", function() {
+    console.log("MAJ Armure");
+    
+    getAttrs(["BonusArmure", "StaminaComp_d", "TotalArmor"], function(values) {
+        console.log(values);
+        let ba = parseInt(values.BonusArmure, 10) || 0;
+        let sc = parseInt(values.StaminaComp_d, 10) || 0;
+        let ta = parseInt(values.TotalArmor, 10) || 0;
+        setAttrs({
+            Armure: Math.floor(ba + sc + ta)
+        });
+    });
+});
+
+on("change:totalresist change:bonusresistance change:volontecomp_d sheet:opened", function() {
+    console.log("MAJ Résistance");
+    getAttrs(["BonusResistance", "VolonteComp_d", "TotalResist"], function(values) {
+        console.log(values);
+        let br = parseInt(values.BonusResistance, 10) || 0;
+        let vc = parseInt(values.VolonteComp_d, 10) || 0;
+        let tr = parseInt(values.TotalResist, 10) || 0;
+        setAttrs({
+            Resistance: Math.floor(br + vc + tr)
+        });
+    });
+});
+
+/* MAJ Defense */
+on("change:puissancenpc change:bonusdefense change:agi_d sheet:opened", function() {
+    console.log("MAJ Résistance");
+    getAttrs(["BonusDefense", "Agi_d", "PuissanceNPC"], function(values) {
+        console.log(values);
+        let bd = parseInt(values.BonusDefense, 10) || 0;
+        let agid = parseInt(values.Agi_d, 10) || 0;
+        let pnpc = parseInt(values.PuissanceNPC, 10) || 0;
+        setAttrs({
+            Defense: Math.floor(9 + bd + Math.floor((pnpc + agid) / 2))
+        });
+    });
+});
+
+</script>

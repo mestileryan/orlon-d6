@@ -1,0 +1,527 @@
+/* Managing tabs */
+
+
+input[type=radio].sheet-tab-button {
+    height: 17px;
+    opacity:0;
+    z-index:2;
+    margin-bottom:10px;
+}
+
+input[type=radio].sheet-tab-button + span {
+    padding: 0px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #E8E8E8;
+    color: black;
+    font-weight: bold;
+}
+
+
+input[type=radio].sheet-tab-button:checked + span {
+    color: #FFFFFF;
+    background-color: #038ff9;
+}
+
+.sheet-dons .sheet-desc-don
+{
+    width:90%;
+    max-height:100px;
+}
+
+.sheet-desc-don-spell {
+    width: 90%;
+    height:36px;
+}
+
+.sheet-tab-selector {
+    position:relative;
+    float:right;
+    width:200px;
+}
+
+.sheet-tab-button.sheet-npc {
+    width:48px;
+}
+
+.sheet-tab-button.sheet-npc + span {
+    margin-left:-48px;
+}
+
+.sheet-tab-button.sheet-pc {
+    width: 38px;
+}
+
+.sheet-tab-button.sheet-pc + span {
+    margin-left:-38px;
+}
+
+.sheet-tab-button.sheet-don0,
+.sheet-tab-button.sheet-don1,
+.sheet-tab-button.sheet-don2,
+.sheet-tab-button.sheet-don3,
+.sheet-tab-button.sheet-don4 {
+    width:30px;
+}
+
+.sheet-tab-button.sheet-don0 + span,
+.sheet-tab-button.sheet-don1 + span,
+.sheet-tab-button.sheet-don2 + span,
+.sheet-tab-button.sheet-don3 + span,
+.sheet-tab-button.sheet-don4 + span {
+    margin-left:-30px;
+}
+
+.sheet-page {
+    display: none;
+}
+
+/* Gestion des onglets pour les pages PC/NPC */
+.sheet-tab-button.sheet-pc:checked ~ .sheet-page.sheet-pc,
+.sheet-tab-button.sheet-npc:checked ~ .sheet-page.sheet-npc,
+/* Gestion des onglets cumulatifs pour les dons (4 max) */
+.sheet-tab-button.sheet-don1:checked ~ .sheet-page.sheet-don1,
+.sheet-tab-button.sheet-don2:checked ~ .sheet-page.sheet-don1,
+.sheet-tab-button.sheet-don2:checked ~ .sheet-page.sheet-don2,
+.sheet-tab-button.sheet-don3:checked ~ .sheet-page.sheet-don1,
+.sheet-tab-button.sheet-don3:checked ~ .sheet-page.sheet-don2,
+.sheet-tab-button.sheet-don3:checked ~ .sheet-page.sheet-don3,
+.sheet-tab-button.sheet-don4:checked ~ .sheet-page.sheet-don1,
+.sheet-tab-button.sheet-don4:checked ~ .sheet-page.sheet-don2,
+.sheet-tab-button.sheet-don4:checked ~ .sheet-page.sheet-don3,
+.sheet-tab-button.sheet-don4:checked ~ .sheet-page.sheet-don4
+{
+    display: block;
+}
+
+.sheet-page.sheet-don1,
+.sheet-page.sheet-don2,
+.sheet-page.sheet-don3,
+.sheet-page.sheet-don4 {
+    float: left;
+    width: 48%;
+    padding-right:2%;
+}
+
+/*******************************/
+/*********** Tooltip ***********/
+/*******************************/
+
+
+/* Tooltip container */
+.sheet-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.sheet-tooltip .sheet-tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.sheet-tooltip .sheet-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.sheet-tooltip:hover .sheet-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Set the min-width so that when the window is resized the look will stay consistant */
+
+.charsheet {
+	background-color: #ddd;
+	min-width: 800px;
+}
+
+.sheet-4colrow-custom .sheet-col {
+    width: calc(25% - 21px);
+}
+
+/* ========= Universal styling ========= */
+
+/* Universal styling applied to all elements of these types */
+.charsheet h1 {
+
+	font-size: 3em;
+	margin-bottom: 30px;
+	text-align: center;
+	font-family:"Times New Roman";
+}
+
+.charsheet h2 {
+	font-size: 2em;
+	margin-bottom: 10px;
+	text-align: center;
+	font-family:"Times New Roman";
+}
+
+.charsheet .sheet-npc label {
+	display: inline-block;
+	width: 25%;
+}
+.charsheet label {
+	display: inline-block;
+	width: 31%;
+}
+
+textarea { 
+    resize: vertical;
+}
+
+input {
+	display: inline-block;
+	width: 165px;
+}
+
+.charsheet input[type=checkbox] {
+	width: 16px;
+}
+
+.charsheet img {
+	max-height: 100px;
+}
+
+.charsheet textarea {
+	resize: vertical;
+}
+/* Targetted styling that only effects elements with these classes */
+.charsheet .sheet-short {
+	width: 25px !important;
+	background-color: #d5d5d5;
+    border: none;
+}
+
+.charsheet .sheet-short:hover {
+    background-color:#ccc;
+}
+
+.charsheet .sheet-short:focus {
+    background-color:#fff;
+}
+
+.charsheet select.sheet-dtype {
+    vertical-align: top;
+    width: 60px;
+}
+.charsheet span.sheet-dee {
+	font-size: 1.3em;
+	font-weight: bold;
+	position: relative;
+	top: 3px;
+}
+
+.charsheet .sheet-skill-label {
+    background-color:#eee;
+    color: #555;
+    font-weight:normal;
+    width: 157px;
+    padding-right:0px;
+    padding:4px;
+    font-size:13px;
+    margin-right:5px;
+    margin-bottom:3px;
+}
+
+.charsheet .sheet-skill-input {
+    width:165px;
+    margin-bottom:3px;
+    margin-right:5px;
+    background:rgba(0,0,0,0);
+    background-color:#eee;
+    border:none;
+}
+
+.charsheet .sheet-skill-input:hover {
+    background-color:#ccc;
+}
+
+.charsheet .sheet-skill-input:focus {
+    background-color:#ffffff;
+}
+
+
+
+/* Ligne de l'armure (spécifique) */
+.charsheet .sheet-desc-equipped {
+    text-align:center;
+    width:18px;
+    margin-left:18px;
+}
+
+.charsheet .sheet-desc-equip-name, .charsheet .sheet-desc-spell-name {
+    text-align:center;
+    width:145px;
+}
+
+.charsheet .sheet-desc-spell-cost {
+    margin-left:18px;
+    width:40px;
+    text-align:center;
+}
+
+.charsheet .sheet-npc .sheet-desc-spell-cost {
+    margin-left:18px;
+    width:40px;
+    text-align:center;
+}
+
+.charsheet .sheet-desc-equip-value, .charsheet .sheet-desc-spell-rank {
+    text-align:center;
+    margin-left:10px;
+    width:40px;
+}
+.charsheet .sheet-desc-equip-range {
+    text-align:center;
+    margin-left:-2px;
+    width:40px;
+}
+
+.charsheet .sheet-desc-equip-malus {
+    text-align:center;
+    margin-left:-2px;
+    width:40px;
+}
+
+.charsheet .sheet-desc-spell-desc {
+    text-align:center;
+    margin-left:6px;
+    width:490px;
+}
+
+.charsheet .sheet-desc-equip-spe {
+    text-align:center;
+    margin-left:6px;
+    width:155px;
+}
+/* Add and Modify buttons */
+
+
+/** STYLE FOR GENERAL STUFF AND ROLL20 SPECIFIC STUFF **/
+.repcontrol button {
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+    display:inline-block;
+	cursor:pointer;
+	font-family:Arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:0px 12px;
+	text-decoration:none;
+}
+
+.repcontrol button:active {
+	position:relative;
+	top:1px;
+}
+
+/* Add button */
+.repcontrol .repcontrol_add {
+	-moz-box-shadow: 0px 1px 0px 0px #3e7327;
+	-webkit-box-shadow: 0px 1px 0px 0px #3e7327;
+	box-shadow: 0px 1px 0px 0px #3e7327;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77b55a), color-stop(1, #72b352));
+	background:-moz-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-webkit-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-o-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:-ms-linear-gradient(top, #77b55a 5%, #72b352 100%);
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+	background-color:#77b55a;
+	border:1px solid #4b8f29;
+	color:#ffffff;
+	text-shadow:0px -1px 0px #5b8a3c;
+}
+.repcontrol .repcontrol_add:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, #77b55a));
+	background:-moz-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-webkit-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-o-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:-ms-linear-gradient(top, #72b352 5%, #77b55a 100%);
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+	background-color:#72b352;
+}
+
+/* Edit button */
+.repcontrol .repcontrol_edit {
+    -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+	-webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7980b8), color-stop(1, #54587d));
+	background:-moz-linear-gradient(top, #7980b8 5%, #54587d 100%);
+	background:-webkit-linear-gradient(top, #7980b8 5%, #54587d 100%);
+	background:-o-linear-gradient(top, #7980b8 5%, #54587d 100%);
+	background:-ms-linear-gradient(top, #7980b8 5%, #54587d 100%);
+	background:linear-gradient(to bottom, #7980b8 5%, #54587d 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7980b8', endColorstr='#54587d',GradientType=0);
+	background-color:#7980b8;
+	border:1px solid #5e568f;
+	color:#ffffff;
+	text-shadow:0px -1px 0px #785b5b;
+}
+.repcontrol .repcontrol_edit:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #54587d), color-stop(1, #7980b8));
+	background:-moz-linear-gradient(top, #54587d 5%, #7980b8 100%);
+	background:-webkit-linear-gradient(top, #54587d 5%, #7980b8 100%);
+	background:-o-linear-gradient(top, #54587d 5%, #7980b8 100%);
+	background:-ms-linear-gradient(top, #54587d 5%, #7980b8 100%);
+	background:linear-gradient(to bottom, #54587d 5%, #7980b8 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#54587d', endColorstr='#7980b8',GradientType=0);
+	background-color:#54587d;
+}
+
+/* Roll20 roll button */
+.charsheet button[type=roll] {
+    
+	-moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	box-shadow:inset 0px 1px 0px 0px #a6827e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30));
+	background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0);
+	background-color:#7d5d3b;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #54381e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:2px 5px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #4d3534;
+	
+}
+
+.charsheet button[type=roll]:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #634b30), color-stop(1, #7d5d3b));
+	background:-moz-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-o-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-ms-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#7d5d3b',GradientType=0);
+	background-color:#634b30;
+}
+
+.charsheet button[type=roll]:active {
+	position:relative;
+	top:1px;
+}
+
+.charsheet input[type=number]::-webkit-inner-spin-button, 
+.charsheet input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/* Fancy Separateur */
+
+.charsheet hr { 
+    border: 0; 
+    height: 1px;
+    position: relative;
+    margin: 0.5em 0; /* Keep other elements away from pseudo elements*/
+}
+.charsheet hr:before {
+    top: -0.5em;
+    height: 1em;
+}
+.charsheet hr:after {
+    content:'';
+    height: 0.5em;   /* half the height of :before */
+    top: 1px;        /* height of hr*/
+}
+
+.charsheet hr:before, .charsheet hr:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+.charsheet hr, .charsheet hr:before {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 75%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(75%,rgba(0,0,0,0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
+
+
+
+
+/* Targetted styling that only effects elements contained within the stated class */
+.sheet-stats h3 {
+	display: inline-block;
+	text-align: left;
+}
+
+.sheet-stats h3:first-child {
+	margin-left: 35%;
+	margin-right: 15%;
+}
+
+.sheet-stats input {
+	margin-right: 8%;
+	width: 17%;
+}
+
+.sheet-oneline {
+	display: inline;
+}
+
+/** CUSTOM ORLON STUFF **/
+
+.sheet-desclabel {
+    width: 130px;   
+    display:inline-block;
+}
+
+.sheet-long-desc {
+    width: 500px;   
+}
+
+.sheet-comp-section, .sheet-spell-row, .sheet-armor-row, .sheet-weapon-row {
+    display:list-item;
+    list-style-type: square;
+    margin-left: 20px;
+}
