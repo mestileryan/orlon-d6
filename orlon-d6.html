@@ -20,42 +20,43 @@
             <label class="forlbl">Force</label><input type="number" name='attr_For_d' class='sheet-short' value="0" >
             <span class='dee'>D+</span>
             <input type="number" name='attr_For_pip' class='sheet-short' value='0' />
-            <button type='roll' name='roll_jetFor' class='rollbtn' value='!wwd [[(@{PuissanceNPC}+@{For_d})D6+@{For_pip}]]'></button>
+            <button type='roll' name='roll_jetFor' class='rollbtn' value='!wwd [[(@{PuissanceNPC}+@{For_d})D6+@{For_pip}]] {{carac=Force}} {{nd=?{Difficulté ?|} }}'></button>
             <br/>
             <label class="dexlbl">Dextérité</label><input type="number" name='attr_Dex_d' class='sheet-short' value="0" />
             <span class='dee'>D+</span>
             <input type="number" name='attr_Dex_pip' class='sheet-short'  value="0" />
-            <button type='roll' name='roll_jetDex' value='!wwd [[(@{PuissanceNPC}+@{Dex_d})D6+@{Dex_pip}]]'></button>
+            <button type='roll' name='roll_jetDex' value='!wwd [[(@{PuissanceNPC}+@{Dex_d})D6+@{Dex_pip}]] {{carac=Dextérité}} {{nd=?{Difficulté ?|} }}'></button>
             <br/> 
             <label class="agilbl">Agilité</label><input type="number" name='attr_Agi_d' class='sheet-short' value="0">
             <span class='dee'>D+</span>
             <input type="number" name='attr_Agi_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetAgi' value='!wwd [[(@{PuissanceNPC}+@{Agi_d})D6+@{Agi_pip}+@{TotalAgiMalus}]]'></button>
+            <button type='roll' name='roll_jetAgi' value='!wwd [[(@{PuissanceNPC}+@{Agi_d})D6+@{Agi_pip}+@{TotalAgiMalus}]] {{carac=Agilité}} {{nd=?{Difficulté ?|} }}'></button>
             <br/> 
             <label class="conlbl">Constitution</label><input type="number" name='attr_Con_d' class='sheet-short' value="0">
             <span class='dee'>D+</span>
             <input type="number" name='attr_Con_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetCon' value='!wwd [[(@{PuissanceNPC}+@{Con_d})D6+@{Con_pip}]]'></button>
+            <button type='roll' name='roll_jetCon' value='!wwd [[(@{PuissanceNPC}+@{Con_d})D6+@{Con_pip}]] {{carac=Constitution}} {{nd=?{Difficulté ?|} }}'></button>
             <br/> 
             <label class="intlbl">Intelligence</label><input type="number" name='attr_Int_d' class='sheet-short' value="0">
             <span class='dee'>D+</span>
             <input type="number" name='attr_Int_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetInt' value='!wwd [[(@{PuissanceNPC}+@{Int_d})D6+@{Int_pip}]]'></button>
+            <button type='roll' name='roll_jetInt' value='!wwd [[(@{PuissanceNPC}+@{Int_d})D6+@{Int_pip}]] {{carac=Intelligence}} {{nd=?{Difficulté ?|} }}'></button>
             <br/> 
             <label class="saglbl">Sagesse</label><input type="number" name='attr_Sag_d' class='sheet-short' value="0">
             <span class='dee'>D+</span>
             <input type="number" name='attr_Sag_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetSag' value='!wwd [[(@{PuissanceNPC}+@{Sag_d})D6+@{Sag_pip}]]'></button>
+            <button type='roll' name='roll_jetSag' value='!wwd [[(@{PuissanceNPC}+@{Sag_d})D6+@{Sag_pip}]] {{carac=Sagesse}} {{nd=?{Difficulté ?|} }}'></button>
             <br/> 
             <label class="chalbl">Charisme</label><input type="number" name='attr_Cha_d' class='sheet-short' value="0">
             <span class='dee'>D+</span>
             <input type="number" name='attr_Cha_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetCha' value='!wwd [[(@{PuissanceNPC}+@{Cha_d})D6+@{Cha_pip}]]'></button>
+            <button type='roll' name='roll_jetCha' value='!wwd [[(@{PuissanceNPC}+@{Cha_d})D6+@{Cha_pip}]] {{carac=Charisme}} {{nd=?{Difficulté ?|} }}'></button>
             <br/> 
             <label class="potlbl">Potentiel</label><input type="number" name='attr_Pot_d' class='sheet-short' value="0">
             <span class='dee'>D+</span>
             <input type="number" name='attr_Pot_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetPot' value='!wwd [[(@{PuissanceNPC}+@{Pot_d})D6+@{Pot_pip}]]'></button>
+            <button type='roll' name='roll_jetPot' value='!wwd [[(@{PuissanceNPC}+@{Pot_d})D6+@{Pot_pip}]] {{carac=Potentiel}} {{nd=?{Difficulté ?|} }}'></button>
+		<hr/>
 		</div>
         <div class="col">
         	<label class="oneline">PV</label>
@@ -108,206 +109,85 @@
 </div>
 
 <div class="page pc">
-    <h1>Informations générales</h1>
     
+    <input type="text" name="attr_character_name" class="transparent-input editable-title" placeholder="Nom"/>
     <div class="2colrow">
         <div class="col">
-    	    <label>Nom</label><input type="text" name="attr_character_name" />
-    		<br/>
-    		<label>Race</label><input type="text" name="attr_rank" />
+    		<label style="width:160px; margin-left:40px">Malus Multi-Action</label><input type="number" name="attr_global" value=0 />
     	</div>
     
     
     	<div class="col">
-    		<label>Karma Dispo</label><input type="number" name="attr_karma" />
+    		<label>Karma</label><input type="number" name="attr_karma" value=0 />
+    	    <span class='dee'>/</span>
+    		<input type="number" name="attr_karma_max" value=0 />
     		<br/>
-    		<label>Karma Total</label><input type="number" name="attr_karma_max" />
-    		<br/>
-    		<label>Malus Multi-Action</label><input type="number" name="attr_mmaction" />
     	</div>
     
     </div>
     <hr/>
     <h1>Caractéristiques et Compétences</h1>
+
     <div class="2colrow">
     	<div class="col">
-    		<label class="forlbl">Force</label><input type="number" name='attr_For_d' class='sheet-short' value="0" min="0" >
-    		<span class='dee'>D+</span>
-    		<input type="number" name='attr_For_pip' class='sheet-short' value='0' />
-    		<button type='roll' name='roll_jetFor' value='!wd [[(@{For_d}+@{global})D6+@{For_pip}]]'></button>
-    		<br/> 
-    		<div class="comp-section">
-                <label class="skill-label">Puissance Physique</label><input type="number" name='attr_PuissancePhysiqueComp_d' class='sheet-short' value='0' min="0" />
-                <span class='dee'>D+</span>
-                <input type="number" name='attr_PuissancePhysiqueComp_pip' class='sheet-short' value="0" min="0"/>
-                <button type='roll' name='roll_PuissancePhysiqueComp' value='!wd [[(@{PuissancePhysiqueComp_d}+@{For_d}+@{global})D6+(@{PuissancePhysiqueComp_pip}+@{For_pip})]]'></button>
-            </div>
-    		<fieldset class="repeating_ForComp">
-    	        <div class="comp-section">
-                    <input type="text" class="skill-input" name="attr_OtherForComp_name" placeholder="<Entrez un nom>"/><input type="number" name='attr_OtherForComp_d' class='sheet-short' value="0" min="0">
-                    <span class='dee'>D+</span>
-                    <input type="number" name='attr_OtherForComp_pip' class='sheet-short' value='0' min="0" >
-                    <button type='roll' name='roll_OtherForComp' value='!wd [[(@{OtherForComp_d}+@{For_d}+@{global})D6+(@{OtherForComp_pip}+@{For_pip})]]'></button>
+    		<h2>Attributs</h2>
+    		<div class="attributes">
+	            <div class="top">
+                    <span class="label" style="margin-left:15px;width: 120px;">Nom de l'attribut</span>
+                    <span class="label" style="width: 25px;">Dés</span>
+                    <span class="label" style="width: 50px;">Points</span>
                 </div>
-            </fieldset>
-    	</div>
-    	<div class="col">
-    		<label class="dexlbl">Dextérité</label><input type="number" name='attr_Dex_d' class='sheet-short' value="0" min="0" />
-    		<span class='dee'>D+</span>
-    		<input type="number" name='attr_Dex_pip' class='sheet-short'  value="0" />
-    		<button type='roll' name='roll_jetDex' value='!wd [[(@{Dex_d}+@{global})D6+@{Dex_pip}]]'></button>
-    		<br/> 
-    		<div class="comp-section">
-                <label class="skill-label">Combat Mêlée</label><input type="number" name='attr_CombatMeleeComp_d' class='sheet-short'  value="0" min="0"/>
-                <span class='dee'>D+</span>
-                <input type="number" name='attr_CombatMeleeComp_pip' class='sheet-short' value="0" min="0"/>
-                <button type='roll' name='roll_CombatMeleeComp' value='!wd [[(@{CombatMeleeComp_d}+@{Dex_d}+@{global})D6+(@{CombatMeleeComp_pip}+@{For_pip})]]'></button>
-            </div>
-    		<div class="comp-section">
-                <label class="skill-label">Tir</label><input type="number" name='attr_TirComp_d' class='sheet-short' value="0" min="0" />
-                <span class='dee'>D+</span>
-                <input type="number" name='attr_TirComp_pip' class='sheet-short' value="0" min="0"/>
-                <button type='roll' name='roll_TirComp' value='!wd [[(@{TirComp_d}+@{Dex_d}+@{global})D6+(@{TirComp_pip}+@{For_pip})]]'></button>
-            </div>
-    		<div class="comp-section">
-                <label class="skill-label">Lancé</label><input type="number" name='attr_LanceComp_d' class='sheet-short' value="0" min="0">
-                <span class='dee'>D+</span>
-                <input type="number" name='attr_LanceComp_pip' class='sheet-short' value="0" min="0">
-                <button type='roll' name='roll_LanceComp' value='!wd [[(@{LanceComp_d}+@{Dex_d}+@{global})D6+(@{LanceComp_pip}+@{For_pip})]]'></button>
-            </div>
-    		<fieldset class="repeating_DexComp">
-        		<div class="comp-section">
-                    <input type="text" class="skill-input" name="attr_OtherDexComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherDexComp_d' class='sheet-short' value="0" min="0">
-                    <span class='dee'>D+</span>
-                    <input type="number" name='attr_OtherDexComp_pip' class='sheet-short' value="0" min="0">
-                    <button type='roll' name='roll_OtherDexComp' value='!wd [[(@{OtherDexComp_d}+@{Dex_d}+@{global})D6+(@{OtherDexComp_pip}+@{Dex_pip})]]'></button>
+                <div class="display">
+                    <span class="attributes-display">Force</span>
+                    <input type="number" name='attr_For_d' value='0' min="0" />
+                    <input type="number" name='attr_For_pip' value="0" min="0"/>
+                    <button type='roll' name='roll_jetFor' value='!wd [[(@{For_d}+@{global})D6+@{For_pip}]] {{carac=Force}} {{nd=?{Difficulté ?|} }}'></button>
                 </div>
-            </fieldset>
-    	</div>
-    </div>
-    <div class="2colrow">
-    	<div class="col">
-    		<label class="agilbl">Agilité</label><input type="number" name='attr_Agi_d' class='sheet-short' value="0" min="0">
-    		<span class='dee'>D+</span>
-    		<input type="number" name='attr_Agi_pip' class='sheet-short' value="0" >
-    		<button type='roll' name='roll_jetAgi' value='!wd [[(@{Agi_d}+@{global})D6+@{Agi_pip}+@{TotalAgiMalus}]]'></button>
-    		<br/> 
-    		<div class="comp-section">
-                <label class="skill-label">Esquive</label><input type="number" name='attr_EsquiveComp_d' class='sheet-short' value="0" min="0">
-                <span class='dee'>D+</span>
-                <input type="number" name='attr_EsquiveComp_pip' class='sheet-short' value="0" min="0">
-                <button type='roll' name='roll_EsquiveComp' value='!wd [[(@{EsquiveComp_d}+@{Agi_d}+@{global})D6+(@{EsquiveComp_pip}+@{Agi_pip}+@{TotalAgiMalus})]]'></button>
+                <div class="display">
+                    <span class="attributes-display">Dextérité</span>
+                    <input type="number" name='attr_Dex_d' value='0' min="0" />
+                    <input type="number" name='attr_Dex_pip' value="0" min="0"/>
+                    <button type='roll' name='roll_jetDex' value='!wd [[(@{Dex_d}+@{global})D6+@{Dex_pip}]] {{carac=Dextérité}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="attributes-display">Agilité</span>
+                    <input type="number" name='attr_Agi_d' value='0' min="0" />
+                    <input type="number" name='attr_Agi_pip' value="0" min="0"/>
+                    <button type='roll' name='roll_jetAgi' value='!wd [[(@{Agi_d}+@{global})D6+@{Agi_pip}]] {{carac=Agilité}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="attributes-display">Constitution</span>
+                    <input type="number" name='attr_Con_d' value='0' min="0" />
+                    <input type="number" name='attr_Con_pip' value="0" min="0"/>
+                    <button type='roll' name='roll_jetCon' value='!wd [[(@{Con_d}+@{global})D6+@{Con_pip}]] {{carac=Constitution}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="attributes-display">Intelligence</span>
+                    <input type="number" name='attr_Int_d' value='0' min="0" />
+                    <input type="number" name='attr_Int_pip' value="0" min="0"/>
+                    <button type='roll' name='roll_jetInt' value='!wd [[(@{Int_d}+@{global})D6+@{Int_pip}]] {{carac=Intelligence}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="attributes-display">Sagesse</span>
+                    <input type="number" name='attr_Sag_d' value='0' min="0" />
+                    <input type="number" name='attr_Sag_pip' value="0" min="0"/>
+                    <button type='roll' name='roll_jetSag' value='!wd [[(@{Sag_d}+@{global})D6+@{Sag_pip}]] {{carac=Sagesse}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="attributes-display">Charisme</span>
+                    <input type="number" name='attr_Cha_d' value='0' min="0" />
+                    <input type="number" name='attr_Cha_pip' value="0" min="0"/>
+                    <button type='roll' name='roll_jetCha' value='!wd [[(@{Cha_d}+@{global})D6+@{Cha_pip}]] {{carac=Charisme}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="attributes-display">Potentiel</span>
+                    <input type="number" name='attr_Pot_d' value='0' min="0" />
+                    <input type="number" name='attr_Pot_pip' value="0" min="0"/>
+                    <button type='roll' name='roll_jetPot' value='!wd [[(@{Pot_d}+@{global})D6+@{Pot_pip}]] {{carac=Potentiel}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
             </div>
-    		<fieldset class="repeating_AgiComp">
-        		<div class="comp-section">
-                    <input type="text" class="skill-input" name="attr_OtherAgiComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherAgiComp_d' class='sheet-short' value="0" min="0">
-                    <span class='dee'>D+</span>
-                    <input type="number" name='attr_OtherAgiComp_pip' class='sheet-short' value="0" min="0">
-                    <button type='roll' name='roll_OtherAgiComp' value='!wd [[(@{OtherAgiComp_d}+@{Agi_d}+@{global})D6+(@{OtherAgiComp_pip}+@{Agi_pip}+@{TotalAgiMalus})]]'></button>
-                </div>
-            </fieldset>
-    	</div>
-    	<div class="col">
-    		<label class="conlbl">Constitution</label><input type="number" name='attr_Con_d' class='sheet-short' value="0" min="0">
-    		<span class='dee'>D+</span>
-    		<input type="number" name='attr_Con_pip' class='sheet-short' value="0" >
-    		<button type='roll' name='roll_jetCon' value='!wd [[(@{Con_d}+@{global})D6+@{Con_pip}]]'></button>
-    		<br/> 
-    		<div class="comp-section">
-                <label class="skill-label">Stamina</label><input type="number" name='attr_StaminaComp_d' class='sheet-short' value="0" min="0">
-                <span class='dee'>D+</span>
-                <input type="number" name='attr_StaminaComp_pip' class='sheet-short' value="0" min="0">
-                <button type='roll' name='roll_StaminaComp' value='!wd [[(@{StaminaComp_d}+@{Con_pip}+@{global})D6+(@{StaminaComp_pip}+@{Con_pip})]]'></button>
-            </div>
-    		<fieldset class="repeating_ConComp">
-            	<div class="comp-section">
-                    <input type="text" class="skill-input" name="attr_OtherConComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherConComp_d' class='sheet-short' value="0" min="0">
-                    <span class='dee'>D+</span>
-                    <input type="number" name='attr_OtherConComp_pip' class='sheet-short' value="0" min="0">
-                    <button type='roll' name='roll_OtherConComp' value='!wd [[(@{OtherConComp_d}+@{Con_d}+@{global})D6+(@{OtherConComp_pip}+@{Con_pip})]]'></button>
-    	        </div>
-            </fieldset>
-    	</div>
-    </div>
-    <div class="2colrow">
-    	<div class="col">
-    		<label class="intlbl">Intelligence</label><input type="number" name='attr_Int_d' class='sheet-short' value="0" min="0">
-    		<span class='dee'>D+</span>
-    		<input type="number" name='attr_Int_pip' class='sheet-short' value="0" >
-    		<button type='roll' name='roll_jetInt' value='!wd [[(@{Int_d}+@{global})D6+@{Int_pip}]]'></button>
-    		<br/> 
-    		<fieldset class="repeating_IntComp">
-        		<div class="comp-section">
-                    <input type="text" class="skill-input" name="attr_OtherIntComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherIntComp_d' class='sheet-short' value="0" min="0">
-                    <span class='dee'>D+</span>
-                    <input type="number" name='attr_OtherIntComp_pip' class='sheet-short' value="0" min="0">
-                    <button type='roll' name='roll_OtherIntComp' value='!wd [[(@{OtherIntComp_d}+@{Int_d}+@{global})D6+(@{OtherIntComp_pip}+@{Int_pip})]]'></button>
-                </div>
-            </fieldset>
-    	</div>
-    	<div class="col">
-    		<label class="saglbl">Sagesse</label><input type="number" name='attr_Sag_d' class='sheet-short' value="0" min="0">
-    		<span class='dee'>D+</span>
-    		<input type="number" class="skill-input" name='attr_Sag_pip' class='sheet-short' value="0" >
-    		<button type='roll' name='roll_jetSag' value='!wd [[(@{Sag_d}+@{global})D6+@{Sag_pip}]]'></button>
-    		<br/> 
-    		<div class="comp-section">
-                <label class="skill-label">Volonté</label><input type="number" name='attr_VolonteComp_d' class='sheet-short' value="0" min="0">
-                <span class='dee'>D+</span>
-                <input type="number" name='attr_VolonteComp_pip' class='sheet-short' value="0" min="0">
-                <button type='roll' name='roll_VolonteComp' value='!wd [[(@{VolonteComp_d}+@{Sag_d}+@{global})D6+(@{VolonteComp_pip}+@{Sag_pip})]]'></button>
-            </div>
-    		<fieldset class="repeating_SagComp">
-        		<div class="comp-section">
-                    <input type="text" class="skill-input" name="attr_OtherSagComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherSagComp_d' class='sheet-short' value="0" min="0">
-                    <span class='dee'>D+</span>
-                    <input type="number" name='attr_OtherSagComp_pip' class='sheet-short' value="0" min="0">
-                    <button type='roll' name='roll_OtherSagComp' value='!wd [[(@{OtherSagComp_d}+@{Sag_d}+@{global})D6+(@{OtherSagComp_pip}+@{Sag_pip})]]'></button>
-                </div>
-            </fieldset>
-    	</div>
-    </div>
-    <div class="2colrow">
-    	<div class="col">
-    		<label class="chalbl">Charisme</label><input type="number" name='attr_Cha_d' class='sheet-short' value="0" min="0">
-    		<span class='dee'>D+</span>
-    		<input type="number" name='attr_Cha_pip' class='sheet-short' value="0" >
-    		<button type='roll' name='roll_jetCha' value='!wd [[(@{Cha_d}+@{global})D6+@{Cha_pip}]]'></button>
-    		<br/> 
-    		<fieldset class="repeating_ChaComp">
-        		<div class="comp-section">
-                    <input type="text" class="skill-input" name="attr_OtherChaComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherChaComp_d' class='sheet-short' value="0" min="0">
-                    <span class='dee'>D+</span>
-                    <input type="number" name='attr_OtherChaComp_pip' class='sheet-short' value="0" min="0">
-                    <button type='roll' name='roll_OtherChaComp' value='!wd [[(@{OtherChaComp_d}+@{Cha_d}+@{global})D6+(@{OtherChaComp_pip}+@{Cha_pip})]]'></button>
-                </div>
-            </fieldset>
-    	</div>
-    	<div class="col">
-    		<label class="potlbl">Potentiel</label><input type="number" name='attr_Pot_d' class='sheet-short' value="0" min="0">
-    		<span class='dee'>D+</span>
-    		<input type="number" name='attr_Pot_pip' class='sheet-short' value="0" >
-    		<button type='roll' name='roll_jetPot' value='!wd [[(@{Pot_d}+@{global})D6+@{Pot_pip}]]'></button>
-    		<br/> 
-    		<div class="comp-section">
-                <label class="skill-label">Puissance magique</label><input type="number" name='attr_PuissanceMagiqueComp_d' class='sheet-short' value="0" min="0">
-                <span class='dee'>D+</span>
-                <input type="number" name='attr_PuissanceMagiqueComp_pip' class='sheet-short' value="0" min="0">
-                <button type='roll' name='roll_PuissanceMagiqueComp' value='!wd [[(@{PuissanceMagiqueComp_d}+@{Pot_d}+@{global})D6+(@{PuissanceMagiqueComp_pip}+@{Pot_pip})]]'></button>
-            </div>
-    		<fieldset class="repeating_PotComp">
-        		<div class="comp-section">
-                    <input type="text" class="skill-input" name="attr_OtherPotComp_name" placeholder="<Entrez un nom>"></input><input type="number" name='attr_OtherPotComp_d' class='sheet-short' value="0" min="0">
-                    <span class='dee'>D+</span>
-                    <input type="number" name='attr_OtherPotComp_pip' class='sheet-short' value="0" min="0">
-                    <button type='roll' name='roll_OtherPotComp' value='!wd [[(@{OtherPotComp_d}+@{Pot_d}+@{global})D6+(@{OtherPotComp_pip}+@{Pot_pip})]]'></button>
-                </div>
-            </fieldset>
-    	</div>
-    </div>
-    <div class="3colrow">
-    	<div class="col">
-    	    <h2>Caractéristiques principales</h2>
+            
+    		<h2>Caractéristiques principales</h2>
         	<div class="tooltip desclabel">
         	    <label class="oneline">Points de vie</label>
         	    <span class="tooltiptext"><b>Points de vie</b></span>
@@ -323,10 +203,9 @@
         	<input type="number" name="attr_PE"/>
         	<span class='dee'>/</span>
         	<input type="number" name="attr_PE_max" readonly />
-        </div>
-    	<div class="col">
+        	
     	    <h2>Caractéristiques offensives</h2>
-        	<div class="tooltip desclabel">
+    		<div class="tooltip desclabel">
         	    <label>Physique</label>
         	    <span class="tooltiptext">
         	        <b>Base aux dégâts physiques</b><br/><br/>Dégâts physiques infligés de base lors d'une frappe ou avec une arme implicant la puissance brute du personnage
@@ -341,11 +220,11 @@
                 </span>
             </div>
         	<span class='dee'>+</span><input type="number" name="attr_BonusBaseMag" /><span class='dee'>=</span><input type="number" name="attr_BaseMag" readonly />
+        	<br/>
         	<label class="desclabel">Initiative</label>
             <button type='roll' name='roll_OtherPotComp' value='Initiative de @{character_name}: [[(@{Sag_d}-1)D6+(@{Sag_pip}+floor(@{Agi_d}/4))+1D6! &{tracker}]]'></button>
-        </div>
-    	<div class="col">
-    	    <h2>Carractéristiques défensives</h2>
+    	
+    	<h2>Carractéristiques défensives</h2>
         	<div class="tooltip desclabel">
         	    <label>Armure</label>
         	    <span class="tooltiptext">
@@ -371,8 +250,549 @@
         	    </span>
         	</div>
         	<span class='dee'>+</span><input type="number" name="attr_BonusDefense" /><span class='dee'>=</span><input type="number" name="attr_Defense" readonly />
-        </div>
+
+        	<h2>Expertises</h2>
+        	<div class="skills">
+                <div class="top">
+                    <span class="label" style="margin-left:15px;width: 82px;">Nom de l'expertise</span>
+                    <span class="label" style="width: 12px;">Dés</span>
+                    <span class="label" style="width: 22px;">Points</span>
+                    <span class="label" style="width: 80px;">Attribut</span>
+                </div>
+                <fieldset class="repeating_Expertise-Skills">
+                    <div class="display">
+                        <input type="text" class="skill-display" name="attr_Expertise_nom"/>
+                        <input type="number" name='attr_Expertise_d' value='0' min="0" />
+                        <input type="number" name='attr_Expertise_pip' value="0" min="0"/>
+                        <select name="attr_ExpertiseSkill">
+                            <optgroup label="Force">
+        						<option value="@{PuissancePhysiqueAttr}+(@{PuissancePhysiqueComp_d}+@{global})D6+@{PuissancePhysiqueComp_pip}">Puissance Physique</option>
+        						<option value="@{AthletismeAttr}+(@{AthletismeComp_d}+@{global})D6+@{AthletismeComp_pip}">Athlétisme</option>
+        					</optgroup>
+        					<optgroup label="Dextérité">
+        						<option value="@{CombatMeleeAttr}+(@{CombatMeleeComp_d}+@{global})D6+@{CombatMeleeComp_pip}">Combat Mêlée</option>
+        						<option value="@{TirAttr}+(@{TirComp_d}+@{global})D6+@{TirComp_pip}">Tir</option>
+        						<option value="@{LanceAttr}+(@{LanceComp_d}+@{global})D6+@{LanceComp_pip}">Lancé</option>
+        						<option value="@{CambriolageAttr}+(@{CambriolageComp_d}+@{global})D6+@{CambriolageComp_pip}">Cambriolage</option>
+        					</optgroup>
+        					<optgroup label="Agilité">
+        						<option value="@{EsquiveAttr}+(@{EsquiveComp_d}+@{global})D6+@{EsquiveComp_pip}">Esquive</option>
+        						<option value="@{AcrobatieAttr}+(@{AcrobatieComp_d}+@{global})D6+@{AcrobatieComp_pip}">Acrobatie</option>
+        						<option value="@{DiscretionAttr}+(@{DiscretionComp_d}+@{global})D6+@{DiscretionComp_pip}">Discrétion</option>
+        						<option value="@{EquitationAttr}+(@{EquitationComp_d}+@{global})D6+@{EquitationComp_pip}">Équitation</option>
+        					</optgroup>
+        					<optgroup label="Constitution">
+        						<option value="@{StaminaAttr}+(@{StaminaComp_d}+@{global})D6+@{StaminaComp_pip}">Stamina</option>
+        					</optgroup>
+        					<optgroup label="Intelligence">
+        						<option value="@{CultureAttr}+(@{CultureComp_d}+@{global})D6+@{CultureComp_pip}">Culture</option>
+        						<option value="@{MedecineAttr}+(@{MedecineComp_d}+@{global})D6+@{MedecineComp_pip}">Médecine</option>
+        						<option value="@{MarchandageAttr}+(@{MarchandageComp_d}+@{global})D6+@{MarchandageComp_pip}">Marchandage</option>
+        						<option value="@{InvestigationAttr}+(@{InvestigationComp_d}+@{global})D6+@{InvestigationComp_pip}">Investigation</option>
+        					</optgroup>
+        					<optgroup label="Sagesse">
+        						<option value="@{DressageAttr}+(@{DressageComp_d}+@{global})D6+@{DressageComp_pip}">Dressage</option>
+        						<option value="@{PerceptionAttr}+(@{PerceptionComp_d}+@{global})D6+@{PerceptionComp_pip}">Perception</option>
+        						<option value="@{DetectionAttr}+(@{DetectionComp_d}+@{global})D6+@{DetectionComp_pip}">Détection</option>
+        						<option value="@{SurvieAttr}+(@{SurvieComp_d}+@{global})D6+@{SurvieComp_pip}">Survie</option>
+        						<option value="@{ArtisanatAttr}+(@{ArtisanatComp_d}+@{global})D6+@{ArtisanatComp_pip}">Artisanat</option>
+        						<option value="@{DeguisementAttr}+(@{DeguisementComp_d}+@{global})D6+@{DeguisementComp_pip}">Déguisement</option>
+        						<option value="@{JeuAttr}+(@{JeuComp_d}+@{global})D6+@{JeuComp_pip}">Jeu</option>
+        						<option value="@{VolonteAttr}+(@{VolonteComp_d}+@{global})D6+@{VolonteComp_pip}">Volonté</option>
+        					</optgroup>
+        					<optgroup label="Charisme">
+        						<option value="@{IntimidationAttr}+(@{IntimidationComp_d}+@{global})D6+@{IntimidationComp_pip}">Intimidation</option>
+        						<option value="@{PersuasionAttr}+(@{PersuasionComp_d}+@{global})D6+@{PersuasionComp_pip}">Persuasion</option>
+        						<option value="@{TromperieAttr}+(@{TromperieComp_d}+@{global})D6+@{TromperieComp_pip}">Tromperie</option>
+        						<option value="@{SeductionAttr}+(@{SeductionComp_d}+@{global})D6+@{SeductionComp_pip}">Séduction</option>
+        					</optgroup>
+        					<optgroup label="Potentiel">
+        						<option value="@{ArtDeLaMagieAttr}+(@{ArtDeLaMagieComp_d}+@{global})D6+@{ArtDeLaMagieComp_pip}">Art de la magie</option>
+        						<option value="@{PuissanceMagiqueAttr}+(@{PuissanceMagiqueComp_d}+@{global})D6+@{PuissanceMagiqueComp_pip}">Puissance magique</option>
+        					</optgroup>
+                        </select>
+                        <button type='roll' name='roll_Expertise' value='!wd [[@{ExpertiseSkill}+(@{Expertise_d}+@{global})D6+@{Expertise_pip}]] {{carac=@{Expertise_nom} }} {{nd=?{Difficulté ?|} }}'></button>
+                    </div>
+                </fieldset>
+            </div>
+    	</div>
+    	<div class="col">
+    	    <h2>Compétences</h2>
+    		<div class="skills">
+	            <div class="top">
+                    <span class="label" style="margin-left:15px;width: 93px;">Nom de la compétence</span>
+                    <span class="label" style="width: 10px;">Dés</span>
+                    <span class="label" style="width: 22px;">Points</span>
+                    <span class="label" style="width: 80px;">Attribut</span>
+                </div>
+                <div class="display">
+                    <span class="skill-display">Puissance Physique</span>
+                    <input type="number" name='attr_PuissancePhysiqueComp_d' value='0' min="0" />
+                    <input type="number" name='attr_PuissancePhysiqueComp_pip' value="0" min="0"/>
+                    <select name="attr_PuissancePhysiqueAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl" selected>Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_PuissancePhysiqueComp' value='!wd [[@{PuissancePhysiqueAttr}+(@{PuissancePhysiqueComp_d}+@{global})D6+@{PuissancePhysiqueComp_pip}]] {{carac=Puissance Physique}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>                
+                <div class="display">
+                    <span class="skill-display">Athlétisme</span>
+                    <input type="number" name='attr_AthletismeComp_d' value='0' min="0" />
+                    <input type="number" name='attr_AthletismeComp_pip' value="0" min="0"/>
+                    <select name="attr_AthletismeAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl" selected>Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_AthletismeComp' value='!wd [[@{AthletismeAttr}+(@{AthletismeComp_d}+@{global})D6+@{AthletismeComp_pip}]] {{carac=Athlétisme}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="skill-display">Combat Mêlée</span>
+                    <input type="number" name='attr_CombatMeleeComp_d' value='0' min="0" />
+                    <input type="number" name='attr_CombatMeleeComp_pip' value="0" min="0"/>
+                    <select name="attr_CombatMeleeAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl" selected>Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_CombatMeleeComp' value='!wd [[@{CombatMeleeAttr}+(@{CombatMeleeComp_d}+@{global})D6+@{CombatMeleeComp_pip}]] {{carac=Combat Mêlée}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="skill-display">Tir</span>
+                    <input type="number" name='attr_TirComp_d' value='0' min="0" />
+                    <input type="number" name='attr_TirComp_pip' value="0" min="0"/>
+                    <select name="attr_TirAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl" selected>Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_TirComp' value='!wd [[@{TirAttr}+(@{TirComp_d}+@{global})D6+@{TirComp_pip}]] {{carac=Tir}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="skill-display">Lancé</span>
+                    <input type="number" name='attr_LanceComp_d' value='0' min="0" />
+                    <input type="number" name='attr_LanceComp_pip' value="0" min="0"/>
+                    <select name="attr_LanceAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl" selected>Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_LanceComp' value='!wd [[@{LanceAttr}+(@{LanceComp_d}+@{global})D6+@{LanceComp_pip}]] {{carac=Lancé}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="skill-display">Cambriolage</span>
+                    <input type="number" name='attr_CambriolageComp_d' value='0' min="0" />
+                    <input type="number" name='attr_CambriolageComp_pip' value="0" min="0"/>
+                    <select name="attr_CambriolageAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl" selected>Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_CambriolageComp' value='!wd [[@{CambriolageAttr}+(@{CambriolageComp_d}+@{global})D6+@{CambriolageComp_pip}]] {{carac=Cambriolage}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="skill-display">Esquive</span>
+                    <input type="number" name='attr_EsquiveComp_d' value='0' min="0" />
+                    <input type="number" name='attr_EsquiveComp_pip' value="0" min="0"/>
+                    <select name="attr_EsquiveAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl" selected>Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_EsquiveComp' value='!wd [[@{EsquiveAttr}+(@{EsquiveComp_d}+@{global})D6+@{EsquiveComp_pip}]] {{carac=Esquive}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="skill-display">Acrobatie</span>
+                    <input type="number" name='attr_AcrobatieComp_d' value='0' min="0" />
+                    <input type="number" name='attr_AcrobatieComp_pip' value="0" min="0"/>
+                    <select name="attr_AcrobatieAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl" selected>Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_AcrobatieComp' value='!wd [[@{AcrobatieAttr}+(@{AcrobatieComp_d}+@{global})D6+@{AcrobatieComp_pip}]] {{carac=Acrobatie}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Discrétion</span>
+                    <input type="number" name='attr_DiscretionComp_d' value='0' min="0" />
+                    <input type="number" name='attr_DiscretionComp_pip' value="0" min="0"/>
+                    <select name="attr_DiscretionAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl" selected>Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_DiscretionComp' value='!wd [[@{DiscretionAttr}+(@{DiscretionComp_d}+@{global})D6+@{DiscretionComp_pip}]] {{carac=Discrétion}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Équitation</span>
+                    <input type="number" name='attr_EquitationComp_d' value='0' min="0" />
+                    <input type="number" name='attr_EquitationComp_pip' value="0" min="0"/>
+                    <select name="attr_EquitationAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl" selected>Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_EquitationComp' value='!wd [[@{EquitationAttr}+(@{EquitationComp_d}+@{global})D6+@{EquitationComp_pip}]] {{carac=Équitation}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Stamina</span>
+                    <input type="number" name='attr_StaminaComp_d' value='0' min="0" />
+                    <input type="number" name='attr_StaminaComp_pip' value="0" min="0"/>
+                    <select name="attr_StaminaAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl" selected>Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_StaminaComp' value='!wd [[@{StaminaAttr}+(@{StaminaComp_d}+@{global})D6+@{StaminaComp_pip}]] {{carac=Stamina}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Culture</span>
+                    <input type="number" name='attr_CultureComp_d' value='0' min="0" />
+                    <input type="number" name='attr_CultureComp_pip' value="0" min="0"/>
+                    <select name="attr_CultureAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl" selected>Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_CultureComp' value='!wd [[@{CultureAttr}+(@{CultureComp_d}+@{global})D6+@{CultureComp_pip}]] {{carac=Culture}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+                <div class="display">
+                    <span class="skill-display">Médecine</span>
+                    <input type="number" name='attr_MedecineComp_d' value='0' min="0" />
+                    <input type="number" name='attr_MedecineComp_pip' value="0" min="0"/>
+                    <select name="attr_MedecineAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl" selected>Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_MedecineComp' value='!wd [[@{MedecineAttr}+(@{MedecineComp_d}+@{global})D6+@{MedecineComp_pip}]] {{carac=Médecine}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Marchandage</span>
+                    <input type="number" name='attr_MarchandageComp_d' value='0' min="0" />
+                    <input type="number" name='attr_MarchandageComp_pip' value="0" min="0"/>
+                    <select name="attr_MarchandageAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl" selected>Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_MarchandageComp' value='!wd [[@{MarchandageAttr}+(@{MarchandageComp_d}+@{global})D6+@{MarchandageComp_pip}]] {{carac=Marchandage}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Investigation</span>
+                    <input type="number" name='attr_InvestigationComp_d' value='0' min="0" />
+                    <input type="number" name='attr_InvestigationComp_pip' value="0" min="0"/>
+                    <select name="attr_InvestigationAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl" selected>Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_InvestigationComp' value='!wd [[@{InvestigationAttr}+(@{InvestigationComp_d}+@{global})D6+@{InvestigationComp_pip}]] {{carac=Investigation}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Dressage</span>
+                    <input type="number" name='attr_DressageComp_d' value='0' min="0" />
+                    <input type="number" name='attr_DressageComp_pip' value="0" min="0"/>
+                    <select name="attr_DressageAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl" selected>Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_DressageComp' value='!wd [[@{DressageAttr}+(@{DressageComp_d}+@{global})D6+@{DressageComp_pip}]] {{carac=Dressage}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Perception</span>
+                    <input type="number" name='attr_PerceptionComp_d' value='0' min="0" />
+                    <input type="number" name='attr_PerceptionComp_pip' value="0" min="0"/>
+                    <select name="attr_PerceptionAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_PerceptionComp' value='!wd [[@{PerceptionAttr}+(@{PerceptionComp_d}+@{global})D6+@{PerceptionComp_pip}]] {{carac=Perception}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Détection</span>
+                    <input type="number" name='attr_DetectionComp_d' value='0' min="0" />
+                    <input type="number" name='attr_DetectionComp_pip' value="0" min="0"/>
+                    <select name="attr_DetectionAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_DetectionComp' value='!wd [[@{DetectionAttr}+(@{DetectionComp_d}+@{global})D6+@{DetectionComp_pip}]] {{carac=Détection}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Survie</span>
+                    <input type="number" name='attr_SurvieComp_d' value='0' min="0" />
+                    <input type="number" name='attr_SurvieComp_pip' value="0" min="0"/>
+                    <select name="attr_SurvieAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_SurvieComp' value='!wd [[@{SurvieAttr}+(@{SurvieComp_d}+@{global})D6+@{SurvieComp_pip}]] {{carac=Survie}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Artisanat</span>
+                    <input type="number" name='attr_ArtisanatComp_d' value='0' min="0" />
+                    <input type="number" name='attr_ArtisanatComp_pip' value="0" min="0"/>
+                    <select name="attr_ArtisanatAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_ArtisanatComp' value='!wd [[@{ArtisanatAttr}+(@{ArtisanatComp_d}+@{global})D6+@{ArtisanatComp_pip}]] {{carac=Artisanat}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Déguisement</span>
+                    <input type="number" name='attr_DeguisementComp_d' value='0' min="0" />
+                    <input type="number" name='attr_DeguisementComp_pip' value="0" min="0"/>
+                    <select name="attr_DeguisementAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_DeguisementComp' value='!wd [[@{DeguisementAttr}+(@{DeguisementComp_d}+@{global})D6+@{DeguisementComp_pip}]] {{carac=Déguisement}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Jeu</span>
+                    <input type="number" name='attr_JeuComp_d' value='0' min="0" />
+                    <input type="number" name='attr_JeuComp_pip' value="0" min="0"/>
+                    <select name="attr_JeuAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_JeuComp' value='!wd [[@{JeuAttr}+(@{JeuComp_d}+@{global})D6+@{JeuComp_pip}]] {{carac=Jeu}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Volonté</span>
+                    <input type="number" name='attr_VolonteComp_d' value='0' min="0" />
+                    <input type="number" name='attr_VolonteComp_pip' value="0" min="0"/>
+                    <select name="attr_VolonteAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_VolonteComp' value='!wd [[@{VolonteAttr}+(@{VolonteComp_d}+@{global})D6+@{VolonteComp_pip}]] {{carac=Volonté}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Intimidation</span>
+                    <input type="number" name='attr_IntimidationComp_d' value='0' min="0" />
+                    <input type="number" name='attr_IntimidationComp_pip' value="0" min="0"/>
+                    <select name="attr_IntimidationAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl" selected>Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_IntimidationComp' value='!wd [[@{IntimidationAttr}+(@{IntimidationComp_d}+@{global})D6+@{IntimidationComp_pip}]] {{carac=Intimidation}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Persuasion</span>
+                    <input type="number" name='attr_PersuasionComp_d' value='0' min="0" />
+                    <input type="number" name='attr_PersuasionComp_pip' value="0" min="0"/>
+                    <select name="attr_PersuasionAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl" selected>Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_PersuasionComp' value='!wd [[@{PersuasionAttr}+(@{PersuasionComp_d}+@{global})D6+@{PersuasionComp_pip}]] {{carac=Persuasion}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Tromperie</span>
+                    <input type="number" name='attr_TromperieComp_d' value='0' min="0" />
+                    <input type="number" name='attr_TromperieComp_pip' value="0" min="0"/>
+                    <select name="attr_TromperieAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl" selected>Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_TromperieComp' value='!wd [[@{TromperieAttr}+(@{TromperieComp_d}+@{global})D6+@{TromperieComp_pip}]] {{carac=Tromperie}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Séduction</span>
+                    <input type="number" name='attr_SeductionComp_d' value='0' min="0" />
+                    <input type="number" name='attr_SeductionComp_pip' value="0" min="0"/>
+                    <select name="attr_SeductionAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl" selected>Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_SeductionComp' value='!wd [[@{SeductionAttr}+(@{SeductionComp_d}+@{global})D6+@{SeductionComp_pip}]] {{carac=Séduction}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Art de la magie</span>
+                    <input type="number" name='attr_ArtDeLaMagieComp_d' value='0' min="0" />
+                    <input type="number" name='attr_ArtDeLaMagieComp_pip' value="0" min="0"/>
+                    <select name="attr_ArtDeLaMagieAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl" selected>Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_ArtDeLaMagieComp' value='!wd [[@{ArtDeLaMagieAttr}+(@{ArtDeLaMagieComp_d}+@{global})D6+@{ArtDeLaMagieComp_pip}]] {{carac=Art de la magie}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+				<div class="display">
+                    <span class="skill-display">Puissance magique</span>
+                    <input type="number" name='attr_PuissanceMagiqueComp_d' value='0' min="0" />
+                    <input type="number" name='attr_PuissanceMagiqueComp_pip' value="0" min="0"/>
+                    <select name="attr_PuissanceMagiqueAttr">
+                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl" selected>Potentiel</option>
+                    </select>
+                    <button type='roll' name='roll_PuissanceMagiqueComp' value='!wd [[@{PuissanceMagiqueAttr}+(@{PuissanceMagiqueComp_d}+@{global})D6+@{PuissanceMagiqueComp_pip}]] {{carac=Puissance magique}} {{nd=?{Difficulté ?|} }}'></button>
+                </div>
+            </div>
+    	</div>
     </div>
+    
     <hr/>
     <h1>Dons</h1>
     <div class="dons">
@@ -384,12 +804,12 @@
         <input class="tab-button don4" type="radio" name="attr_tabdon" value="don5"><span>4</span>
         <br/>
         <div class="page don1">
-            <center><input type="text" name="attr_nomdon1" placeholder="Nom du don" /></center>
+            <center><input class="transparent-input nom-don" type="text" name="attr_nomdon1" placeholder="Nom du don" /></center>
             <br/>
-            <input type="number" name='attr_compdon1_d' class='sheet-short' value="0" min="0">
+            <input type="number" class="transparent-input" name='attr_compdon1_d' class='sheet-short' value="0" min="0">
             <span class='dee'>D+</span>
-            <input type="number" name="attr_compdon1_pip" class="sheet-short" value='0'>
-            <select name="attr_compdon1_mult">
+            <input type="number" class="transparent-input" name="attr_compdon1_pip" class="sheet-short" value='0'>
+            <select name="attr_compdon1_mult" class="select-don">
                 <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
                 <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
                 <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
@@ -399,27 +819,70 @@
                 <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
                 <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
             </select>
-            <button type='roll' name='roll_compdon1' value='!wd [[@{compdon1_mult}+(@{compdon1_d}+@{global})D6+@{compdon1_pip})]]'></button>
+            <button type='roll' name='roll_compdon1' value='!wd [[@{compdon1_mult}+(@{compdon1_d}+@{global})D6+@{compdon1_pip})]] {{carac=@{nomdon1}}} {{nd=?{Difficulté ?|} }}'></button>
             <br/>
-            <label>Description :</label><textarea class="desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
+            <label>Description :</label><textarea class="transparent-input desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
             <h3>Liste des sorts et/ou techniques</h3>
-            <fieldset class="repeating_allDons1-spells">
-            <div class="spell-row"> 
-                <input type="text" name="attr_don1_spell_name" placeholder="Nom" />
-                <span>Coût : </span><input type="number" class="sheet-short" name="attr_don1_spell_cost" value="1" min="0"/>
-                <span>Rang : </span><input type="number" class="sheet-short" name="attr_don1_spell_level" value="1" min="1"/>
-                <button type='roll' name='roll_compdon1' value='!wd [[@{compdon1_mult}+(@{compdon1_d}+@{global})D6+@{compdon1_pip})]]'></button>
-                <textarea class="desc-don-spell" name="attr_don1_spell_desc" placeholder="Description/Effet"></textarea>
+            <div class="spellattacks">
+                <div class="top">
+                    <span class="label" style="width: 32px; padding-left:5px;">Coût</span>
+                    <span class="label" style="width: 175px; ">Nom</span>
+                    <span class="label" style="width: 75px;">Dommages</span>
+                </div>
+                <fieldset class="repeating_allDons1-spells">
+                    <div class="spellattack"> 
+                        <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+                        <div class="options">
+                            <div class="row">
+                                <span>Coût :</span>
+                                <input type="text" name="attr_don1_spellattackatkcost" placeholder="-" style="width: 20px;">
+                                <span>Nom :</span>
+                                <input type="text" name="attr_don1_spellattackname">
+                            </div>
+                            <div class="row">
+                                <span>Bonus jet :</span>
+                                <input type="text" class="num" name="attr_don1_spellattackmod" placeholder="0">
+                            </div>
+                            <div class="row">
+                                <span>Dommages :</span>
+                                <input type="text" name="attr_don1_spellattackdmgbase" placeholder="-" style="width: 50px;">
+                                <span>Type dégâts :</span>
+                                <select name="attr_don1_spellattacktype">
+                                    <option value="0" selected>-</option>
+                                    <option value="@{BasePhy}">Physiques</option>
+                                    <option value="@{BaseMag}">Magiques</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <span>Portée :</span>
+                                <input type="text" name="attr_don1_spellattackatkrange" placeholder="CaC/X m" style="width: 170px;">
+                            </div>
+                            <div class="row">
+                                <span>Effet supplémentaire :</span>
+                                <input type="text" name="attr_don1_spellattackeffet" placeholder="---" style="width: 250px;">
+                            </div>
+                            <div class="row">
+                                <span>Description :</span>
+                                <textarea name="attr_don1_spellattack_desc" ></textarea>
+                            </div>
+                        </div>
+                        <div class="display">
+                            <span name="attr_don1_spellattackatkcost" style="width: 25px;"></span>
+                            <span name="attr_don1_spellattackname" style="width: 175px;"></span>
+                            <span name="attr_don1_spellattackdmgbase" style="width: 70px;"></span>
+                            <button type="roll" name="roll_attack" value="!wd [[ @{compdon1_mult}+(@{compdon1_d}+@{global})D6+@{compdon1_pip}+@{don1_spellattackmod}]] {{carac=@{don1_spellattackname}}} {{nd=?{Difficulté ?|} }} {{damage=@{don1_spellattackdmgbase}+@{don1_spellattacktype} }} {{effect=@{don1_spellattackeffet} }} {{description=@{don1_spellattack_desc} }} {{range=@{don1_spellattackatkrange} }}"></button>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-            </fieldset>
         </div>
         <div class="page don2">
-            <center><input type="text" name="attr_nomdon2" placeholder="Nom du don" /></center>
+            <center><input class="transparent-input nom-don" type="text" name="attr_nomdon2" placeholder="Nom du don" /></center>
             <br/>
-            <input type="number" name='attr_compdon2_d' class='sheet-short' value="0" min="0">
+            <input type="number" class="transparent-input" name='attr_compdon2_d' class='sheet-short' value="0" min="0">
             <span class='dee'>D+</span>
-            <input type="number" name="attr_compdon2_pip" class="sheet-short" value='0'>
-            <select name="attr_compdon2_mult">
+            <input type="number" class="transparent-input" name="attr_compdon2_pip" class="sheet-short" value='0'>
+            <select name="attr_compdon2_mult" class="select-don">
                 <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
                 <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
                 <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
@@ -429,27 +892,73 @@
                 <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
                 <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
             </select>
-            <button type='roll' name='roll_compdon2' value='!wd [[@{compdon2_mult}+(@{compdon2_d}+@{global})D6+@{compdon2_pip})]]'></button>
+            <button type='roll' name='roll_compdon2' value='!wd [[@{compdon2_mult}+(@{compdon2_d}+@{global})D6+@{compdon2_pip})]] {{carac=@{nomdon2}}} {{nd=?{Difficulté ?|} }}'></button>
             <br/>
-            <label>Description :</label><textarea class="desc-don" name="attr_doncompletdescription2" placeholder="Description complète du don"></textarea>
+            <label>Description :</label><textarea class="transparent-input desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
             <h3>Liste des sorts et/ou techniques</h3>
-            <fieldset class="repeating_allDons2-spells">
-            <div class="spell-row"> 
-                <input type="text" name="attr_don2_spell_name" placeholder="Nom" />
-                <span>Coût : </span><input type="number" class="sheet-short" name="attr_don2_spell_cost" value="1" min="0"/>
-                <span>Rang : </span><input type="number" class="sheet-short" name="attr_don2_spell_level" value="1" min="1"/>
-                <button type='roll' name='roll_compdon2' value='!wd [[@{compdon2_mult}+(@{compdon2_d}+@{global})D6+@{compdon2_pip})]]'></button>
-                <textarea class="desc-don-spell" name="attr_don2_spell_desc" placeholder="Description/Effet"></textarea>
+            <div class="spellattacks">
+                <div class="top">
+                    <span class="label" style="width: 32px; padding-left:5px;">Coût</span>
+                    <span class="label" style="width: 175px; ">Nom</span>
+                    <span class="label" style="width: 75px;">Dommages</span>
+                </div>
+                <fieldset class="repeating_allDons1-spells">
+                    <div class="spellattack"> 
+                        <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+                        <div class="options">
+                            <div class="row">
+                                <span>Coût :</span>
+                                <input type="text" name="attr_don2_spellattackatkcost" placeholder="-" style="width: 20px;">
+                                <span>Nom :</span>
+                                <input type="text" name="attr_don2_spellattackname">
+                            </div>
+                            <div class="row">
+                                <span>Bonus jet :</span>
+                                <input type="text" class="num" name="attr_don2_spellattackmod" placeholder="0">
+                            </div>
+                            <div class="row">
+                                <span>Dommages :</span>
+                                <input type="text" name="attr_don2_spellattackdmgbase" placeholder="-" style="width: 50px;">
+                                <span>Type dégâts :</span>
+                                <select name="attr_don2_spellattacktype">
+                                    <option value="0" selected>-</option>
+                                    <option value="@{BasePhy}">Physiques</option>
+                                    <option value="@{BaseMag}">Magiques</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <span>Portée :</span>
+                                <input type="text" name="attr_don2_spellattackatkrange" placeholder="CaC/X m" style="width: 170px;">
+                            </div>
+                            <div class="row">
+                                <span>Effet supplémentaire :</span>
+                                <input type="text" name="attr_don2_spellattackeffet" placeholder="---" style="width: 250px;">
+                            </div>
+                            <div class="row">
+                                <span>Description :</span>
+                                <textarea name="attr_don2_spellattack_desc" ></textarea>
+                            </div>
+                        </div>
+                        <div class="display">
+                            <span name="attr_don2_spellattackatkcost" style="width: 25px;"></span>
+                            <span name="attr_don2_spellattackname" style="width: 175px;"></span>
+                            <span name="attr_don2_spellattackdmgbase" style="width: 70px;"></span>
+                            <button type="roll" name="roll_attack" value="!wd [[ @{compdon2_mult}+(@{compdon2_d}+@{global})D6+@{compdon2_pip}+@{don2_spellattackmod}]] {{carac=@{don2_spellattackname}}} {{nd=?{Difficulté ?|} }} {{damage=@{don2_spellattackdmgbase}+@{don2_spellattacktype} }} {{effect=@{don2_spellattackeffet} }} {{description=@{don2_spellattack_desc} }} {{range=@{don2_spellattackatkrange} }}"></button>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-            </fieldset>
+        </div>
+        <div class="page don3" style="width:100%;">
+            <hr/>
         </div>
         <div class="page don3">
-            <center><input type="text" name="attr_nomdon3" placeholder="Nom du don" /></center>
+            <center><input class="transparent-input nom-don" type="text" name="attr_nomdon3" placeholder="Nom du don" /></center>
             <br/>
-            <input type="number" name='attr_compdon3_d' class='sheet-short' value="0" min="0">
+            <input type="number" class="transparent-input" name='attr_compdon3_d' class='sheet-short' value="0" min="0">
             <span class='dee'>D+</span>
-            <input type="number" name="attr_compdon3_pip" class="sheet-short" value='0'>
-            <select name="attr_compdon3_mult">
+            <input type="number" class="transparent-input" name="attr_compdon3_pip" class="sheet-short" value='0'>
+            <select name="attr_compdon3_mult" class="select-don">
                 <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
                 <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
                 <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
@@ -459,27 +968,70 @@
                 <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
                 <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
             </select>
-            <button type='roll' name='roll_compdon3' value='!wd [[@{compdon3_mult}+(@{compdon3_d}+@{global})D6+@{compdon3_pip})]]'></button>
+            <button type='roll' name='roll_compdon3' value='!wd [[@{compdon3_mult}+(@{compdon3_d}+@{global})D6+@{compdon3_pip})]] {{carac=@{nomdon3}}} {{nd=?{Difficulté ?|} }}'></button>
             <br/>
-            <label>Description :</label><textarea class="desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
+            <label>Description :</label><textarea class="transparent-input desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
             <h3>Liste des sorts et/ou techniques</h3>
-            <fieldset class="repeating_allDons3-spells">
-            <div class="spell-row"> 
-                <input type="text" name="attr_don1_spell_name" placeholder="Nom" />
-                <span>Coût : </span><input type="number" class="sheet-short" name="attr_don3_spell_cost" value="1" min="0"/>
-                <span>Rang : </span><input type="number" class="sheet-short" name="attr_don3_spell_level" value="1" min="1"/>
-                <button type='roll' name='roll_compdon3' value='!wd [[@{compdon3_mult}+(@{compdon3_d}+@{global})D6+@{compdon3_pip})]]'></button>
-                <textarea class="desc-don-spell" name="attr_don3_spell_desc" placeholder="Description/Effet"></textarea>
+            <div class="spellattacks">
+                <div class="top">
+                    <span class="label" style="width: 32px; padding-left:5px;">Coût</span>
+                    <span class="label" style="width: 175px; ">Nom</span>
+                    <span class="label" style="width: 75px;">Dommages</span>
+                </div>
+                <fieldset class="repeating_allDons1-spells">
+                    <div class="spellattack"> 
+                        <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+                        <div class="options">
+                            <div class="row">
+                                <span>Coût :</span>
+                                <input type="text" name="attr_don3_spellattackatkcost" placeholder="-" style="width: 20px;">
+                                <span>Nom :</span>
+                                <input type="text" name="attr_don3_spellattackname">
+                            </div>
+                            <div class="row">
+                                <span>Bonus jet :</span>
+                                <input type="text" class="num" name="attr_don3_spellattackmod" placeholder="0">
+                            </div>
+                            <div class="row">
+                                <span>Dommages :</span>
+                                <input type="text" name="attr_don3_spellattackdmgbase" placeholder="-" style="width: 50px;">
+                                <span>Type dégâts :</span>
+                                <select name="attr_don3_spellattacktype">
+                                    <option value="0" selected>-</option>
+                                    <option value="@{BasePhy}">Physiques</option>
+                                    <option value="@{BaseMag}">Magiques</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <span>Portée :</span>
+                                <input type="text" name="attr_don3_spellattackatkrange" placeholder="CaC/X m" style="width: 170px;">
+                            </div>
+                            <div class="row">
+                                <span>Effet supplémentaire :</span>
+                                <input type="text" name="attr_don3_spellattackeffet" placeholder="---" style="width: 250px;">
+                            </div>
+                            <div class="row">
+                                <span>Description :</span>
+                                <textarea name="attr_don3_spellattack_desc" ></textarea>
+                            </div>
+                        </div>
+                        <div class="display">
+                            <span name="attr_don3_spellattackatkcost" style="width: 25px;"></span>
+                            <span name="attr_don3_spellattackname" style="width: 175px;"></span>
+                            <span name="attr_don3_spellattackdmgbase" style="width: 70px;"></span>
+                            <button type="roll" name="roll_attack" value="!wd [[ @{compdon3_mult}+(@{compdon3_d}+@{global})D6+@{compdon3_pip}+@{don3_spellattackmod}]] {{carac=@{don3_spellattackname}}} {{nd=?{Difficulté ?|} }} {{damage=@{don3_spellattackdmgbase}+@{don3_spellattacktype} }} {{effect=@{don3_spellattackeffet} }} {{description=@{don3_spellattack_desc} }} {{range=@{don3_spellattackatkrange} }}"></button>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-            </fieldset>
         </div>
         <div class="page don4">
-            <center><input type="text" name="attr_nomdon4" placeholder="Nom du don" /></center>
+            <center><input class="transparent-input nom-don" type="text" name="attr_nomdon4" placeholder="Nom du don" /></center>
             <br/>
-            <input type="number" name='attr_compdon4_d' class='sheet-short' value="0" min="0">
+            <input type="number" class="transparent-input" name='attr_compdon4_d' class='sheet-short' value="0" min="0">
             <span class='dee'>D+</span>
-            <input type="number" name="attr_compdon4_pip" class="sheet-short" value='0'>
-            <select name="attr_compdon4_mult">
+            <input type="number" class="transparent-input" name="attr_compdon4_pip" class="sheet-short" value='0'>
+            <select name="attr_compdon4_mult" class="select-don">
                 <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
                 <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
                 <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
@@ -489,78 +1041,372 @@
                 <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
                 <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
             </select>
-            <button type='roll' name='roll_compdon4' value='!wd [[@{compdon4_mult}+(@{compdon4_d}+@{global})D6+@{compdon4_pip})]]'></button>
+            <button type='roll' name='roll_compdon4' value='!wd [[@{compdon4_mult}+(@{compdon4_d}+@{global})D6+@{compdon4_pip})]] {{carac=@{nomdon4}}} {{nd=?{Difficulté ?|} }}'></button>
             <br/>
-            <label>Description :</label><textarea class="desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
+            <label>Description :</label><textarea class="transparent-input desc-don" name="attr_doncompletdescription1" placeholder="Description complète du don"></textarea>
             <h3>Liste des sorts et/ou techniques</h3>
-            <fieldset class="repeating_allDons4-spells">
-            <div class="spell-row"> 
-                <input type="text" name="attr_don3_spell_name" placeholder="Nom" />
-                <span>Coût : </span><input type="number" class="sheet-short" name="attr_don3_spell_cost" value="1" min="0"/>
-                <span>Rang : </span><input type="number" class="sheet-short" name="attr_don3_spell_level" value="1" min="1"/>
-                <button type='roll' name='roll_compdon3' value='!wd [[@{compdon3_mult}+(@{compdon3_d}+@{global})D6+@{compdon3_pip})]]'></button>
-                <textarea class="desc-don-spell" name="attr_don3_spell_desc" placeholder="Description/Effet"></textarea>
+            <div class="spellattacks">
+                <div class="top">
+                    <span class="label" style="width: 32px; padding-left:5px;">Coût</span>
+                    <span class="label" style="width: 175px; ">Nom</span>
+                    <span class="label" style="width: 75px;">Dommages</span>
+                </div>
+                <fieldset class="repeating_allDons1-spells">
+                    <div class="spellattack"> 
+                        <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+                        <div class="options">
+                            <div class="row">
+                                <span>Coût :</span>
+                                <input type="text" name="attr_don4_spellattackatkcost" placeholder="-" style="width: 20px;">
+                                <span>Nom :</span>
+                                <input type="text" name="attr_don4_spellattackname">
+                            </div>
+                            <div class="row">
+                                <span>Bonus jet :</span>
+                                <input type="text" class="num" name="attr_don4_spellattackmod" placeholder="0">
+                            </div>
+                            <div class="row">
+                                <span>Dommages :</span>
+                                <input type="text" name="attr_don4_spellattackdmgbase" placeholder="-" style="width: 50px;">
+                                <span>Type dégâts :</span>
+                                <select name="attr_don4_spellattacktype">
+                                    <option value="0" selected>-</option>
+                                    <option value="@{BasePhy}">Physiques</option>
+                                    <option value="@{BaseMag}">Magiques</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <span>Portée :</span>
+                                <input type="text" name="attr_don4_spellattackatkrange" placeholder="CaC/X m" style="width: 170px;">
+                            </div>
+                            <div class="row">
+                                <span>Effet supplémentaire :</span>
+                                <input type="text" name="attr_don4_spellattackeffet" placeholder="---" style="width: 250px;">
+                            </div>
+                            <div class="row">
+                                <span>Description :</span>
+                                <textarea name="attr_don4_spellattack_desc" ></textarea>
+                            </div>
+                        </div>
+                        <div class="display">
+                            <span name="attr_don4_spellattackatkcost" style="width: 25px;"></span>
+                            <span name="attr_don4_spellattackname" style="width: 175px;"></span>
+                            <span name="attr_don4_spellattackdmgbase" style="width: 70px;"></span>
+                            <button type="roll" name="roll_attack" value="!wd [[ @{compdon4_mult}+(@{compdon4_d}+@{global})D6+@{compdon4_pip}+@{don4_spellattackmod}]] {{carac=@{don4_spellattackname}}} {{nd=?{Difficulté ?|} }} {{damage=@{don4_spellattackdmgbase}+@{don4_spellattacktype} }} {{effect=@{don4_spellattackeffet} }} {{description=@{don4_spellattack_desc} }} {{range=@{don4_spellattackatkrange} }}"></button>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-            </fieldset>
         </div>
-        
-        
     </div>
     <hr/>
-    <h1>Autres sorts ou techniques</h1>
-    <label class="desc-spell-cost">Coût</label>
-    <label class="desc-spell-name">Nom</label>
-    <label class="desc-spell-rank">Rang</label>
-    <label class="desc-spell-desc">Description</label>
-    <fieldset class="repeating_allOtherDons-spells">
-        <div class="spell-row"> 
-            <input type="number" name="attr_other_don_spell_cost" value="1" min="0"/>
-            <input type="text" name="attr_other_don_spell_name" placeholder="Nom" />
-            <input type="number" name="attr_other_don_spell_level" value="1" min="1"/>
-            <input class="long-desc" type="text" name="attr_other_don_spell_desc" placeholder="Description/Effet"/>
+    <h1>Autres techniques</h1>
+    
+    <div class="spellattacks" style="position: relative; float:left; margin-right: 10px;">
+        <div class="top">
+            <span class="label" style="width: 30px; padding-left:5px;">Coût</span>
+            <span class="label" style="width: 205px;">Nom</span>
+            <span class="label" style="width: 85px;">Dommages</span>
+            <span class="label" style="width: 45px;">Effet</span>
         </div>
-    </fieldset>
+        <fieldset class="repeating_spellattack">
+            <div class="spellattack">
+                <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+                <div class="options">
+                    <div class="row">
+                        <span>Nom du sort ou de la technique :</span>
+                        <input type="text" name="attr_spellattackname">
+                    </div>
+                    <div class="row">
+                        <span>Coût :</span>
+                        <input type="text" name="attr_spellattackatkcost" placeholder="-" style="width: 170px;">
+                    </div>
+                    <div class="row">
+                        <span>Attaque :</span>
+                        <select name="attr_spellattackattr_base">
+                            <optgroup label="Force">
+        						<option value="@{PuissancePhysiqueAttr}+(@{PuissancePhysiqueComp_d}+@{global})D6+@{PuissancePhysiqueComp_pip}">Puissance Physique</option>
+        						<option value="@{AthletismeAttr}+(@{AthletismeComp_d}+@{global})D6+@{AthletismeComp_pip}">Athlétisme</option>
+        					</optgroup>
+        					<optgroup label="Dextérité">
+        						<option value="@{CombatMeleeAttr}+(@{CombatMeleeComp_d}+@{global})D6+@{CombatMeleeComp_pip}">Combat Mêlée</option>
+        						<option value="@{TirAttr}+(@{TirComp_d}+@{global})D6+@{TirComp_pip}">Tir</option>
+        						<option value="@{LanceAttr}+(@{LanceComp_d}+@{global})D6+@{LanceComp_pip}">Lancé</option>
+        						<option value="@{CambriolageAttr}+(@{CambriolageComp_d}+@{global})D6+@{CambriolageComp_pip}">Cambriolage</option>
+        					</optgroup>
+        					<optgroup label="Agilité">
+        						<option value="@{EsquiveAttr}+(@{EsquiveComp_d}+@{global})D6+@{EsquiveComp_pip}">Esquive</option>
+        						<option value="@{AcrobatieAttr}+(@{AcrobatieComp_d}+@{global})D6+@{AcrobatieComp_pip}">Acrobatie</option>
+        						<option value="@{DiscretionAttr}+(@{DiscretionComp_d}+@{global})D6+@{DiscretionComp_pip}">Discrétion</option>
+        						<option value="@{EquitationAttr}+(@{EquitationComp_d}+@{global})D6+@{EquitationComp_pip}">Équitation</option>
+        					</optgroup>
+        					<optgroup label="Constitution">
+        						<option value="@{StaminaAttr}+(@{StaminaComp_d}+@{global})D6+@{StaminaComp_pip}">Stamina</option>
+        					</optgroup>
+        					<optgroup label="Intelligence">
+        						<option value="@{CultureAttr}+(@{CultureComp_d}+@{global})D6+@{CultureComp_pip}">Culture</option>
+        						<option value="@{MedecineAttr}+(@{MedecineComp_d}+@{global})D6+@{MedecineComp_pip}">Médecine</option>
+        						<option value="@{MarchandageAttr}+(@{MarchandageComp_d}+@{global})D6+@{MarchandageComp_pip}">Marchandage</option>
+        						<option value="@{InvestigationAttr}+(@{InvestigationComp_d}+@{global})D6+@{InvestigationComp_pip}">Investigation</option>
+        					</optgroup>
+        					<optgroup label="Sagesse">
+        						<option value="@{DressageAttr}+(@{DressageComp_d}+@{global})D6+@{DressageComp_pip}">Dressage</option>
+        						<option value="@{PerceptionAttr}+(@{PerceptionComp_d}+@{global})D6+@{PerceptionComp_pip}">Perception</option>
+        						<option value="@{DetectionAttr}+(@{DetectionComp_d}+@{global})D6+@{DetectionComp_pip}">Détection</option>
+        						<option value="@{SurvieAttr}+(@{SurvieComp_d}+@{global})D6+@{SurvieComp_pip}">Survie</option>
+        						<option value="@{ArtisanatAttr}+(@{ArtisanatComp_d}+@{global})D6+@{ArtisanatComp_pip}">Artisanat</option>
+        						<option value="@{DeguisementAttr}+(@{DeguisementComp_d}+@{global})D6+@{DeguisementComp_pip}">Déguisement</option>
+        						<option value="@{JeuAttr}+(@{JeuComp_d}+@{global})D6+@{JeuComp_pip}">Jeu</option>
+        						<option value="@{VolonteAttr}+(@{VolonteComp_d}+@{global})D6+@{VolonteComp_pip}">Volonté</option>
+        					</optgroup>
+        					<optgroup label="Charisme">
+        						<option value="@{IntimidationAttr}+(@{IntimidationComp_d}+@{global})D6+@{IntimidationComp_pip}">Intimidation</option>
+        						<option value="@{PersuasionAttr}+(@{PersuasionComp_d}+@{global})D6+@{PersuasionComp_pip}">Persuasion</option>
+        						<option value="@{TromperieAttr}+(@{TromperieComp_d}+@{global})D6+@{TromperieComp_pip}">Tromperie</option>
+        						<option value="@{SeductionAttr}+(@{SeductionComp_d}+@{global})D6+@{SeductionComp_pip}">Séduction</option>
+        					</optgroup>
+        					<optgroup label="Potentiel">
+        						<option value="@{ArtDeLaMagieAttr}+(@{ArtDeLaMagieComp_d}+@{global})D6+@{ArtDeLaMagieComp_pip}">Art de la magie</option>
+        						<option value="@{PuissanceMagiqueAttr}+(@{PuissanceMagiqueComp_d}+@{global})D6+@{PuissanceMagiqueComp_pip}">Puissance magique</option>
+        					</optgroup>
+                        </select>
+                        <span>+</span>
+                        <input type="text" class="num" name="attr_spellattackatkmod" placeholder="0">
+                    </div>
+                    <div class="row">
+                        <span>Dommages :</span>
+                        <input type="text" name="attr_spellattackdmgbase" placeholder="-" style="width: 50px;">
+                        <span>Type :</span>
+                        <select name="attr_spellattacktype">
+                            <option value="0" selected>-</option>
+                            <option value="@{BasePhy}">Physiques</option>
+                            <option value="@{BaseMag}">Magiques</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <span>Portée :</span>
+                        <input type="text" name="attr_spellattackatkrange" placeholder="Corps-à-corps/X m" style="width: 170px;">
+                    </div>
+                    <div class="row">
+                        <span>Effet supplémentaire :</span>
+                        <input type="text" name="attr_spellattackeffet" placeholder="---" style="width: 250px;">
+                    </div>
+                    <div class="row">
+                        <span>Description :</span>
+                        <textarea name="attr_spellattack_desc" ></textarea>
+                    </div>
+                </div>
+                <div class="display">
+                    <span name="attr_spellattackatkcost" style="width: 25px;"></span>
+                    <span name="attr_spellattackname" style="width: 200px;"></span>
+                    <span name="attr_spellattackdmgbase" style="width: 80px;"></span>
+                    <span name="attr_spellattackeffet" style="width: 200px;"></span>
+                    <button type="roll" name="roll_attack" value="!wd [[ @{spellattackattr_base}+@{spellattackatkmod}]] {{carac=@{spellattackname}}} {{nd=?{Difficulté ?|} }} {{damage=@{spellattackdmgbase}+@{spellattacktype} }} {{effect=@{spellattackeffet} }} {{description=@{spellattack_desc} }} {{range=@{spellattackatkrange} }}"></button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
     <hr/>
-    <h1>Armes</h1>
-    <label class="desc-equipped">E?</label>
-    <label class="desc-equip-name">Nom</label>
-    <label class="desc-equip-value">Dégâts</label>
-    <label class="desc-equip-range">Portée</label>
-    <label class="desc-equip-spe">Spécial</label>
-    <fieldset class="repeating_allweapon">
-        <div class="weapon-row"> 
-            <input type="checkbox" name="attr_weapon_equipped" />
-            <input type="text" name="attr_weapon_name" placeholder="Nom de l'arme"/>
-            <input type="number" name="attr_weapon_value" value="0" min="0"/>
-            <input type="number" name="attr_weapon_range" value="0" min="0"/>
-            <input type="text" name="attr_weapon_misc" />
+    <h1>Equipements</h1>
+    <div class="attacks" style="position: relative; float:left; margin-right: 10px;">
+        <h2 class="label" style="margin-top: 0px; bottom: 0px;">Armes</h2>
+        <div class="top">
+            <span class="label" style="width: 90px; padding-left:5px;">Nom de l'arme</span>
+            <span class="label" style="width: 55px;">Dommages</span>
+            <span class="label" style="width: 45px;">Portée</span>
         </div>
-    </fieldset>
+        <fieldset class="repeating_attack">
+            <div class="attack">
+                <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+                <div class="options">
+                    <div class="row">
+                        <span>Nom de l'arme :</span>
+                        <input type="text" name="attr_atkname">
+                    </div>
+                    <div class="row">
+                        <span>Attaque :</span>
+                        <select name="attr_atkattr_base">
+                            <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                            <option value="(@{PuissancePhysiqueComp_d}+@{For_d}+@{global})D6+(@{PuissancePhysiqueComp_pip}+@{For_pip})" class="forlbl">Puissance Physique</option>
+                            <option value="@{Agi_d}D6+@{Agi_pip}" class="dexlbl">Dextérité</option>
+                            <option value="(@{CombatMeleeComp_d}+@{Dex_d}+@{global})D6+(@{CombatMeleeComp_pip}+@{Dex_pip})" class="dexlbl">Combat Mêlée</option>
+                            <option value="(@{TirComp_d}+@{Dex_d}+@{global})D6+(@{TirComp_pip}+@{Dex_pip})" class="dexlbl">Tir</option>
+                            <option value="(@{LanceComp_d}+@{Dex_d}+@{global})D6+(@{LanceComp_pip}+@{Dex_pip})" class="dexlbl">Lancé</option>
+                            <option value="0" class="dexlbl">Autre - Voir MJ</option>
+                        </select>
+                        <span>+</span>
+                        <input type="text" class="num" name="attr_atkmod" placeholder="0">
+                    </div>
+                    <div class="row">
+                        <span>Portée :</span>
+                        <input type="text" name="attr_atkrange" placeholder="Corps-à-corps/X m" style="width: 170px;">
+                    </div>
+                    <div class="row">
+                        <span>Dommages :</span>
+                        <input type="text" name="attr_dmgbase" placeholder="X" style="width: 50px;">
+                    </div>
+                    <div class="row">
+                        <span>Description :</span>
+                        <textarea name="attr_atk_desc" ></textarea>
+                    </div>
+                </div>
+                <div class="display">
+                    <span name="attr_atkname" style="width: 95px;"></span>
+                    <input type="text" name="attr_dmgbase" style="width: 60px;" value="">
+                    <span name="attr_atkrange" style="width: 30px;"></span>
+                    <button type="roll" name="roll_attack" value="!wd [[ @{atkattr_base}+@{atkmod}]] {{carac=@{atkname}}} {{nd=?{Difficulté ?|} }} {{damage=@{dmgbase}+@{BasePhy} }}"></button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="armors" style="position: relative; float:left; margin-right: 10px;">
+        <h2 class="label" style="margin-top: 0px; bottom: 0px;">Armures</h2>
+        <div class="top">
+            <span class="label" style="width: 7px;">E?</span>
+            <span class="label" style="width: 93px;">Nom de l'armure</span>
+            <span class="label" style="width: 40px;">Physique</span>
+            <span class="label" style="width: 40px;">Magique</span>
+        </div>
+        <fieldset class="repeating_allarmors">
+            <div class="armor">
+                <input class="options-flag" type="checkbox" name="attr_options-flag" checked="checked"><span>y</span>
+                <div class="options">
+                    <div class="row">
+                        <span>Nom de l'armure :</span>
+                        <input type="text" name="attr_armorname">
+                    </div>
+                    <div class="row">
+                        <span>Armure :</span>
+                        <input type="text" name="attr_armor_value" placeholder="" style="width: 50px;">
+                        <span style="margin-left:20px;">Résistance :</span>
+                        <input type="text" name="attr_resist_value" placeholder="" style="width: 50px;">
+                        <span>Malus d'agilité :</span>
+                        <input type="text" name="attr_armor_malus" placeholder="" style="width: 50px;">
+                    </div>
+                    <div class="row">
+                        <span>Attaque :</span>
+                        <select name="attr_atkattr_base">
+                            <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
+                            <option value="(@{PuissancePhysiqueComp_d}+@{For_d}+@{global})D6+(@{PuissancePhysiqueComp_pip}+@{For_pip})" class="forlbl">Puissance Physique</option>
+                            <option value="@{Agi_d}D6+@{Agi_pip}" class="dexlbl">Dextérité</option>
+                            <option value="(@{CombatMeleeComp_d}+@{Dex_d}+@{global})D6+(@{CombatMeleeComp_pip}+@{Dex_pip})" class="dexlbl">Combat Mêlée</option>
+                            <option value="(@{TirComp_d}+@{Dex_d}+@{global})D6+(@{TirComp_pip}+@{Dex_pip})" class="dexlbl">Tir</option>
+                            <option value="(@{LanceComp_d}+@{Dex_d}+@{global})D6+(@{LanceComp_pip}+@{Dex_pip})" class="dexlbl">Lancé</option>
+                            <option value="0" class="dexlbl">Autre - Voir MJ</option>
+                        </select>
+                        <span>+</span>
+                        <input type="text" class="num" name="attr_atkmod" placeholder="0">
+                    </div>
+                    <div class="row">
+                        <span>Dommages :</span>
+                        <input type="text" name="attr_dmgbase" placeholder="-" style="width: 50px;">
+                    </div>
+                    <div class="row">
+                        <span>Description :</span>
+                        <textarea name="attr_atk_desc" ></textarea>
+                    </div>
+                </div>
+                <div class="display">
+                    <input type="checkbox" name="attr_armor_equipped"/>
+                    <span name="attr_armorname" style="width: 90px;"></span>
+                    <span name="attr_armor_value" style="width: 35px;"></span>
+                    <span name="attr_resist_value" style="width: 35px;"></span>
+                    <button type="roll" name="roll_attack" value="!wd [[ @{atkattr_base}+@{atkmod}]] {{carac=@{atkname}}} {{nd=?{Difficulté ?|} }} {{damage=@{dmgbase}+@{BasePhy} }}"/>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="equipment">
+        <h2 class="label" style="margin-left: 5px; bottom: 0px;">Autres</h2>
+        <h6 class="label" style="margin-left: 5px; bottom: 0px;">Pièces :</h6>
+        <div class="money">
+            <div class="coin coper">
+                <span class="label">Cuivre</span>
+                <input type="text" name="attr_cp" title="10 => 1 PA">
+            </div>
+            <div class="coin silver">
+                <span class="label">Argent</span>
+                <input type="text" name="attr_sp" title="10 => 1 PO">
+            </div>
+            <div class="coin gold">
+                <span class="label">Or</span>
+                <input type="text" name="attr_gp" title="10 => 1 PP">
+            </div>
+            <div class="coin platine">
+                <span class="label">Platine</span>
+                <input type="text" name="attr_pp">
+            </div>
+        </div>
+        <h6 class="label" style="margin-left: 5px; bottom: 0px;">Objets divers :</h6>
+        <div class="complex">
+            <div class="top" style="height: auto;">
+                <span style="width: 50px; text-align: center; display:inline-block;">Quantité</span>
+                <span style="width: 150px; text-align: left; display:inline-block;">Nom de l'objet</span>
+            </div>
+            <fieldset class="repeating_inventory">
+                <input type="hidden" class="equippedflag" name="attr_equipped">
+                <div class="item">
+                    <input class="weight" type="text" name="attr_itemcount" value="1">
+                    <input class="name" type="text" name="attr_itemname">
+                </div>
+            </fieldset>
+        </div>
+    </div>
     <input type="hidden" name="attr_TotalArmor">
     <input type="hidden" name="attr_TotalResist">
     <input type="hidden" name="attr_TotalAgiMalus">
     <hr/>
-    <h1>Armures</h1>
-    <label class="desc-equipped">E?</label>
-    <label class="desc-equip-name">Nom</label>
-    <label class="desc-equip-value">Valeur</label>
-    <label class="desc-equip-value">Resist</label>
-    <label class="desc-equip-malus">Malus</label>
-    <label class="desc-equip-spe">Spécial</label>
-    <fieldset class="repeating_allarmors">
-        <div class="armor-row"> 
-            <input type="checkbox" name="attr_armor_equipped" />
-            <input type="text" name="attr_armor_name" placeholder="Nom de l'armure"/>
-            <input type="number" name="attr_armor_value" value="0" min="0"/>
-            <input type="number" name="attr_resist_value" value="0" min="0"/>
-            <input type="number" name="attr_armor_malus" value="0" max="0"/>
-            <input type="text" name="attr_armor_misc" />
+    <h1>Roleplay</h1>
+    <div class="2colrow">
+        <div class="col">
+	        <label class="background-label">Race</label><input type="text" name="attr_race" /><br/>
+	        <label class="background-label">Langues</label><input type="text" name="attr_langues" />
         </div>
-    </fieldset>
-    <hr/>
-    <h1>Equipement</h1>
-    <textarea name="attr_equipement" placeholder="Placer vos équipements ici"></textarea>
+        <div class="col">
+	        <label class="background-label">Taille</label><input type="text" name="attr_taille" /><br/>
+	        <label class="background-label">Poids</label><input type="text" name="attr_poids" /><br/>
+	        <label class="background-label">Âge</label><input type="text" name="attr_age" />
+        </div>
+	</div>
+    <div class="2colrow">
+        <div class="col">
+            <div class="background">
+                <span>Personnalité (qualités, défauts, caractère)</span>
+                <textarea name="attr_personnalite" ></textarea>
+            </div>
+        </div>
+        <div class="col">
+            <div class="background">
+                <span>Contacts, alliés et ennemis</span>
+                <textarea name="attr_contacts" ></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="2colrow">
+        <div class="col">
+            <div class="background">
+                <span>Goûts</span>
+                <textarea name="attr_gouts" ></textarea>
+            </div>
+        </div>
+        <div class="col">
+            <div class="background">
+                <span>Peurs</span>
+                <textarea name="attr_peurs" ></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="background">
+        <span>Histoire</span>
+        <textarea name="attr_historique" style="font-style:italic;" ></textarea>
+    </div>
+    <div class="background">
+        <span>Notes</span>
+        <textarea name="attr_notes" ></textarea>
+    </div>
 </div>
+<hr/>
 
 <!-- Script Worker -->
 <script type="text/worker">

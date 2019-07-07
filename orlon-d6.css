@@ -27,6 +27,7 @@ input[type=radio].sheet-tab-button:checked + span {
 {
     width:90%;
     max-height:100px;
+    background-color: #ddd;
 }
 
 .sheet-desc-don-spell {
@@ -79,7 +80,7 @@ input[type=radio].sheet-tab-button:checked + span {
 /* Gestion des onglets pour les pages PC/NPC */
 .sheet-tab-button.sheet-pc:checked ~ .sheet-page.sheet-pc,
 .sheet-tab-button.sheet-npc:checked ~ .sheet-page.sheet-npc,
-/* Gestion des onglets cumulatifs pour les dons (4 max) */
+/* Gestion des onglets cumulatifs pour les dons (4 actuellement) */
 .sheet-tab-button.sheet-don1:checked ~ .sheet-page.sheet-don1,
 .sheet-tab-button.sheet-don2:checked ~ .sheet-page.sheet-don1,
 .sheet-tab-button.sheet-don2:checked ~ .sheet-page.sheet-don2,
@@ -98,9 +99,13 @@ input[type=radio].sheet-tab-button:checked + span {
 .sheet-page.sheet-don2,
 .sheet-page.sheet-don3,
 .sheet-page.sheet-don4 {
+    border: 1px solid #666;
+    padding-left: 5px;
+    padding-right: 0px;
+    margin-right: 2px;
+    border-radius: 50px;
     float: left;
     width: 48%;
-    padding-right:2%;
 }
 
 /*******************************/
@@ -199,11 +204,22 @@ textarea {
 
 input {
 	display: inline-block;
-	width: 165px;
+	width: 165px;    
+	border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+select {
+	border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .charsheet input[type=checkbox] {
 	width: 16px;
+}
+
+.charsheet input[type=number] {
+    width: 2.2em !important;
 }
 
 .charsheet img {
@@ -214,7 +230,7 @@ input {
 	resize: vertical;
 }
 /* Targetted styling that only effects elements with these classes */
-.charsheet .sheet-short {
+/*.charsheet .sheet-short {
 	width: 25px !important;
 	background-color: #d5d5d5;
     border: none;
@@ -226,7 +242,7 @@ input {
 
 .charsheet .sheet-short:focus {
     background-color:#fff;
-}
+}*/
 
 .charsheet select.sheet-dtype {
     vertical-align: top;
@@ -251,7 +267,11 @@ input {
     margin-bottom:3px;
 }
 
-.charsheet .sheet-skill-input {
+.charsheet .sheet-background-label {
+    width:15%;
+    font-family:"Times New Roman";
+}
+.charsheet .sheet-transparent-input {
     width:165px;
     margin-bottom:3px;
     margin-right:5px;
@@ -260,15 +280,39 @@ input {
     border:none;
 }
 
-.charsheet .sheet-skill-input:hover {
+.charsheet .sheet-transparent-input:hover {
     background-color:#ccc;
 }
 
-.charsheet .sheet-skill-input:focus {
+.charsheet .sheet-transparent-input:focus {
     background-color:#ffffff;
 }
 
+.charsheet .sheet-editable-title {
+    background-color:#ddd;
+    width:95%;
+    font-size:30px;
+    text-align:center;
+    margin-bottom:20px;
+}
 
+.charsheet .sheet-nom-don {
+    text-align: center;
+    background-color: #ddd;
+    font-size: 18px;
+    width: 93%;
+    margin: 10px;
+    padding: 5px;
+}
+
+.charsheet .sheet-select-don {
+    background-color: #EFEFEF;
+    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
+    width: auto;
+    border: none;
+}
 
 /* Ligne de l'armure (spécifique) */
 .charsheet .sheet-desc-equipped {
@@ -326,6 +370,27 @@ input {
 
 
 /** STYLE FOR GENERAL STUFF AND ROLL20 SPECIFIC STUFF **/
+
+.itemcontrol {
+    z-index: 10;
+}
+
+.itemcontrol .repcontrol_del {
+    font-size: 10px;
+    margin-top: 3px;
+    padding: 0px;
+    height: 18px;
+    width: 18px;
+}
+
+.itemcontrol .repcontrol_move {
+    font-size: 10px;
+    margin-top: 3px;
+    padding: 0px;
+    height: 18px;
+    width: 18px;
+}
+
 .repcontrol button {
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
@@ -346,6 +411,7 @@ input {
 
 /* Add button */
 .repcontrol .repcontrol_add {
+    height:16px;
 	-moz-box-shadow: 0px 1px 0px 0px #3e7327;
 	-webkit-box-shadow: 0px 1px 0px 0px #3e7327;
 	box-shadow: 0px 1px 0px 0px #3e7327;
@@ -374,6 +440,7 @@ input {
 
 /* Edit button */
 .repcontrol .repcontrol_edit {
+    height:16px;
     -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
 	-webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
 	box-shadow: 0px 1px 0px 0px #f0f7fa;
@@ -524,4 +591,543 @@ input {
     display:list-item;
     list-style-type: square;
     margin-left: 20px;
+}
+
+/** DND 5 imported stuff - Weapon **/
+
+
+.sheet-equipment .sheet-complex {
+    vertical-align: top;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    margin-left:10px;
+}
+
+
+.sheet-equipment {
+    position: relative;
+    min-height: 276px;
+}
+
+.sheet-equipment input {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    color: black;
+}
+
+.sheet-equipment span {
+    display: block;
+    font-size: 9px;
+    line-height: 12px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.sheet-equipment textarea {
+    width: calc(100% - 69px);
+    margin: 0px 0px 0px -5px;
+    resize: vertical;
+    border: none;
+    display: inline-block;
+    padding: 0px;
+    min-height: 264px;
+}
+
+.sheet-equipment span
+{
+    margin-top: 0px;
+}
+
+.sheet-equipment.sheet-hidden {
+    min-height: 50px;
+}
+
+.sheet-armors input[type="number"], 
+.sheet-armors input[type="text"],
+.sheet-spellattacks input[type="number"], 
+.sheet-spellattacks input[type="text"],
+.sheet-attacks input[type="number"], 
+.sheet-attacks input[type="text"]
+{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    color: black;
+}
+
+.sheet-attributes span,
+.sheet-skills span,
+.sheet-armors span,
+.sheet-spellattacks span,
+.sheet-attacks span {
+    display: block;
+    font-size: 9px;
+    line-height: 12px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.sheet-armors,
+.sheet-attacks,
+.sheet-spellattacks,
+.sheet-equipment
+{
+    padding-bottom: 10px;
+    width: 240px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+.sheet-spellattacks {
+    width: 88%;
+    border: none;
+}
+
+.sheet-attributes,
+.sheet-skills {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 325px; /* override */
+}
+
+.sheet-equipment {
+    position: relative;
+    float: left;
+    min-height: 276px;
+}
+
+
+.sheet-attributes .sheet-top span,
+.sheet-skills .sheet-top span,
+.sheet-equipment .sheet-top span,
+.sheet-armors .sheet-top span,
+.sheet-spellattacks .sheet-top span,
+.sheet-attacks .sheet-top span {
+    text-align: left;
+    margin-left: 5px;
+    color: #A0A0A0;
+    font-weight: normal;
+    display: inline-block;
+    width: initial;
+}
+
+.sheet-attributes,
+.sheet-skills,
+.sheet-armors,
+.sheet-spellattacks,
+.sheet-attacks {
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+.sheet-attributes .sheet-display,
+.sheet-skills .sheet-display,
+.sheet-spellattacks .sheet-display {
+    margin: 5px 10px;
+}
+
+.sheet-attributes  .sheet-display .sheet-attributes-display,
+.sheet-skills .sheet-display .sheet-skill-display {
+    width:90px;
+}
+
+.sheet-attributes .sheet-display button[type=roll],
+.sheet-skills .sheet-display button[type=roll],
+.sheet-spellattacks .sheet-display button[type=roll],
+.sheet-attacks .sheet-display button[type=roll],
+.sheet-armors .sheet-display button[type=roll]
+{
+    font-size: 11px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: auto;
+}
+
+
+.sheet-attributes .sheet-display input,
+.sheet-attributes .sheet-display span,
+.sheet-skills .sheet-display input,
+.sheet-skills .sheet-display span,
+.sheet-skills .sheet-display select,
+.sheet-armors .sheet-display input,
+.sheet-armors .sheet-display span,
+.sheet-spellattacks .sheet-display input,
+.sheet-spellattacks .sheet-display span,
+.sheet-attacks .sheet-display input,
+.sheet-attacks .sheet-display span,
+.sheet-equipment .sheet-item input,
+.sheet-equipment .sheet-item span {
+    font-size: 12px;
+    line-height: 12px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    text-align: left;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.sheet-attributes .sheet-display span,
+.sheet-skills .sheet-display span,
+.sheet-skills .sheet-display select,
+.sheet-armors .sheet-display span,
+.sheet-equipment .sheet-item span,
+.sheet-spellattacks .sheet-display span,
+.sheet-attacks .sheet-display span {
+    min-height: 12px;
+    display: inline-block;
+    margin-top: 0px;
+    padding: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+
+
+.sheet-attributes .sheet-display button[type=roll] {
+    font-size: 18px;
+    height:22px;
+    position: relative;
+    bottom: -2px;
+}
+
+.sheet-attributes  .sheet-display .sheet-attributes-display {
+    height:18.4px;
+    width:120px;
+}
+
+.sheet-skills .sheet-display select {
+    width: auto;
+    height: 22px;
+    margin-bottom: unset;
+}
+
+.sheet-armors .sheet-options-flag,
+.sheet-spellattacks .sheet-options-flag,
+.sheet-attacks .sheet-options-flag {
+    opacity: 0;    
+    position: absolute;
+    top: 4px;
+    right: -12px;
+    width: 12px;
+    height: 12px;
+    z-index: 2;
+}
+
+.sheet-armors .sheet-options-flag + span,
+.sheet-spellattacks .sheet-options-flag + span,
+.sheet-attacks .sheet-options-flag + span
+{
+    position: absolute;
+    top: 4px;
+    right: -12px;
+    white-space: nowrap;
+    width: 15px;
+    height: 15px;
+    font-size: 20px;
+    font-family: pictos;
+    color: #A0A0A0;
+    cursor: pointer;
+    margin-top: 0px;
+    display: none;
+}
+
+.sheet-armors .sheet-options-flag:checked + span,
+.sheet-spellattacks .sheet-options-flag:checked + span,
+.sheet-attacks .sheet-options-flag:checked + span {
+    color: black;
+    display: block;
+}
+
+.sheet-armors .sheet-armor:hover .sheet-options-flag + span,
+.sheet-spellattacks .sheet-spellattack:hover .sheet-options-flag + span,
+.sheet-attacks .sheet-attack:hover .sheet-options-flag + span
+{
+    display: block;
+}
+
+.sheet-armors .sheet-options-flag:checked ~ .sheet-options,
+.sheet-spellattacks .sheet-options-flag:checked ~ .sheet-options,
+.sheet-attacks .sheet-options-flag:checked ~ .sheet-options
+{
+    display: inherit;
+}
+
+
+.sheet-pc .sheet-header .sheet-options-flag {
+    top: 8px;
+    right: 4px;
+}
+
+.sheet-pc .sheet-header .sheet-options-flag + span {
+    top: 8px;
+    right: 4px;
+}
+
+
+.sheet-pc .sheet-global-mod .sheet-options-flag:checked ~ .sheet-display-flag,
+.sheet-pc .sheet-trait .sheet-options-flag:checked ~ .sheet-display-flag {
+    width: 0px;
+    height: 0px;
+}
+
+.sheet-pc .sheet-trait .sheet-display-flag:checked ~ .sheet-display .sheet-desc
+{
+    display: none;
+}
+
+.sheet-armor,
+.sheet-spellattack,
+.sheet-attack
+{
+    position: relative;
+}
+
+.sheet-armor .sheet-options,
+.sheet-spellattack .sheet-options,
+.sheet-attack .sheet-options
+{
+    display: none;
+    border-top: 2px dashed gold;
+}
+
+.sheet-armor .sheet-options,
+.sheet-spellattack .sheet-options,
+.sheet-attack .sheet-options
+{
+    padding-left: 5px;
+}
+
+.sheet-armor .sheet-options span,
+.sheet-spellattack .sheet-options span,
+.sheet-attack .sheet-options span
+{
+    width: initial;
+    display: inline-block;
+    text-align: left;
+}
+
+.sheet-spellattack .sheet-options input[type=text],
+.sheet-attack .sheet-options input[type=text],
+.sheet-armor .sheet-options input[type=text]
+{
+    display: inline-block;
+    text-align: left;
+    font-size: 12px;
+    border-bottom: 1px solid #D3D3D3;
+    padding: 0px;
+    width: initial;
+}
+
+.sheet-spellattack .sheet-options select,
+.sheet-attack .sheet-options select,
+.sheet-armor .sheet-options select
+{
+    border-bottom: 1px solid #D3D3D3;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    color: black;
+    display: inline-block;
+    font-size: 12px;
+    width: initial;
+    padding: 0px;
+    margin: 0px;
+    line-height: 18px;
+    height: 18px;
+}
+
+.sheet-armor .sheet-options input[type=checkbox],
+.sheet-spellattack .sheet-options input[type=checkbox],
+.sheet-attack .sheet-options input[type=checkbox]
+{
+    width: 13px;
+    font-size: initial;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+}
+
+.sheet-armor .sheet-options input[type=text].sheet-num,
+.sheet-spellattack .sheet-options input[type=text].sheet-num,
+.sheet-attack .sheet-options input[type=text].sheet-num,
+.sheet-options input[type=text].sheet-num
+{
+    width: 15px;
+    text-align: center;
+}
+
+.sheet-npc .sheet-display .sheet-traits textarea,
+.sheet-npc .sheet-reaction textarea,
+.sheet-spellattack textarea,
+.sheet-attack textarea,
+.sheet-armor textarea
+{
+    resize: vertical;
+    height: 36px;
+    min-height: 36px;
+    border: none;
+    padding: 0px;
+    box-shadow: none;
+}
+
+
+.sheet-npc .sheet-armor_option,
+.sheet-npc .sheet-attack_option {
+    display: none;
+}
+
+.sheet-npc .sheet-attack_options[value="on"] ~ .sheet-attack_option,
+.sheet-npc .sheet-attack_options[value="{{attack=1}}"] ~ .sheet-attack_option,
+.sheet-npc .sheet-armor_options[value="on"] ~ .sheet-armor_option,
+.sheet-npc .sheet-armor_options[value="{{armor=1}}"] ~ .sheet-armor_option
+{
+    display: block;
+}
+
+.sheet-attack input[type=text].sheet-flat,
+.sheet-armor input[type=text].sheet-flat {
+    display: none;
+}
+
+.sheet-attack .sheet-flatflag[value*="saveflat"] ~ input[type=text].sheet-flat,
+.sheet-armor .sheet-flatflag[value*="saveflat"] ~ input[type=text].sheet-flat {
+    display: inline-block;
+}
+
+.sheet-equipment .sheet-complex
+{
+    display: inline-block;
+}
+
+.sheet-money {
+    width: 100%;
+    display: inline-block;
+}
+
+.sheet-coin {
+    border: 1px solid #666;
+    border-radius: 20px;
+    margin: 10px 4px;
+    padding: 0px 5px;
+    position: relative;
+    float: left;
+}
+
+.sheet-coper {
+    background-color:#dbcbbe;
+    background-image: url(/images/dndstyling/copper.png);
+}
+
+.sheet-silver {
+    background-color:#e3e3e3;
+}
+
+.sheet-gold {
+    background-color:#d5dbbe;
+}
+
+.sheet-platine {
+    background-color:#bed7db;
+}
+
+.sheet-coin span {
+    display: block;
+    color: #808080;
+    margin-top: 0px;
+    margin-left: 5px;
+    width: 25px;
+}
+
+.sheet-coin input {
+    display: block;
+    font-size: 12px;
+    padding: 0px;
+    width: 40px;
+}
+
+
+.sheet-item {
+    margin-bottom: 2px;
+}
+
+.sheet-item .sheet-name {
+    width: 150px;
+}
+
+.sheet-item input[type="text"].sheet-weight {
+    width: 50px;
+    text-align: center;
+}
+
+.sheet-item .sheet-subitem .sheet-subfield {
+    font-weight: normal;
+    background-color: transparent;
+    padding: 0px;
+    width: 112px;
+}
+
+.sheet-item .sheet-subitem .sheet-subtextarea {
+    width: calc(100% - 20px);
+    font-size: 9px;
+    padding: 0px 5px 0px 15px;
+    min-height: 32px;
+    height: 32px;
+    margin: 0px;
+}
+
+.sheet-attributes .sheet-top span,
+.sheet-attributes  .sheet-display .sheet-attributes-display,
+.sheet-attributes .sheet-display input,
+.sheet-attributes .sheet-display span,
+.sheet-attributes ,
+.sheet-spellattack .sheet-options input[type=text],
+.sheet-spellattacks span,
+.sheet-spellattack .sheet-options select,
+.sheet-spellattacks .sheet-top span,
+.sheet-spellattacks  .sheet-display .sheet-attributes-display,
+.sheet-spellattacks .sheet-display input,
+.sheet-spellattacks .sheet-display span,
+.sheet-spellattacks 
+{
+    font-size:16px;
+    min-height:16px;
+    line-height:16px;
+}
+
+.sheet-background span {
+	font-family:"Times New Roman";
+	font-weight:bold;
+}
+
+.sheet-background textarea {
+	width:100%;
 }

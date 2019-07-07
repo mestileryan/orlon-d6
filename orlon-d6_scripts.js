@@ -139,16 +139,14 @@ var WildDice = WildDice || (function() {
         if (wildDie == 1) {
             critFail = true;
             critFailDice = getDiceCounts(rDice);
-            if (_.isEmpty(critFailDice))
+            if (!_.isEmpty(critFailDice))
             {
-                return;
+                critFailDice[_.max(rDice)]--;
+                critFailDice = getDiceArray(critFailDice);
+                sumFail=_.reduce(critFailDice,function(m,r){return parseInt(m,10) + parseInt(r,10);},0) + pips;
+    
+                markFirstMax = true;
             }
-            
-            critFailDice[_.max(rDice)]--;
-            critFailDice = getDiceArray(critFailDice);
-            sumFail=_.reduce(critFailDice,function(m,r){return parseInt(m,10) + parseInt(r,10);},0) + pips;
-
-            markFirstMax = true;
         }
         
         sum = _.reduce(rDice.concat(wildDices),function(m,r){return m+r;}, wildDie) + pips;
@@ -161,7 +159,7 @@ var WildDice = WildDice || (function() {
                     '<tr style="border: 1px solid black;"><td style="font-weight: bold; padding: 1px 3px;">Difficulté</td><td>'+
                     '<div style="background: white; padding: 5px 3px; font-weight: bold; text-align: center; font-size:20px; color=maroon">' + MISCInfos.nd + '</div>' +
                     '</td></tr>') : '')+
-                    '<tr><td style="font-weight: bold; padding: 1px 3px; width:66px;">Jet :</td><td>'+
+                    '<tr><td style="font-weight: bold; padding: 1px 3px; width:66px;">Jet</td><td>'+
                     // Display normal dices (+ striked one if any)
                     _.map(rDice,function(d){
                             var c ='';
@@ -183,30 +181,50 @@ var WildDice = WildDice || (function() {
     					'')+
                     '<div style="clear: both"></div>'+
                     '</td></tr>'+
-                    '<tr><td style="margin-left: 10px; font-weight: bold; padding: 1px 3px;">Total :</td><td>'+
+                    '<tr><td style="margin-left: 10px; font-weight: bold; padding: 1px 3px;">Total</td><td>'+
                     // Display results (totals)
-                        //'<div style="float:left; margin-left: 10px; font-weight: bold; padding: 1px 3px; font-size:15px;">Total:</div>'+
                         '<div style="float:left; margin-left: 10px; background: '+(critFail ? 'orange' : 'green' )+ '; border: 1px solid black; padding: 1px 3px; color: white; font-weight: bold;">'+sum+'</div>'+
                         (critFail ? ('<div style="float:left; background: red; margin-left: 10px; border: 1px solid black; padding: 1px 3px; color: white; font-weight: bold;">'+ sumFail +'</div>') : '')+
                         (MISCInfos.nd ? ('<div style="float:left; margin-left: 10px; color: '+(sum >= MISCInfos.nd ? (critFail && sumFail < MISCInfos.nd ? 'orange' : 'green') : 'red' )+ '; padding: 1px 3px; font-weight: bold;">'+(sum >= MISCInfos.nd ? (critFail && sumFail < MISCInfos.nd ? 'Succès ?' : 'Succès') : 'Echec' ) + '</div>') : '') +
-                    
-                        
                         '<div style="clear: both"></div>'+
                     '</td></tr>'+
                     
-                    (MISCInfos.dmg ? ( '<tr style="border: 1px solid black;"><td style="font-weight: bold; padding: 1px 3px;">Dégâts :</td><td>'+
+                    (MISCInfos.dmg ? ( '<tr style="border: 1px solid black;"><td style="font-weight: bold; padding: 1px 3px;">Dégâts</td><td>'+
                     '<div style="margin-left: auto ; margin-right: auto; position: relative; text-align:center;">'+
-                    '<div style="background: white;padding: 5px 3px;font-weight: bold;font-size: 20px;display: inline-block;">' + (MISCInfos.dmg + Math.floor((sum - MISCInfos.nd)/3)) + '</div>' +
+                    '<div style="background: white;padding: 5px 3px;font-weight: bold;font-size: 20px;display: inline-block;">' + (MISCInfos.dmg + (MISCInfos.nd ? Math.floor((sum - MISCInfos.nd)/3) : 0)) + '</div>' +
                     (MISCInfos.nd ? ('<div style="background: white;padding: 5px 3px;font-weight: bold;display: inline-block;font-size: 12px;">= ' + MISCInfos.dmg + ' (+' + Math.floor((sum - MISCInfos.nd)/3) + ')</div>') :'') +
                     '</div>'+
+                    '</td></tr>') : '')+
+                    // Display Effect
+                    (MISCInfos.range ? (
+                    '<tr style="border: 1px solid black;"><td style="font-weight: bold; padding: 1px 3px;">Portée</td><td>'+ //
+                    '<div style="background: white; padding: 5px 3px; text-align: center; font-weight: bold; font-size:18px; color=maroon">' + MISCInfos.range + '</div>' +
+                    '</td></tr>') : '')+
+                    // Display Effect
+                    (MISCInfos.effect ? (
+                    '<tr style="border: 1px solid black;"><td style="font-weight: bold; padding: 1px 3px;">Autres effets</td><td>'+
+                    '<div style="background: white; padding: 5px 3px; text-align: center; font-size:12px; color=maroon">' + MISCInfos.effect + '</div>' +
+                    '</td></tr>') : '')+
+                    // Display Effect
+                    (MISCInfos.desc ? (
+                    '<tr style="border: 1px solid black;"><td colspan = "2">'+ //<td style="font-weight: bold; padding: 1px 3px;">Description</td>
+                    '<div style="background: white; padding: 5px 3px; text-align: center; font-size:12px; font-style: italic; color=maroon">' + MISCInfos.desc + '</div>' +
                     '</td></tr>') : '')+
                 '</table>');
     },
 
+    EvalArithmetics = function(s) {
+        return (s.replace(/\s/g, '').match(/[+\-]?([0-9\.]+)/g) || [])
+            .reduce(function(sum, value) {
+                return parseFloat(sum) + parseFloat(value);
+            }, 0);
+    },
+
     ParseArguments = function(content) {
+        log(content);
         var myRegexp = /{{(.*?)=(.*?)}}/g;
         var match;
-        var nd = null, damage = null, carac = null;
+        var nd = null, damage = null, carac = null, effect = null, description = null, range = null;
         while (match = myRegexp.exec(content))
         {
             if (match[1] && match[2])
@@ -214,21 +232,39 @@ var WildDice = WildDice || (function() {
                 switch(match[1])
                 {
                     case "nd":
-                        log("found nd");
-                        nd = parseInt(match[2], 10);
+                        nd = parseInt(EvalArithmetics(match[2]), 10);
+                        if (!nd || nd === 0)
+                            nd = null;
                         break;
                     case "damage":
-                        log("found damage");
-                        damage = parseInt(match[2], 10);
+                        damage = parseInt(EvalArithmetics(match[2]), 10);
+                        if (!damage || damage === 0)
+                            damage = null;
                         break;
                     case "carac":
-                        log("found nd");
                         carac = match[2];
+                        if (!carac || carac.trim() === "")
+                            carac = null;
+                        break;
+                    case "range":
+                            range = match[2];
+                        if (!range || range.trim() === "")
+                            range = null;
+                        break;
+                    case "description":
+                        description = match[2];
+                        if (!description || description.trim() === "")
+                            description = null;
+                        break;
+                    case "effect":
+                        effect = match[2];
+                        if (!effect || effect.trim() === "")
+                            effect = null;
                         break;
                 }
             }
         }
-        return [carac, nd, damage];
+        return [carac, nd, damage, description, effect, range];
     },
 
     ProcessApiMessage = function(msg) {
@@ -271,7 +307,8 @@ var WildDice = WildDice || (function() {
             var MISCInfo = {};
             MISCInfo['w'] = w;
             MISCInfo['playerid'] = msg.playerid;
-            [MISCInfo['carac'], MISCInfo['nd'], MISCInfo['dmg']] = ParseArguments(msg.content);
+            [MISCInfo['carac'], MISCInfo['nd'], MISCInfo['dmg'], MISCInfo['desc'], MISCInfo['effect'], MISCInfo['range']] = ParseArguments(msg.content);
+            log(MISCInfo);
             
             sendChat( "player|" + msg.playerid, '<div class="orlonCallback" style="display: none;">[['+(initialDiceNb-1)+'D6+1D6!+'+pips+']]###' + JSON.stringify(MISCInfo) + '###</div>', null, {use3d : true});
         }
