@@ -81,16 +81,16 @@ input[type=radio].sheet-tab-button:checked + span {
 .sheet-tab-button.sheet-pc:checked ~ .sheet-page.sheet-pc,
 .sheet-tab-button.sheet-npc:checked ~ .sheet-page.sheet-npc,
 /* Gestion des onglets cumulatifs pour les dons (4 actuellement) */
-.sheet-tab-button.sheet-don1:checked ~ .sheet-page.sheet-don1,
-.sheet-tab-button.sheet-don2:checked ~ .sheet-page.sheet-don1,
-.sheet-tab-button.sheet-don2:checked ~ .sheet-page.sheet-don2,
-.sheet-tab-button.sheet-don3:checked ~ .sheet-page.sheet-don1,
-.sheet-tab-button.sheet-don3:checked ~ .sheet-page.sheet-don2,
-.sheet-tab-button.sheet-don3:checked ~ .sheet-page.sheet-don3,
-.sheet-tab-button.sheet-don4:checked ~ .sheet-page.sheet-don1,
-.sheet-tab-button.sheet-don4:checked ~ .sheet-page.sheet-don2,
-.sheet-tab-button.sheet-don4:checked ~ .sheet-page.sheet-don3,
-.sheet-tab-button.sheet-don4:checked ~ .sheet-page.sheet-don4
+.sheet-tab-button.sheet-don1:checked ~ .sheet-don1,
+.sheet-tab-button.sheet-don2:checked ~ .sheet-don1,
+.sheet-tab-button.sheet-don2:checked ~ .sheet-don2,
+.sheet-tab-button.sheet-don3:checked ~ .sheet-don1,
+.sheet-tab-button.sheet-don3:checked ~ .sheet-don2,
+.sheet-tab-button.sheet-don3:checked ~ .sheet-don3,
+.sheet-tab-button.sheet-don4:checked ~ .sheet-don1,
+.sheet-tab-button.sheet-don4:checked ~ .sheet-don2,
+.sheet-tab-button.sheet-don4:checked ~ .sheet-don3,
+.sheet-tab-button.sheet-don4:checked ~ .sheet-don4
 {
     display: block;
 }
@@ -274,7 +274,7 @@ select {
 .charsheet .sheet-transparent-input {
     width:165px;
     margin-bottom:3px;
-    margin-right:5px;
+    /*margin-right:5px;*/
     background:rgba(0,0,0,0);
     background-color:#eee;
     border:none;

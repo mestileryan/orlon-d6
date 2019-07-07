@@ -113,14 +113,14 @@
     <input type="text" name="attr_character_name" class="transparent-input editable-title" placeholder="Nom"/>
     <div class="2colrow">
         <div class="col">
-    		<label style="width:160px; margin-left:40px">Malus Multi-Action</label><input type="number" name="attr_global" value=0 />
+    		<label style="width:160px; margin-left:40px">Malus Multi-Action</label><input class="transparent-input" type="number" name="attr_global" value=0 />
     	</div>
     
     
     	<div class="col">
-    		<label>Karma</label><input type="number" name="attr_karma" value=0 />
+    		<label>Karma</label><input class="transparent-input" type="number" name="attr_karma" value=0 />
     	    <span class='dee'>/</span>
-    		<input type="number" name="attr_karma_max" value=0 />
+    		<input class="transparent-input" type="number" name="attr_karma_max" value=0 />
     		<br/>
     	</div>
     
@@ -192,7 +192,7 @@
         	    <label class="oneline">Points de vie</label>
         	    <span class="tooltiptext"><b>Points de vie</b></span>
     	    </div>
-    	    <input type="number" name="attr_PV"/>
+    	    <input type="number" class="transparent-input" name="attr_PV"/>
     	    <span class='dee'>/</span>
     	    <input type="number" name="attr_PV_max" readonly />
             <br/>
@@ -200,7 +200,7 @@
         	    <label class="oneline">Points d'énergie</label>
         	    <span class="tooltiptext"><b>Points d'énergie</b></span>
         	</div>
-        	<input type="number" name="attr_PE"/>
+        	<input type="number" class="transparent-input" name="attr_PE"/>
         	<span class='dee'>/</span>
         	<input type="number" name="attr_PE_max" readonly />
         	
@@ -211,7 +211,7 @@
         	        <b>Base aux dégâts physiques</b><br/><br/>Dégâts physiques infligés de base lors d'une frappe ou avec une arme implicant la puissance brute du personnage
     	        </span>
             </div>
-        	<span class='dee'>+</span><input type="number" name="attr_BonusBasePhy" /><span class='dee'>=</span><input type="number" name="attr_BasePhy" readonly/>
+        	<span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusBasePhy" /><span class='dee'>=</span><input type="number" name="attr_BasePhy" readonly/>
             <br/>
         	<div class="tooltip desclabel">
     	        <label>Magique</label>
@@ -219,7 +219,7 @@
     	            <b>Base aux dégâts magiques</b><br/><br/>Dégâts magiques infligés de base lorsqu'un sort est lancé ou lorsqu'une arme magique impliquant la puissance magique du personnage est utilisée
                 </span>
             </div>
-        	<span class='dee'>+</span><input type="number" name="attr_BonusBaseMag" /><span class='dee'>=</span><input type="number" name="attr_BaseMag" readonly />
+        	<span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusBaseMag" /><span class='dee'>=</span><input type="number" name="attr_BaseMag" readonly />
         	<br/>
         	<label class="desclabel">Initiative</label>
             <button type='roll' name='roll_OtherPotComp' value='Initiative de @{character_name}: [[(@{Sag_d}-1)D6+(@{Sag_pip}+floor(@{Agi_d}/4))+1D6! &{tracker}]]'></button>
@@ -231,7 +231,7 @@
         	        <b>Armure physique</b><br/><br/>Réduction fixe des dégâts physiques infligés
         	    </span>
         	</div>
-            <span class='dee'>+</span><input type="number" name="attr_BonusArmure" /><span class='dee'>=</span><input type="number" name="attr_Armure" readonly />
+            <span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusArmure" /><span class='dee'>=</span><input type="number" name="attr_Armure" readonly />
             <br/>
             
         	<div class="tooltip desclabel">
@@ -240,7 +240,7 @@
         	        <b>Résistance magique</b><br/><br/>Réduction fixe des dégâts magiques infligés
         	    </span>
         	</div>
-        	<span class='dee'>+</span><input type="number" name="attr_BonusResistance" /><span class='dee'>=</span><input type="number" name="attr_Resistance" readonly />
+        	<span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusResistance" /><span class='dee'>=</span><input type="number" name="attr_Resistance" readonly />
             <br/>
             
         	<div class="tooltip desclabel">
@@ -249,7 +249,7 @@
         	        <b>Défense passive</b><br/><br/>Equivalent de la classe d'armure : Valeur qu'un opposant doit dépasser par défaut lors d'une attaque
         	    </span>
         	</div>
-        	<span class='dee'>+</span><input type="number" name="attr_BonusDefense" /><span class='dee'>=</span><input type="number" name="attr_Defense" readonly />
+        	<span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusDefense" /><span class='dee'>=</span><input type="number" name="attr_Defense" readonly />
 
         	<h2>Expertises</h2>
         	<div class="skills">
@@ -809,6 +809,7 @@
             <input type="number" class="transparent-input" name='attr_compdon1_d' class='sheet-short' value="0" min="0">
             <span class='dee'>D+</span>
             <input type="number" class="transparent-input" name="attr_compdon1_pip" class="sheet-short" value='0'>
+            <span class='dee'>+</span>
             <select name="attr_compdon1_mult" class="select-don">
                 <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
                 <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
@@ -863,7 +864,7 @@
                             </div>
                             <div class="row">
                                 <span>Description :</span>
-                                <textarea name="attr_don1_spellattack_desc" ></textarea>
+                                <textarea name="attr_don1_spellattack_desc" class="transparent-input" ></textarea>
                             </div>
                         </div>
                         <div class="display">
@@ -882,6 +883,7 @@
             <input type="number" class="transparent-input" name='attr_compdon2_d' class='sheet-short' value="0" min="0">
             <span class='dee'>D+</span>
             <input type="number" class="transparent-input" name="attr_compdon2_pip" class="sheet-short" value='0'>
+            <span class='dee'>+</span>
             <select name="attr_compdon2_mult" class="select-don">
                 <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
                 <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
@@ -936,7 +938,7 @@
                             </div>
                             <div class="row">
                                 <span>Description :</span>
-                                <textarea name="attr_don2_spellattack_desc" ></textarea>
+                                <textarea name="attr_don2_spellattack_desc" class="transparent-input" ></textarea>
                             </div>
                         </div>
                         <div class="display">
@@ -949,15 +951,13 @@
                 </fieldset>
             </div>
         </div>
-        <div class="page don3" style="width:100%;">
-            <hr/>
-        </div>
+        <br/>
         <div class="page don3">
             <center><input class="transparent-input nom-don" type="text" name="attr_nomdon3" placeholder="Nom du don" /></center>
-            <br/>
             <input type="number" class="transparent-input" name='attr_compdon3_d' class='sheet-short' value="0" min="0">
             <span class='dee'>D+</span>
             <input type="number" class="transparent-input" name="attr_compdon3_pip" class="sheet-short" value='0'>
+            <span class='dee'>+</span>
             <select name="attr_compdon3_mult" class="select-don">
                 <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
                 <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
@@ -1012,7 +1012,7 @@
                             </div>
                             <div class="row">
                                 <span>Description :</span>
-                                <textarea name="attr_don3_spellattack_desc" ></textarea>
+                                <textarea name="attr_don3_spellattack_desc" class="transparent-input" ></textarea>
                             </div>
                         </div>
                         <div class="display">
@@ -1031,6 +1031,7 @@
             <input type="number" class="transparent-input" name='attr_compdon4_d' class='sheet-short' value="0" min="0">
             <span class='dee'>D+</span>
             <input type="number" class="transparent-input" name="attr_compdon4_pip" class="sheet-short" value='0'>
+            <span class='dee'>+</span>
             <select name="attr_compdon4_mult" class="select-don">
                 <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
                 <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
@@ -1085,7 +1086,7 @@
                             </div>
                             <div class="row">
                                 <span>Description :</span>
-                                <textarea name="attr_don4_spellattack_desc" ></textarea>
+                                <textarea name="attr_don4_spellattack_desc" class="transparent-input" ></textarea>
                             </div>
                         </div>
                         <div class="display">
@@ -1193,7 +1194,7 @@
                     </div>
                     <div class="row">
                         <span>Description :</span>
-                        <textarea name="attr_spellattack_desc" ></textarea>
+                        <textarea name="attr_spellattack_desc" class="transparent-input" ></textarea>
                     </div>
                 </div>
                 <div class="display">
@@ -1248,7 +1249,7 @@
                     </div>
                     <div class="row">
                         <span>Description :</span>
-                        <textarea name="attr_atk_desc" ></textarea>
+                        <textarea name="attr_atk_desc" class="transparent-input" ></textarea>
                     </div>
                 </div>
                 <div class="display">
@@ -1304,7 +1305,7 @@
                     </div>
                     <div class="row">
                         <span>Description :</span>
-                        <textarea name="attr_atk_desc" ></textarea>
+                        <textarea name="attr_atk_desc" class="transparent-input" ></textarea>
                     </div>
                 </div>
                 <div class="display">
@@ -1360,26 +1361,26 @@
     <h1>Roleplay</h1>
     <div class="2colrow">
         <div class="col">
-	        <label class="background-label">Race</label><input type="text" name="attr_race" /><br/>
-	        <label class="background-label">Langues</label><input type="text" name="attr_langues" />
+	        <label class="background-label">Race</label><input type="text" class="transparent-input" name="attr_race" /><br/>
+	        <label class="background-label">Langues</label><input type="text" class="transparent-input" name="attr_langues" />
         </div>
         <div class="col">
-	        <label class="background-label">Taille</label><input type="text" name="attr_taille" /><br/>
-	        <label class="background-label">Poids</label><input type="text" name="attr_poids" /><br/>
-	        <label class="background-label">Âge</label><input type="text" name="attr_age" />
+	        <label class="background-label">Taille</label><input type="text" class="transparent-input" name="attr_taille" /><br/>
+	        <label class="background-label">Poids</label><input type="text" class="transparent-input" name="attr_poids" /><br/>
+	        <label class="background-label">Âge</label><input type="text" class="transparent-input" name="attr_age" />
         </div>
 	</div>
     <div class="2colrow">
         <div class="col">
             <div class="background">
                 <span>Personnalité (qualités, défauts, caractère)</span>
-                <textarea name="attr_personnalite" ></textarea>
+                <textarea name="attr_personnalite" class="transparent-input" ></textarea>
             </div>
         </div>
         <div class="col">
             <div class="background">
                 <span>Contacts, alliés et ennemis</span>
-                <textarea name="attr_contacts" ></textarea>
+                <textarea name="attr_contacts" class="transparent-input" ></textarea>
             </div>
         </div>
     </div>
@@ -1387,23 +1388,23 @@
         <div class="col">
             <div class="background">
                 <span>Goûts</span>
-                <textarea name="attr_gouts" ></textarea>
+                <textarea name="attr_gouts" class="transparent-input" ></textarea>
             </div>
         </div>
         <div class="col">
             <div class="background">
                 <span>Peurs</span>
-                <textarea name="attr_peurs" ></textarea>
+                <textarea name="attr_peurs" class="transparent-input" ></textarea>
             </div>
         </div>
     </div>
     <div class="background">
         <span>Histoire</span>
-        <textarea name="attr_historique" style="font-style:italic;" ></textarea>
+        <textarea name="attr_historique" class="transparent-input" style="font-style:italic;" ></textarea>
     </div>
     <div class="background">
         <span>Notes</span>
-        <textarea name="attr_notes" ></textarea>
+        <textarea name="attr_notes" class="transparent-input" ></textarea>
     </div>
 </div>
 <hr/>
