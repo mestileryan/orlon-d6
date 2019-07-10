@@ -188,13 +188,13 @@ var WildDice = WildDice || (function() {
                         (MISCInfos.nd ? ('<div style="float:left; margin-left: 10px; color: '+(sum >= MISCInfos.nd ? (critFail && sumFail < MISCInfos.nd ? 'orange' : 'green') : 'red' )+ '; padding: 1px 3px; font-weight: bold;">'+(sum >= MISCInfos.nd ? (critFail && sumFail < MISCInfos.nd ? 'Succès ?' : 'Succès') : 'Echec' ) + '</div>') : '') +
                         '<div style="clear: both"></div>'+
                     '</td></tr>'+
-                    
+                    // Damage
                     (MISCInfos.dmg ? ( '<tr style="border: 1px solid black;"><td style="font-weight: bold; padding: 1px 3px;">Dégâts</td><td>'+
                     '<div style="margin-left: auto ; margin-right: auto; position: relative; text-align:center;">'+
-                    '<div style="background: white;padding: 5px 3px;font-weight: bold;font-size: 20px;display: inline-block;">' + (MISCInfos.dmg + (MISCInfos.nd ? Math.floor((sum - MISCInfos.nd)/3) : 0)) + '</div>' +
-                    (MISCInfos.nd ? ('<div style="background: white;padding: 5px 3px;font-weight: bold;display: inline-block;font-size: 12px;">= ' + MISCInfos.dmg + ' (+' + Math.floor((sum - MISCInfos.nd)/3) + ')</div>') :'') +
-                    '</div>'+
-                    '</td></tr>') : '')+
+                    '<div style="background: white;padding: 5px 3px;font-weight: bold;font-size: 20px;display: inline-block;">' + (MISCInfos.dmg + (MISCInfos.nd && sum >= MISCInfos.nd && !critFail ? Math.floor((sum - MISCInfos.nd)/3) : 0)) + '</div>' +
+                    (MISCInfos.nd && sum >= MISCInfos.nd && !critFail ? ('<div style="background: white;padding: 5px 3px;font-weight: bold;display: inline-block;font-size: 12px;">= ' + MISCInfos.dmg + ' (+' + Math.floor((sum - MISCInfos.nd)/3) + ')</div>') :'') +
+                    '</div>' +
+                    '</td></tr>') : '') +
                     // Display Effect
                     (MISCInfos.range ? (
                     '<tr style="border: 1px solid black;"><td style="font-weight: bold; padding: 1px 3px;">Portée</td><td>'+ //
