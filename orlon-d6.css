@@ -23,11 +23,43 @@ input[type=radio].sheet-tab-button:checked + span {
     background-color: #038ff9;
 }
 
+.sheet-subdons {
+    width: 80%;
+}
+
+.sheet-subdon-display {
+    width: 200px;   
+}
+
+.sheet-subdons select {
+    margin-bottom:0px;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    text-align: left;
+    width: auto;
+    border: none;
+}
+
+
+.sheet-subdons .sheet-display select,
+.sheet-subdons .sheet-display input,
+.sheet-aspects .sheet-display input {
+    font-size: 14px;
+    line-height: 14px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    text-align: left;
+    width: auto;
+    height: 28px;
+}
+
 .sheet-dons .sheet-desc-don
 {
     width:90%;
     max-height:100px;
-    background-color: #ddd;
+    background-color: #eee;
 }
 
 .sheet-desc-don-spell {
@@ -57,6 +89,14 @@ input[type=radio].sheet-tab-button:checked + span {
     margin-left:-38px;
 }
 
+.sheet-tab-button.sheet-roleplay {
+    width: 76px;
+}
+
+.sheet-tab-button.sheet-roleplay + span {
+    margin-left:-76px;
+}
+
 .sheet-tab-button.sheet-don0,
 .sheet-tab-button.sheet-don1,
 .sheet-tab-button.sheet-don2,
@@ -80,6 +120,7 @@ input[type=radio].sheet-tab-button:checked + span {
 /* Gestion des onglets pour les pages PC/NPC */
 .sheet-tab-button.sheet-pc:checked ~ .sheet-page.sheet-pc,
 .sheet-tab-button.sheet-npc:checked ~ .sheet-page.sheet-npc,
+.sheet-tab-button.sheet-roleplay:checked ~ .sheet-page.sheet-roleplay,
 /* Gestion des onglets cumulatifs pour les dons (4 actuellement) */
 .sheet-tab-button.sheet-don1:checked ~ .sheet-don1,
 .sheet-tab-button.sheet-don2:checked ~ .sheet-don1,
@@ -244,6 +285,10 @@ select {
     background-color:#fff;
 }*/
 
+.charsheet select {
+    background-color: #eee;
+}
+
 .charsheet select.sheet-dtype {
     vertical-align: top;
     width: 60px;
@@ -305,14 +350,6 @@ select {
     padding: 5px;
 }
 
-.charsheet .sheet-select-don {
-    background-color: #EFEFEF;
-    cursor: pointer;
-    text-align: left;
-    font-weight: bold;
-    width: auto;
-    border: none;
-}
 
 /* Ligne de l'armure (spécifique) */
 .charsheet .sheet-desc-equipped {
@@ -719,6 +756,8 @@ select {
 
 .sheet-attributes .sheet-top span,
 .sheet-skills .sheet-top span,
+.sheet-subdons .sheet-top span,
+.sheet-aspects .sheet-top span,
 .sheet-equipment .sheet-top span,
 .sheet-armors .sheet-top span,
 .sheet-spellattacks .sheet-top span,
