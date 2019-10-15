@@ -293,22 +293,6 @@
                         <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
                     </select>
                     <button type='roll' name='roll_PuissancePhysiqueComp' value='!wd [[@{PuissancePhysiqueAttr}+(@{PuissancePhysiqueComp_d}+@{global})D6+@{PuissancePhysiqueComp_pip}]] {{carac=Puissance Physique}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>                
-                <div class="display">
-                    <span class="skill-display">Athlétisme</span>
-                    <input type="number" name='attr_AthletismeComp_d' value='0' min="0" />
-                    <input type="number" name='attr_AthletismeComp_pip' value="0" min="0"/>
-                    <select name="attr_AthletismeAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl" selected>Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_AthletismeComp' value='!wd [[@{AthletismeAttr}+(@{AthletismeComp_d}+@{global})D6+@{AthletismeComp_pip}]] {{carac=Athlétisme}} {{nd=?{Difficulté ?|} }}'></button>
                 </div>
                 <div class="display">
                     <span class="skill-display">Combat Mêlée</span>
@@ -359,22 +343,6 @@
                     <button type='roll' name='roll_LanceComp' value='!wd [[@{LanceAttr}+(@{LanceComp_d}+@{global})D6+@{LanceComp_pip}]] {{carac=Lancé}} {{nd=?{Difficulté ?|} }}'></button>
                 </div>
                 <div class="display">
-                    <span class="skill-display">Cambriolage</span>
-                    <input type="number" name='attr_CambriolageComp_d' value='0' min="0" />
-                    <input type="number" name='attr_CambriolageComp_pip' value="0" min="0"/>
-                    <select name="attr_CambriolageAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl" selected>Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_CambriolageComp' value='!wd [[@{CambriolageAttr}+(@{CambriolageComp_d}+@{global})D6+@{CambriolageComp_pip}]] {{carac=Cambriolage}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
                     <span class="skill-display">Esquive</span>
                     <input type="number" name='attr_EsquiveComp_d' value='0' min="0" />
                     <input type="number" name='attr_EsquiveComp_pip' value="0" min="0"/>
@@ -389,54 +357,6 @@
                         <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
                     </select>
                     <button type='roll' name='roll_EsquiveComp' value='!wd [[@{EsquiveAttr}+(@{EsquiveComp_d}+@{global})D6+@{EsquiveComp_pip}]] {{carac=Esquive}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="skill-display">Acrobatie</span>
-                    <input type="number" name='attr_AcrobatieComp_d' value='0' min="0" />
-                    <input type="number" name='attr_AcrobatieComp_pip' value="0" min="0"/>
-                    <select name="attr_AcrobatieAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl" selected>Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_AcrobatieComp' value='!wd [[@{AcrobatieAttr}+(@{AcrobatieComp_d}+@{global})D6+@{AcrobatieComp_pip}]] {{carac=Acrobatie}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Discrétion</span>
-                    <input type="number" name='attr_DiscretionComp_d' value='0' min="0" />
-                    <input type="number" name='attr_DiscretionComp_pip' value="0" min="0"/>
-                    <select name="attr_DiscretionAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl" selected>Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_DiscretionComp' value='!wd [[@{DiscretionAttr}+(@{DiscretionComp_d}+@{global})D6+@{DiscretionComp_pip}]] {{carac=Discrétion}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Équitation</span>
-                    <input type="number" name='attr_EquitationComp_d' value='0' min="0" />
-                    <input type="number" name='attr_EquitationComp_pip' value="0" min="0"/>
-                    <select name="attr_EquitationAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl" selected>Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_EquitationComp' value='!wd [[@{EquitationAttr}+(@{EquitationComp_d}+@{global})D6+@{EquitationComp_pip}]] {{carac=Équitation}} {{nd=?{Difficulté ?|} }}'></button>
                 </div>
 				<div class="display">
                     <span class="skill-display">Stamina</span>
@@ -455,182 +375,6 @@
                     <button type='roll' name='roll_StaminaComp' value='!wd [[@{StaminaAttr}+(@{StaminaComp_d}+@{global})D6+@{StaminaComp_pip}]] {{carac=Stamina}} {{nd=?{Difficulté ?|} }}'></button>
                 </div>
 				<div class="display">
-                    <span class="skill-display">Culture</span>
-                    <input type="number" name='attr_CultureComp_d' value='0' min="0" />
-                    <input type="number" name='attr_CultureComp_pip' value="0" min="0"/>
-                    <select name="attr_CultureAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl" selected>Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_CultureComp' value='!wd [[@{CultureAttr}+(@{CultureComp_d}+@{global})D6+@{CultureComp_pip}]] {{carac=Culture}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="skill-display">Médecine</span>
-                    <input type="number" name='attr_MedecineComp_d' value='0' min="0" />
-                    <input type="number" name='attr_MedecineComp_pip' value="0" min="0"/>
-                    <select name="attr_MedecineAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl" selected>Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_MedecineComp' value='!wd [[@{MedecineAttr}+(@{MedecineComp_d}+@{global})D6+@{MedecineComp_pip}]] {{carac=Médecine}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Marchandage</span>
-                    <input type="number" name='attr_MarchandageComp_d' value='0' min="0" />
-                    <input type="number" name='attr_MarchandageComp_pip' value="0" min="0"/>
-                    <select name="attr_MarchandageAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl" selected>Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_MarchandageComp' value='!wd [[@{MarchandageAttr}+(@{MarchandageComp_d}+@{global})D6+@{MarchandageComp_pip}]] {{carac=Marchandage}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Investigation</span>
-                    <input type="number" name='attr_InvestigationComp_d' value='0' min="0" />
-                    <input type="number" name='attr_InvestigationComp_pip' value="0" min="0"/>
-                    <select name="attr_InvestigationAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl" selected>Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_InvestigationComp' value='!wd [[@{InvestigationAttr}+(@{InvestigationComp_d}+@{global})D6+@{InvestigationComp_pip}]] {{carac=Investigation}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Dressage</span>
-                    <input type="number" name='attr_DressageComp_d' value='0' min="0" />
-                    <input type="number" name='attr_DressageComp_pip' value="0" min="0"/>
-                    <select name="attr_DressageAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl" selected>Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_DressageComp' value='!wd [[@{DressageAttr}+(@{DressageComp_d}+@{global})D6+@{DressageComp_pip}]] {{carac=Dressage}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Perception</span>
-                    <input type="number" name='attr_PerceptionComp_d' value='0' min="0" />
-                    <input type="number" name='attr_PerceptionComp_pip' value="0" min="0"/>
-                    <select name="attr_PerceptionAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_PerceptionComp' value='!wd [[@{PerceptionAttr}+(@{PerceptionComp_d}+@{global})D6+@{PerceptionComp_pip}]] {{carac=Perception}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Détection</span>
-                    <input type="number" name='attr_DetectionComp_d' value='0' min="0" />
-                    <input type="number" name='attr_DetectionComp_pip' value="0" min="0"/>
-                    <select name="attr_DetectionAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_DetectionComp' value='!wd [[@{DetectionAttr}+(@{DetectionComp_d}+@{global})D6+@{DetectionComp_pip}]] {{carac=Détection}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Survie</span>
-                    <input type="number" name='attr_SurvieComp_d' value='0' min="0" />
-                    <input type="number" name='attr_SurvieComp_pip' value="0" min="0"/>
-                    <select name="attr_SurvieAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_SurvieComp' value='!wd [[@{SurvieAttr}+(@{SurvieComp_d}+@{global})D6+@{SurvieComp_pip}]] {{carac=Survie}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Artisanat</span>
-                    <input type="number" name='attr_ArtisanatComp_d' value='0' min="0" />
-                    <input type="number" name='attr_ArtisanatComp_pip' value="0" min="0"/>
-                    <select name="attr_ArtisanatAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_ArtisanatComp' value='!wd [[@{ArtisanatAttr}+(@{ArtisanatComp_d}+@{global})D6+@{ArtisanatComp_pip}]] {{carac=Artisanat}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Déguisement</span>
-                    <input type="number" name='attr_DeguisementComp_d' value='0' min="0" />
-                    <input type="number" name='attr_DeguisementComp_pip' value="0" min="0"/>
-                    <select name="attr_DeguisementAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_DeguisementComp' value='!wd [[@{DeguisementAttr}+(@{DeguisementComp_d}+@{global})D6+@{DeguisementComp_pip}]] {{carac=Déguisement}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Jeu</span>
-                    <input type="number" name='attr_JeuComp_d' value='0' min="0" />
-                    <input type="number" name='attr_JeuComp_pip' value="0" min="0"/>
-                    <select name="attr_JeuAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_JeuComp' value='!wd [[@{JeuAttr}+(@{JeuComp_d}+@{global})D6+@{JeuComp_pip}]] {{carac=Jeu}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
                     <span class="skill-display">Volonté</span>
                     <input type="number" name='attr_VolonteComp_d' value='0' min="0" />
                     <input type="number" name='attr_VolonteComp_pip' value="0" min="0"/>
@@ -645,86 +389,6 @@
                         <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
                     </select>
                     <button type='roll' name='roll_VolonteComp' value='!wd [[@{VolonteAttr}+(@{VolonteComp_d}+@{global})D6+@{VolonteComp_pip}]] {{carac=Volonté}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Intimidation</span>
-                    <input type="number" name='attr_IntimidationComp_d' value='0' min="0" />
-                    <input type="number" name='attr_IntimidationComp_pip' value="0" min="0"/>
-                    <select name="attr_IntimidationAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl" selected>Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_IntimidationComp' value='!wd [[@{IntimidationAttr}+(@{IntimidationComp_d}+@{global})D6+@{IntimidationComp_pip}]] {{carac=Intimidation}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Persuasion</span>
-                    <input type="number" name='attr_PersuasionComp_d' value='0' min="0" />
-                    <input type="number" name='attr_PersuasionComp_pip' value="0" min="0"/>
-                    <select name="attr_PersuasionAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl" selected>Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_PersuasionComp' value='!wd [[@{PersuasionAttr}+(@{PersuasionComp_d}+@{global})D6+@{PersuasionComp_pip}]] {{carac=Persuasion}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Tromperie</span>
-                    <input type="number" name='attr_TromperieComp_d' value='0' min="0" />
-                    <input type="number" name='attr_TromperieComp_pip' value="0" min="0"/>
-                    <select name="attr_TromperieAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl" selected>Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_TromperieComp' value='!wd [[@{TromperieAttr}+(@{TromperieComp_d}+@{global})D6+@{TromperieComp_pip}]] {{carac=Tromperie}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Séduction</span>
-                    <input type="number" name='attr_SeductionComp_d' value='0' min="0" />
-                    <input type="number" name='attr_SeductionComp_pip' value="0" min="0"/>
-                    <select name="attr_SeductionAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl" selected>Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_SeductionComp' value='!wd [[@{SeductionAttr}+(@{SeductionComp_d}+@{global})D6+@{SeductionComp_pip}]] {{carac=Séduction}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Art de la magie</span>
-                    <input type="number" name='attr_ArtDeLaMagieComp_d' value='0' min="0" />
-                    <input type="number" name='attr_ArtDeLaMagieComp_pip' value="0" min="0"/>
-                    <select name="attr_ArtDeLaMagieAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl" selected>Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_ArtDeLaMagieComp' value='!wd [[@{ArtDeLaMagieAttr}+(@{ArtDeLaMagieComp_d}+@{global})D6+@{ArtDeLaMagieComp_pip}]] {{carac=Art de la magie}} {{nd=?{Difficulté ?|} }}'></button>
                 </div>
 				<div class="display">
                     <span class="skill-display">Puissance magique</span>
@@ -742,6 +406,24 @@
                     </select>
                     <button type='roll' name='roll_PuissanceMagiqueComp' value='!wd [[@{PuissanceMagiqueAttr}+(@{PuissanceMagiqueComp_d}+@{global})D6+@{PuissanceMagiqueComp_pip}]] {{carac=Puissance magique}} {{nd=?{Difficulté ?|} }}'></button>
                 </div>
+				<fieldset class="repeating_Competence">
+					<div class="display">
+						<input type="text" class="skill-display" name='attr_Competence_nom' style="width: 98px; border-color: transparent;" placeholder="Entrez un nom..." />
+						<input type="number" name='attr_Competence_d' value='0' min="0" />
+						<input type="number" name='attr_Competence_pip' value="0" min="0"/>
+						<select name="attr_CompetenceAttr">
+							<option value="@{For_d}D6+@{For_pip}" class="forlbl" selected>Force</option>
+							<option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
+							<option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
+							<option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
+							<option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
+							<option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
+							<option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
+							<option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
+						</select>
+						<button type='roll' name='roll_CompetenceComp' value='!wd [[@{CompetenceAttr}+(@{Competence_d}+@{global})D6+@{Competence_pip}]] {{carac=@{Competence_nom} }} {{nd=?{Difficulté ?|} }}'></button>
+					</div>
+				</fieldset>
             </div>
     	</div>
     </div>
