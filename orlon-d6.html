@@ -7,427 +7,118 @@
 
 <input type="hidden" name="attr_global" value="0"/>
 
-<div class="page npc">
-    <label>Nom</label><input type="text" name="attr_character_name" />
-	<br/>
-	<label>Race</label><input type="text" name="attr_rank" />
-    <hr/>
-     
-    <label class="forlbl">Puissance générale NPC</label><input type="number" name='attr_PuissanceNPC' class='sheet-short' value="0" >
-    <br/>
-    <h2>Jets simplifiées</h2>
-    <div class="2colrow">
-        <div class="col">
-            <label class="forlbl">Force</label><input type="number" name='attr_For_d' class='sheet-short' value="0" >
-            <span class='dee'>D+</span>
-            <input type="number" name='attr_For_pip' class='sheet-short' value='0' />
-            <button type='roll' name='roll_jetFor' class='rollbtn' value='!wwd [[(@{PuissanceNPC}+@{For_d})D6+@{For_pip}]] {{carac=Force}} {{nd=?{Difficulté ?|} }}'></button>
-            <br/>
-            <label class="dexlbl">Dextérité</label><input type="number" name='attr_Dex_d' class='sheet-short' value="0" />
-            <span class='dee'>D+</span>
-            <input type="number" name='attr_Dex_pip' class='sheet-short'  value="0" />
-            <button type='roll' name='roll_jetDex' value='!wwd [[(@{PuissanceNPC}+@{Dex_d})D6+@{Dex_pip}]] {{carac=Dextérité}} {{nd=?{Difficulté ?|} }}'></button>
-            <br/> 
-            <label class="agilbl">Agilité</label><input type="number" name='attr_Agi_d' class='sheet-short' value="0">
-            <span class='dee'>D+</span>
-            <input type="number" name='attr_Agi_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetAgi' value='!wwd [[(@{PuissanceNPC}+@{Agi_d})D6+@{Agi_pip}+@{TotalAgiMalus}]] {{carac=Agilité}} {{nd=?{Difficulté ?|} }}'></button>
-            <br/> 
-            <label class="conlbl">Constitution</label><input type="number" name='attr_Con_d' class='sheet-short' value="0">
-            <span class='dee'>D+</span>
-            <input type="number" name='attr_Con_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetCon' value='!wwd [[(@{PuissanceNPC}+@{Con_d})D6+@{Con_pip}]] {{carac=Constitution}} {{nd=?{Difficulté ?|} }}'></button>
-            <br/> 
-            <label class="intlbl">Intelligence</label><input type="number" name='attr_Int_d' class='sheet-short' value="0">
-            <span class='dee'>D+</span>
-            <input type="number" name='attr_Int_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetInt' value='!wwd [[(@{PuissanceNPC}+@{Int_d})D6+@{Int_pip}]] {{carac=Intelligence}} {{nd=?{Difficulté ?|} }}'></button>
-            <br/> 
-            <label class="saglbl">Sagesse</label><input type="number" name='attr_Sag_d' class='sheet-short' value="0">
-            <span class='dee'>D+</span>
-            <input type="number" name='attr_Sag_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetSag' value='!wwd [[(@{PuissanceNPC}+@{Sag_d})D6+@{Sag_pip}]] {{carac=Sagesse}} {{nd=?{Difficulté ?|} }}'></button>
-            <br/> 
-            <label class="chalbl">Charisme</label><input type="number" name='attr_Cha_d' class='sheet-short' value="0">
-            <span class='dee'>D+</span>
-            <input type="number" name='attr_Cha_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetCha' value='!wwd [[(@{PuissanceNPC}+@{Cha_d})D6+@{Cha_pip}]] {{carac=Charisme}} {{nd=?{Difficulté ?|} }}'></button>
-            <br/> 
-            <label class="potlbl">Potentiel</label><input type="number" name='attr_Pot_d' class='sheet-short' value="0">
-            <span class='dee'>D+</span>
-            <input type="number" name='attr_Pot_pip' class='sheet-short' value="0" >
-            <button type='roll' name='roll_jetPot' value='!wwd [[(@{PuissanceNPC}+@{Pot_d})D6+@{Pot_pip}]] {{carac=Potentiel}} {{nd=?{Difficulté ?|} }}'></button>
-		<hr/>
-		</div>
-        <div class="col">
-        	<label class="oneline">PV</label>
-    	    <input type="number" name="attr_PV" />
-    	    <span class='dee'>/</span>
-    	    <input type="number" name="attr_PV_max" />
-            <br/>
-    	    <label class="oneline">PE</label>
-        	<input type="number" name="attr_PE" />
-        	<span class='dee'>/</span>
-        	<input type="number" name="attr_PE_max" />
-        	<br/>
-        	<label class="oneline">B. Physique</label>
-        	<input type="number" name="attr_BasePhy" />
-        	<br/>
-        	<label class="oneline">B. Magique</label>
-        	<input type="number" name="attr_BaseMag" />
-        	<br/>
-        	<label class="oneline">Armure</label>
-        	<input type="number" name="attr_Armure" />
-        	<br/>
-        	<label class="oneline">Résistance</label>
-        	<input type="number" name="attr_Resistance" />
-        	<br/>
-        	<label class="oneline">Défense</label>
-        	<input type="number" name="attr_Defense" />
-        	<br/>
-        	<label class="oneline">Initiative</label>
-            <button type='roll' name='roll_OtherPotComp' value='/w gm Initiative de @{character_name}: [[((@{Sag_d}+@{PuissanceNPC})-1)D6+(@{Sag_pip}+floor(@{Agi_d}))+1D6! &{tracker}]]'></button>
-        </div>
-	</div>
-	
-    <hr/>
-    <h1>Sorts ou techniques tiers</h1>
-    <label class="desc-spell-cost">Coût</label>
-    <label class="desc-spell-name">Nom</label>
-    <label class="desc-spell-rank">Rang</label>
-    <label class="desc-spell-desc">Description</label>
-    <fieldset class="repeating_allOtherDons-spells">
-        <div class="spell-row"> 
-            <input type="number" name="attr_other_don_spell_cost" value="1" min="0"/>
-            <input type="text" name="attr_other_don_spell_name" placeholder="Nom" />
-            <input type="number" name="attr_other_don_spell_level" value="1" min="1"/>
-            <input class="long-desc" type="text" name="attr_other_don_spell_desc" placeholder="Description/Effet"/>
-        </div>
-    </fieldset>
-    <hr/>
-    <h1>Loot</h1>
-    <textarea name="attr_equipement" placeholder="Loot ici !"></textarea>
-</div>
-
 <div class="page pc">
     
     <input type="text" name="attr_character_name" class="transparent-input editable-title" placeholder="Nom"/>
-    <div class="2colrow">
-        <div class="col">
-    		<label style="width:160px; margin-left:40px">Malus Multi-Action</label><input class="transparent-input" type="number" name="attr_global" value=0 />
-    	</div>
-    
-    
-    	<div class="col">
-    		<label>Karma</label><input class="transparent-input" type="number" name="attr_karma" value=0 />
-    	    <span class='dee'>/</span>
-    		<input class="transparent-input" type="number" name="attr_karma_max" value=0 />
-    		<br/>
-    	</div>
-    
-    </div>
-    <hr/>
-    <h1>Caractéristiques</h1>
+	<hr/>
+	<div class="2colrow">
+		<div class="col">
+			<h2>Stress</h2>
+			<span class="blessure">Stress physique</span>
+			<input type="number" name='attr_stresspnum1' class='sheet-short stress-val' >
+			<input type="number" name='attr_stresspnum2' class='sheet-short stress-val' >
+			<input type="number" name='attr_stresspnum3' class='sheet-short stress-val' >
+			<br/>
+			<span class="blessure" style="font-weight: normal;">Cases :</span>
+			<input class="stressbox" type="checkbox" name="attr_stressp1" >
+			<input class="stressbox" type="checkbox" name="attr_stressp2" >
+			<input class="stressbox" type="checkbox" name="attr_stressp3" ><br/>
+			<hr/>
+			<span class="blessure">Stress mental</span>
+			<input type="number" name='attr_stressmnum1' class='sheet-short stress-val' >
+			<input type="number" name='attr_stressmnum2' class='sheet-short stress-val' >
+			<input type="number" name='attr_stressmnum3' class='sheet-short stress-val' >
+			<br/>
+			<span class="blessure" style="font-weight: normal;">Cases :</span>
+			<input class="stressbox" type="checkbox" name="attr_stressm1" >
+			<input class="stressbox" type="checkbox" name="attr_stressm2" >
+			<input class="stressbox" type="checkbox" name="attr_stressm3" ><br/>
 
-    <div class="2colrow">
-    	<div class="col">
-    		<h2>Attributs</h2>
-    		<div class="attributes">
-	            <div class="top">
-                    <span class="label" style="margin-left:15px;width: 120px;">Nom de l'attribut</span>
-                    <span class="label" style="width: 25px;">Dés</span>
-                    <span class="label" style="width: 50px;">Points</span>
-                </div>
-                <div class="display">
-                    <span class="attributes-display">Force</span>
-                    <input type="number" name='attr_For_d' value='0' min="0" />
-                    <input type="number" name='attr_For_pip' value="0" min="0"/>
-                    <button type='roll' name='roll_jetFor' value='!wd [[(@{For_d}+@{global})D6+@{For_pip}]] {{carac=Force}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="attributes-display">Dextérité</span>
-                    <input type="number" name='attr_Dex_d' value='0' min="0" />
-                    <input type="number" name='attr_Dex_pip' value="0" min="0"/>
-                    <button type='roll' name='roll_jetDex' value='!wd [[(@{Dex_d}+@{global})D6+@{Dex_pip}]] {{carac=Dextérité}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="attributes-display">Agilité</span>
-                    <input type="number" name='attr_Agi_d' value='0' min="0" />
-                    <input type="number" name='attr_Agi_pip' value="0" min="0"/>
-                    <button type='roll' name='roll_jetAgi' value='!wd [[(@{Agi_d}+@{global})D6+@{Agi_pip}]] {{carac=Agilité}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="attributes-display">Constitution</span>
-                    <input type="number" name='attr_Con_d' value='0' min="0" />
-                    <input type="number" name='attr_Con_pip' value="0" min="0"/>
-                    <button type='roll' name='roll_jetCon' value='!wd [[(@{Con_d}+@{global})D6+@{Con_pip}]] {{carac=Constitution}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="attributes-display">Intelligence</span>
-                    <input type="number" name='attr_Int_d' value='0' min="0" />
-                    <input type="number" name='attr_Int_pip' value="0" min="0"/>
-                    <button type='roll' name='roll_jetInt' value='!wd [[(@{Int_d}+@{global})D6+@{Int_pip}]] {{carac=Intelligence}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="attributes-display">Sagesse</span>
-                    <input type="number" name='attr_Sag_d' value='0' min="0" />
-                    <input type="number" name='attr_Sag_pip' value="0" min="0"/>
-                    <button type='roll' name='roll_jetSag' value='!wd [[(@{Sag_d}+@{global})D6+@{Sag_pip}]] {{carac=Sagesse}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="attributes-display">Charisme</span>
-                    <input type="number" name='attr_Cha_d' value='0' min="0" />
-                    <input type="number" name='attr_Cha_pip' value="0" min="0"/>
-                    <button type='roll' name='roll_jetCha' value='!wd [[(@{Cha_d}+@{global})D6+@{Cha_pip}]] {{carac=Charisme}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="attributes-display">Potentiel</span>
-                    <input type="number" name='attr_Pot_d' value='0' min="0" />
-                    <input type="number" name='attr_Pot_pip' value="0" min="0"/>
-                    <button type='roll' name='roll_jetPot' value='!wd [[(@{Pot_d}+@{global})D6+@{Pot_pip}]] {{carac=Potentiel}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-            </div>
+
+		</div>
+		<div class="col">
+			<h2>Blessures</h2>
+			<span class="blessure">Blessure mineure (4)</span>
+			<input type="text" class="2coltext" name="attr_minorblessure" />
+			<input class="" type="checkbox" name="attr_minorblessurerecover" ><br/>
+			<span class="blessure">Blessure modérée (6)</span>
+			<input type="text" class="2coltext" name="attr_mediumblessure" />
+			<input class="" type="checkbox" name="attr_mediumblessurerecover" ><br/>
+			<span class="blessure">Blessure majeure (8)</span>
+			<input type="text" class="2coltext" name="attr_majorblessure" />
+			<input class="" type="checkbox" name="attr_majorblessurerecover" ><br/>
+
             
-    		<h2>Caractéristiques principales</h2>
-        	<div class="tooltip desclabel">
-        	    <label class="oneline">P. de vie</label>
-        	    <span class="tooltiptext"><b>Points de vie</b></span>
-    	    </div>
-    	    <input type="number" class="transparent-input" name="attr_PV"/>
-    	    <span class='dee'>/</span>
-    	    <input type="number" name="attr_PV_max" readonly />
-            <br/>
-        	<div class="tooltip desclabel">
-        	    <label class="oneline">P. d'énergie</label>
-        	    <span class="tooltiptext"><b>Points d'énergie</b></span>
-        	</div>
-        	<input type="number" class="transparent-input" name="attr_PE"/>
-        	<span class='dee'>/</span>
-        	<input type="number" name="attr_PE_max" readonly />
-        	
-    	    <h2>Caractéristiques offensives</h2>
-    		<div class="tooltip desclabel">
-        	    <label>Physique</label>
-        	    <span class="tooltiptext">
-        	        <b>Base aux dégâts physiques</b><br/><br/>Dégâts physiques infligés de base lors d'une frappe ou avec une arme implicant la puissance brute du personnage
-    	        </span>
-            </div>
-        	<span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusBasePhy" /><span class='dee'>=</span><input type="number" name="attr_BasePhy" readonly/>
-            <br/>
-        	<div class="tooltip desclabel">
-    	        <label>Magique</label>
-    	        <span class="tooltiptext">
-    	            <b>Base aux dégâts magiques</b><br/><br/>Dégâts magiques infligés de base lorsqu'un sort est lancé ou lorsqu'une arme magique impliquant la puissance magique du personnage est utilisée
-                </span>
-            </div>
-        	<span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusBaseMag" /><span class='dee'>=</span><input type="number" name="attr_BaseMag" readonly />
-        	<br/>
-        	<label class="desclabel">Initiative</label>
-            <button type='roll' name='roll_OtherPotComp' value='Initiative de @{character_name}: [[(@{Sag_d}-1)D6+(@{Sag_pip}+floor(@{Agi_d}/4))+1D6! &{tracker}]]'></button>
-    	
-    	<h2>Carractéristiques défensives</h2>
-        	<div class="tooltip desclabel">
-        	    <label>Armure</label>
-        	    <span class="tooltiptext">
-        	        <b>Armure physique</b><br/><br/>Réduction fixe des dégâts physiques infligés
-        	    </span>
-        	</div>
+		</div>
+	</div>
+	<hr/>
+	<div class="2colrow">
+	
+		<div class="col">
+       	    <label>Armure</label>
             <span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusArmure" /><span class='dee'>=</span><input type="number" name="attr_Armure" readonly />
-            <br/>
-            
-        	<div class="tooltip desclabel">
-        	    <label>Résistance</label>
-        	    <span class="tooltiptext">
-        	        <b>Résistance magique</b><br/><br/>Réduction fixe des dégâts magiques infligés
-        	    </span>
-        	</div>
+		</div>
+		<div class="col">
+		
+        	<label>Résistance Mag.</label>
         	<span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusResistance" /><span class='dee'>=</span><input type="number" name="attr_Resistance" readonly />
-            <br/>
-            
-        	<div class="tooltip desclabel">
-        	    <label>Défense</label>
-        	    <span class="tooltiptext">
-        	        <b>Défense passive</b><br/><br/>Equivalent de la classe d'armure : Valeur qu'un opposant doit dépasser par défaut lors d'une attaque
-        	    </span>
-        	</div>
-        	<span class='dee'>+</span><input class="transparent-input" type="number" name="attr_BonusDefense" /><span class='dee'>=</span><input type="number" name="attr_Defense" readonly />
+		</div>
+	
+	</div>
+	<div class="2colrow">
+		<div class="col">
+		
+			<label>Initiative</label>
+			<input type="hidden" name="attr_initiativebonus"/>
 
-            <!--<h2>Aspects</h2>
-            
-        	<div class="attributes">
-        	    <div class="top">
-                    <span class="label" style="margin-left:15px;width: 155px;">Nom de l'aspect</span>
-                    <span class="label" style="width: 12px;">Rang</span>
-                </div>
-                <fieldset class="repeating_aspects">
-                    <div class="display">
-                        <input type="text" class="skills-display" name="attr_aspect_nom"/>
-                        <input type="number" name='attr_aspect_rank' value='0' min="0" />
-                        <textarea class="transparent-input desc-don" style="width:100%; height: 17px; margin-top:2px;min-height: 17px; resize: vertical;"
-                            placeholder="Description"></textarea>
-                    </div>
-                </fieldset>
-            </div>-->
-    	</div>
-    	<div class="col">
-    	    <h2>Compétences</h2>
-    		<div class="skills">
-	            <div class="top">
-                    <span class="label" style="margin-left:15px;width: 93px;">Nom de la compétence</span>
-                    <span class="label" style="width: 10px;">Dés</span>
-                    <span class="label" style="width: 22px;">Points</span>
-                    <span class="label" style="width: 80px;">Attribut</span>
-                </div>
-                <div class="display">
-                    <span class="skill-display">Puissance Physique</span>
-                    <input type="number" name='attr_PuissancePhysiqueComp_d' value='0' min="0" />
-                    <input type="number" name='attr_PuissancePhysiqueComp_pip' value="0" min="0"/>
-                    <select name="attr_PuissancePhysiqueAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl" selected>Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_PuissancePhysiqueComp' value='!wd [[@{PuissancePhysiqueAttr}+(@{PuissancePhysiqueComp_d}+@{global})D6+@{PuissancePhysiqueComp_pip}]] {{carac=Puissance Physique}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="skill-display">Combat Mêlée</span>
-                    <input type="number" name='attr_CombatMeleeComp_d' value='0' min="0" />
-                    <input type="number" name='attr_CombatMeleeComp_pip' value="0" min="0"/>
-                    <select name="attr_CombatMeleeAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl" selected>Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_CombatMeleeComp' value='!wd [[@{CombatMeleeAttr}+(@{CombatMeleeComp_d}+@{global})D6+@{CombatMeleeComp_pip}]] {{carac=Combat Mêlée}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="skill-display">Tir</span>
-                    <input type="number" name='attr_TirComp_d' value='0' min="0" />
-                    <input type="number" name='attr_TirComp_pip' value="0" min="0"/>
-                    <select name="attr_TirAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl" selected>Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_TirComp' value='!wd [[@{TirAttr}+(@{TirComp_d}+@{global})D6+@{TirComp_pip}]] {{carac=Tir}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="skill-display">Lancé</span>
-                    <input type="number" name='attr_LanceComp_d' value='0' min="0" />
-                    <input type="number" name='attr_LanceComp_pip' value="0" min="0"/>
-                    <select name="attr_LanceAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl" selected>Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_LanceComp' value='!wd [[@{LanceAttr}+(@{LanceComp_d}+@{global})D6+@{LanceComp_pip}]] {{carac=Lancé}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-                <div class="display">
-                    <span class="skill-display">Esquive</span>
-                    <input type="number" name='attr_EsquiveComp_d' value='0' min="0" />
-                    <input type="number" name='attr_EsquiveComp_pip' value="0" min="0"/>
-                    <select name="attr_EsquiveAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl" selected>Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_EsquiveComp' value='!wd [[@{EsquiveAttr}+(@{EsquiveComp_d}+@{global})D6+@{EsquiveComp_pip}]] {{carac=Esquive}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Stamina</span>
-                    <input type="number" name='attr_StaminaComp_d' value='0' min="0" />
-                    <input type="number" name='attr_StaminaComp_pip' value="0" min="0"/>
-                    <select name="attr_StaminaAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl" selected>Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_StaminaComp' value='!wd [[@{StaminaAttr}+(@{StaminaComp_d}+@{global})D6+@{StaminaComp_pip}]] {{carac=Stamina}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Volonté</span>
-                    <input type="number" name='attr_VolonteComp_d' value='0' min="0" />
-                    <input type="number" name='attr_VolonteComp_pip' value="0" min="0"/>
-                    <select name="attr_VolonteAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl"  selected>Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_VolonteComp' value='!wd [[@{VolonteAttr}+(@{VolonteComp_d}+@{global})D6+@{VolonteComp_pip}]] {{carac=Volonté}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<div class="display">
-                    <span class="skill-display">Puissance magique</span>
-                    <input type="number" name='attr_PuissanceMagiqueComp_d' value='0' min="0" />
-                    <input type="number" name='attr_PuissanceMagiqueComp_pip' value="0" min="0"/>
-                    <select name="attr_PuissanceMagiqueAttr">
-                        <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                        <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                        <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                        <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                        <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                        <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                        <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                        <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl" selected>Potentiel</option>
-                    </select>
-                    <button type='roll' name='roll_PuissanceMagiqueComp' value='!wd [[@{PuissanceMagiqueAttr}+(@{PuissanceMagiqueComp_d}+@{global})D6+@{PuissanceMagiqueComp_pip}]] {{carac=Puissance magique}} {{nd=?{Difficulté ?|} }}'></button>
-                </div>
-				<fieldset class="repeating_Competence">
-					<div class="display">
-						<input type="text" class="skill-display" name='attr_Competence_nom' style="width: 98px; border-color: transparent;" placeholder="Entrez un nom..." />
-						<input type="number" name='attr_Competence_d' value='0' min="0" />
-						<input type="number" name='attr_Competence_pip' value="0" min="0"/>
-						<select name="attr_CompetenceAttr">
-							<option value="@{For_d}D6+@{For_pip}" class="forlbl" selected>Force</option>
-							<option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-							<option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-							<option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-							<option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-							<option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-							<option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-							<option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-						</select>
-						<button type='roll' name='roll_CompetenceComp' value='!wd [[@{CompetenceAttr}+(@{Competence_d}+@{global})D6+@{Competence_pip}]] {{carac=@{Competence_nom} }} {{nd=?{Difficulté ?|} }}'></button>
-					</div>
-				</fieldset>
-            </div>
-    	</div>
-    </div>
-    
+			<button type='roll' name='roll_intiative' value='&{template:default} {{name=Jet initiative (+@{initiativebonus})}} {{Jet=[[1D8+@{initiativebonus} &{tracker}]] [[ 1t[Jet-secondaire] ]] }}'></button>
+		</div>
+		<div class="col">
+		</div>
+	</div>
+
+    <hr/>
+    <h1>Compétences</h1>
+	<button type='roll' name='roll_specialist' value='&{template:default} {{name=Jet spécialiste (+4)}} {{Jet=[[1D8+4]] [[ 1t[Jet-secondaire] ]] }}'></button>
+	<span class="skill-tier">Spécialiste (+4)</span>
+    <input type="text" class="competence" name="attr_comp1" />
+	<br/>
+	<button type='roll' name='roll_expert' value='&{template:default} {{name=Jet expert (+3)}} {{Jet=[[1D8+3]] [[ 1t[Jet-secondaire] ]] }}'></button>
+	<span class="skill-tier">Expert (+3)</span>
+    <input type="text" class="competence init"  name="attr_comp10"  />
+    <input type="text" class="competence"  name="attr_comp11"  />
+    <input type="text" class="competence"  name="attr_comp12"  />
+	<br/>
+	<button type='roll' name='roll_confirme' value='&{template:default} {{name=Jet confirmé (+2)}} {{Jet=[[1D8+2]] [[ 1t[Jet-secondaire] ]] }}'></button>
+	<span class="skill-tier">Confirmé (+2)</span>
+    <input type="text" class="competence init"  name="attr_comp20"  />
+    <input type="text" class="competence init"  name="attr_comp21"  />
+    <input type="text" class="competence init"  name="attr_comp22"  />
+    <input type="text" class="competence"  name="attr_comp23"  />
+    <input type="text" class="competence"  name="attr_comp24"  /><br/>
+	<button type='roll' name='roll_initie' value='&{template:default} {{name=Jet initié (+1)}} {{Jet=[[1D8+1]] [[ 1t[Jet-secondaire] ]] }}'></button>
+	<span class="skill-tier">Initié (+1)</span>
+    <input type="text" class="competence init"  name="attr_comp30"  />
+    <input type="text" class="competence init"  name="attr_comp31"  />
+    <input type="text" class="competence init"  name="attr_comp32"  />
+    <input type="text" class="competence init"  name="attr_comp33"  />
+    <input type="text" class="competence init"  name="attr_comp34"  />
+    <input type="text" class="competence"  name="attr_comp35"  /><br/>
+	<button type='roll' name='roll_normal' style="display:none;" value='&{template:default} {{name=Jet normal (+0)}} {{Jet=[[1D8]] [[ 1t[Jet-secondaire] ]] }}'></button>
+	<span class="skill-tier" style="margin-left: 32px;"></span>
+    <input type="text" class="competence"  name="attr_comp40"  />
+    <input type="text" class="competence"  name="attr_comp41"  />
+    <input type="text" class="competence"  name="attr_comp42"  />
+    <input type="text" class="competence"  name="attr_comp43"  />
+    <input type="text" class="competence"  name="attr_comp44"  />
+    <input type="text" class="competence"  name="attr_comp45"  /><br/>
+	<button type='roll' name='roll_normal' value='&{template:default} {{name=Jet normal (+0)}} {{Jet=[[1D8]] [[ 1t[Jet-secondaire] ]] }}'></button>
+	<span class="skill-tier">Normal (+0)</span>
+	
+	<input type="hidden" name="attr_physiqueamount"/>
+	<input type="hidden" name="attr_precisionamount"/>
+	<input type="hidden" name="attr_meleeamount"/>
+	<input type="hidden" name="attr_arcaneamount"/>
     <hr/>
     <div class="dons">
         
@@ -438,14 +129,12 @@
                 
             	<div class="aspects">
             	    <div class="top">
-                        <span class="label" style="margin-left:10px;width: 202px;">Nom de l'aspect</span>
-                        <span class="label" style="width: 12px;">Rang</span>
+                        <span class="label" style="margin-left:10px;width: 224px;">Nom de l'aspect</span>
                     </div>
                     <fieldset class="repeating_aspects">
                         <div class="display">
-                            <input type="text" class="transparent-input" name="attr_aspect_nom" style="width:215px; font-weight:bold;"/>
-                            <input type="number" name='attr_aspect_rank' value='0' min="0" class="transparent-input" />
-                            <textarea class="transparent-input desc-don" style="width:96%; height: 18px; margin-top:2px;min-height: 17px; resize: vertical;"
+                            <input type="text" class="transparent-input" name="attr_aspect_nom" style="width:248px; font-weight:bold;"/>
+                            <textarea class="transparent-input desc-don" style="width:240px; height: 18px; margin-top:2px;min-height: 17px; resize: vertical;"
                                 placeholder="Description"></textarea>
                         </div>
                     </fieldset>
@@ -456,36 +145,12 @@
                 
             	<div class="subdons">
             	    <div class="top">
-                        <span class="label" style="margin-left:10px;width: 162px;">Nom du don</span>
-                        <span class="label" style="width: 21px;">Dés</span>
-                        <span class="label" style="width: 30px;">Points</span>
-                        <span class="label" style="width: 42px;">Dégâts</span>
-                        <span class="label" style="width: 100px;">Attributs</span>
+                        <span class="label" style="margin-left:10px;width: 90%;">Nom du don</span>
                     </div>
                     <fieldset class="repeating_dons">
                         <div class="display">
-                            <input type="text" class="subdon-display transparent-input" name="attr_subdon_nom" style="width:175px; font-weight:bold;"/>
-                            <input type="number" class="transparent-input" name='attr_subdon_d' value='0' min="0" />
-                            <input type="number" class="transparent-input" name='attr_subdon_pip' value='1' min="0" />
-                            <select name="attr_subdon_spellattacktype" style="width:auto;">
-                                <option value="0" selected>-</option>
-                                <option value="@{BasePhy}">P</option>
-                                <option value="@{BaseMag}">M</option>
-                            </select>
-                            
-                            <select name="attr_subdon_attr" class="select-don">
-                                <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                                <option value="@{Dex_d}D6+@{Dex_pip}" class="dexlbl">Dextérité</option>
-                                <option value="@{Agi_d}D6+@{Agi_pip}" class="agilbl">Agilité</option>
-                                <option value="@{Con_d}D6+@{Con_pip}" class="conlbl">Constitution</option>
-                                <option value="@{Sag_d}D6+@{Sag_pip}" class="saglbl">Sagesse</option>
-                                <option value="@{Int_d}D6+@{Int_pip}" class="intlbl">Intelligence</option>
-                                <option value="@{Cha_d}D6+@{Cha_pip}" class="chalbl">Charisme</option>
-                                <option value="@{Pot_d}D6+@{Pot_pip}" class="potlbl">Potentiel</option>
-                            </select>
-                            
-                            <button type='roll' name='roll_compdon' value='!wd [[(@{subdon_d}+@{global})D6+@{subdon_pip}+@{subdon_attr}]] {{carac=@{subdon_nom}}} {{nd=?{Difficulté ?|} }} {{damage=@{subdon_spellattacktype}}}'></button>
-                            <textarea class="transparent-input desc-don" style="height: 34px; margin-top:2px;min-height: 17px; resize: vertical;"
+                            <input type="text" class="subdon-display transparent-input" name="attr_subdon_nom" style="width:408px; font-weight:bold;"/>
+                            <textarea class="transparent-input desc-don" style="width:400px;height: 34px; margin-top:2px;min-height: 17px; resize: vertical;"
                                 placeholder="Description"></textarea>
                         </div>
                     </fieldset>
@@ -508,19 +173,16 @@
                 <div class="options">
                     <div class="row">
                         <span>Nom de l'arme :</span>
-                        <input type="text" name="attr_atkname">
+                        <input type="text" name="attr_atkname" />
                     </div>
                     <div class="row">
                         <span>Attaque :</span>
-                        <select name="attr_atkattr_base">
-                            <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                            <option value="(@{PuissancePhysiqueComp_d}+@{For_d}+@{global})D6+(@{PuissancePhysiqueComp_pip}+@{For_pip})" class="forlbl">Puissance Physique</option>
-                            <option value="@{Agi_d}D6+@{Agi_pip}" class="dexlbl">Dextérité</option>
-                            <option value="(@{CombatMeleeComp_d}+@{Dex_d}+@{global})D6+(@{CombatMeleeComp_pip}+@{Dex_pip})" class="dexlbl">Combat Mêlée</option>
-                            <option value="(@{TirComp_d}+@{Dex_d}+@{global})D6+(@{TirComp_pip}+@{Dex_pip})" class="dexlbl">Tir</option>
-                            <option value="(@{LanceComp_d}+@{Dex_d}+@{global})D6+(@{LanceComp_pip}+@{Dex_pip})" class="dexlbl">Lancé</option>
-                            <option value="0" class="dexlbl">Autre - Voir MJ</option>
-                        </select>
+						<select name="attr_atkattr_base">
+							<option value="@{physiqueamount}" class="forlbl">Physique</option>
+							<option value="@{precisionamount}" class="dexlbl">Précision</option>
+							<option value="@{meleeamount}" class="agilbl" selected>Combat mêlée</option>
+							<option value="@{arcaneamount}" class="conlbl">Arcane</option>
+						</select>
                         <span>+</span>
                         <input type="text" class="num" name="attr_atkmod" placeholder="0">
                     </div>
@@ -530,7 +192,7 @@
                     </div>
                     <div class="row">
                         <span>Dommages :</span>
-                        <input type="text" name="attr_dmgbase" placeholder="X" style="width: 50px;">
+                        <input type="text" name="attr_dmgbase" placeholder="0" style="width: 50px;">
                     </div>
                     <div class="row">
                         <span>Description :</span>
@@ -541,7 +203,7 @@
                     <span name="attr_atkname" style="width: 95px;"></span>
                     <input type="text" name="attr_dmgbase" style="width: 60px;" value="">
                     <span name="attr_atkrange" style="width: 30px;"></span>
-                    <button type="roll" name="roll_attack" value="!wd [[ @{atkattr_base}+@{atkmod}]] {{carac=@{atkname}}} {{nd=?{Difficulté ?|} }} {{damage=@{dmgbase}+@{BasePhy} }}"></button>
+                    <button type="roll" name="roll_attack" value="&{template:default} {{name=Jet de @{atkname} (+?{Bonus ?|0})}} {{Jet=[[1D8+?{Bonus ?|0}+@{atkattr_base}+@{atkmod}]] [[ 1t[Jet-secondaire] ]] }} {{Dégâts=+@{dmgbase}}}"></button>
                 </div>
             </div>
         </fieldset>
@@ -567,20 +229,17 @@
                         <input type="text" name="attr_armor_value" placeholder="" style="width: 50px;">
                         <span style="margin-left:20px;">Résistance :</span>
                         <input type="text" name="attr_resist_value" placeholder="" style="width: 50px;">
-                        <span>Malus d'agilité :</span>
+                        <span>Malus réactivité :</span>
                         <input type="text" name="attr_armor_malus" placeholder="" style="width: 50px;">
                     </div>
                     <div class="row">
                         <span>Attaque :</span>
-                        <select name="attr_atkattr_base">
-                            <option value="@{For_d}D6+@{For_pip}" class="forlbl">Force</option>
-                            <option value="(@{PuissancePhysiqueComp_d}+@{For_d}+@{global})D6+(@{PuissancePhysiqueComp_pip}+@{For_pip})" class="forlbl">Puissance Physique</option>
-                            <option value="@{Agi_d}D6+@{Agi_pip}" class="dexlbl">Dextérité</option>
-                            <option value="(@{CombatMeleeComp_d}+@{Dex_d}+@{global})D6+(@{CombatMeleeComp_pip}+@{Dex_pip})" class="dexlbl">Combat Mêlée</option>
-                            <option value="(@{TirComp_d}+@{Dex_d}+@{global})D6+(@{TirComp_pip}+@{Dex_pip})" class="dexlbl">Tir</option>
-                            <option value="(@{LanceComp_d}+@{Dex_d}+@{global})D6+(@{LanceComp_pip}+@{Dex_pip})" class="dexlbl">Lancé</option>
-                            <option value="0" class="dexlbl">Autre - Voir MJ</option>
-                        </select>
+						<select name="attr_atkattr_base">
+							<option value="@{physiqueamount}" class="forlbl">Physique</option>
+							<option value="@{precisionamount}" class="dexlbl">Précision</option>
+							<option value="@{meleeamount}" class="agilbl" selected>Combat mêlée</option>
+							<option value="@{arcaneamount}" class="conlbl">Arcane</option>
+						</select>
                         <span>+</span>
                         <input type="text" class="num" name="attr_atkmod" placeholder="0">
                     </div>
@@ -598,7 +257,7 @@
                     <span name="attr_armorname" style="width: 90px;"></span>
                     <span name="attr_armor_value" style="width: 35px;"></span>
                     <span name="attr_resist_value" style="width: 35px;"></span>
-                    <button type="roll" name="roll_attack" value="!wd [[ @{atkattr_base}+@{atkmod}]] {{carac=@{atkname}}} {{nd=?{Difficulté ?|} }} {{damage=@{dmgbase}+@{BasePhy} }}"/>
+                    <button type="roll" name="roll_attack" value="&{template:default} {{name=Jet de @{armorname} (+?{Bonus ?|0})}} {{Jet=[[1D8+?{Bonus ?|0}+@{atkattr_base}+@{atkmod}]] [[ 1t[Jet-secondaire] ]] }} {{Dégâts=+@{dmgbase}}}"></button>
                 </div>
             </div>
         </fieldset>
@@ -837,4 +496,107 @@ on("change:puissancenpc change:bonusdefense change:agi_d sheet:opened", function
     });
 });
 
+const updatePhysStress = (m) => {
+	var v = 0;
+	if (m.has("Stamina"))
+		v = m.get("Stamina");
+	console.log("Update physique stress with " + v);
+	setAttrs({
+		stresspnum1 : Math.max(0, v-2),
+		stresspnum2 : Math.max(1, v),
+		stresspnum3 : v+2
+	});
+};
+
+const updateMentStress = (m) => {
+
+	var v = 0;
+	if (m.has("Volonté"))
+		v = m.get("Volonté");
+	console.log("Update mental stress with " + (v+2));
+	setAttrs({
+		stressmnum1 : Math.max(0, v-2),
+		stressmnum2 : Math.max(1, v),
+		stressmnum3 : v+2
+	});
+};
+
+
+const updateInitiative = (m) => {
+	var r = 0, p = 0;
+	if (m.has("Perception"))
+		p = m.get("Perception");
+	if (m.has("Réaction"))
+		r = m.get("Réaction");
+	console.log("Update initiative bonus with " + (p + Math.ceil(r/2)));
+	setAttrs({
+		initiativebonus : p + Math.ceil(r/2)
+	});
+};
+
+
+const updateAmounts = (m) => {
+	var ph = 0, pr = 0, cm = 0, ar = 0, st = 0, vo = 0;
+	if (m.has("Physique"))
+		ph = m.get("Physique");
+	if (m.has("Précision"))
+		pr = m.get("Précision");
+	if (m.has("Combat mêlée"))
+		cm = m.get("Combat mêlée");
+	if (m.has("Arcane"))
+		ar = m.get("Arcane");
+		
+	console.log("Update competences");
+	setAttrs({
+		physiqueamount : ph,
+		precisionamount : pr,
+		meleeamount : cm,
+		arcaneamount : ar
+	});
+};
+
+const mapit = (attrs) => {
+	var m = new Map();
+	
+	m.set(attrs.comp30, 1);
+	m.set(attrs.comp30, 1);
+	m.set(attrs.comp31, 1);
+	m.set(attrs.comp32, 1);
+	m.set(attrs.comp33, 1);
+	m.set(attrs.comp34, 1);
+	m.set(attrs.comp40, 1);
+	m.set(attrs.comp41, 1);
+	m.set(attrs.comp42, 1);
+	m.set(attrs.comp43, 1);
+	m.set(attrs.comp44, 1);
+	m.set(attrs.comp20, 2);
+	m.set(attrs.comp21, 2);
+	m.set(attrs.comp22, 2);
+	m.set(attrs.comp23, 2);
+	m.set(attrs.comp24, 2);
+	m.set(attrs.comp10, 3);
+	m.set(attrs.comp11, 3);
+	m.set(attrs.comp12, 3);
+	m.set(attrs.comp1, 4);
+	
+	return m;
+};
+
+
+
+
+on("change:comp1 change:comp10 change:comp11 change:comp12 change:comp20 change:comp21 change:comp22 change:comp23 change:comp24 change:comp30 change:comp31 change:comp32 change:comp33 change:comp34 change:comp35 change:comp40 change:comp41 change:comp42 change:comp43 change:comp44 change:comp45 sheet:opened", function() { // TODO
+	console.log("MAJ comp");
+	
+	getAttrs(["comp1", "comp10", "comp11", "comp12", "comp20", "comp21", "comp22", "comp23", "comp24", "comp30", "comp31", "comp32", "comp33", "comp34", "comp35", "comp40", "comp41", "comp42", "comp43", "comp44", "comp45"], function(v) {
+		console.log(v);
+		var vmap = mapit(v);
+		updatePhysStress(vmap);
+		updateMentStress(vmap);
+		updateInitiative(vmap);
+		updateAmounts(vmap);
+		
+	});
+	
+});
 </script>

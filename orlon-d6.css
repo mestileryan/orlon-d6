@@ -236,7 +236,7 @@ input[type=radio].sheet-tab-button:checked + span {
 }
 .charsheet label {
 	display: inline-block;
-	width: 31%;
+	width: 36%;
 }
 
 textarea { 
@@ -721,6 +721,51 @@ select {
     text-align: center;
     font-weight: bold;
     margin-top: 5px;
+}
+
+.sheet-competence {
+	width: 12%;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.sheet-2coltext {
+	width: 200px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.sheet-init {
+	border: 1px solid grey;
+}
+
+.sheet-skill-tier {
+	display: inline-block;
+    width: 100px;
+    font-weight: bold;
+	
+}
+
+.sheet-blessure {
+	display: inline-block;
+    width: 150px;
+    font-weight: bold;
+	
+}
+
+.sheet-stress-val {
+	pointer-events: none;
+	background-color: rgb(245, 245, 245);
+	border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 0px;
+    text-align: center;
+}
+.sheet-stressbox {
+	width: 2.2em !important;
+    padding: 4px;
+    margin-bottom: 5px;
 }
 
 .sheet-armors,
